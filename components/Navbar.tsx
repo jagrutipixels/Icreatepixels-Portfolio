@@ -35,21 +35,21 @@ export const Navbar: React.FC = () => {
     <nav 
       className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ease-in-out ${
         isScrolled || isMobileMenuOpen 
-          ? 'bg-black/90 backdrop-blur-xl py-5 border-b border-white/5 shadow-2xl' 
+          ? 'bg-[#050505]/95 backdrop-blur-xl py-5 border-b border-white/5 shadow-2xl' 
           : 'bg-transparent py-8 md:py-12'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        {/* Logo - Increased size from h-8/10/12 to h-12/16/20 */}
+        {/* Logo */}
         <a 
           href="#home" 
-          className="relative z-[110] block transition-transform duration-300 hover:scale-105 active:scale-95" 
+          className="relative z-[210] block transition-transform duration-300 hover:scale-105 active:scale-95" 
           onClick={() => setIsMobileMenuOpen(false)}
         >
           <img 
             src={logoUrl} 
             alt="Abhishek" 
-            className="h-12 sm:h-16 md:h-20 w-auto object-contain"
+            className="h-10 sm:h-14 md:h-20 w-auto object-contain"
           />
         </a>
         
@@ -69,28 +69,28 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Trigger */}
         <button 
-          className="md:hidden relative z-[110] p-2 flex flex-col gap-1.5 focus:outline-none"
+          className="md:hidden relative z-[210] p-2 flex flex-col items-end gap-1.5 focus:outline-none"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle Menu"
         >
-          <span className={`w-6 h-[2px] bg-white transition-all duration-300 origin-center ${isMobileMenuOpen ? 'rotate-45 translate-y-[8px]' : ''}`}></span>
-          <span className={`w-6 h-[2px] bg-white transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0 scale-x-0' : 'opacity-100'}`}></span>
-          <span className={`w-6 h-[2px] bg-white transition-all duration-300 origin-center ${isMobileMenuOpen ? '-rotate-45 -translate-y-[8px]' : ''}`}></span>
+          <span className={`h-[2px] bg-white transition-all duration-300 origin-center ${isMobileMenuOpen ? 'w-8 rotate-45 translate-y-[8px]' : 'w-8'}`}></span>
+          <span className={`h-[2px] bg-white transition-all duration-300 ${isMobileMenuOpen ? 'w-0 opacity-0 scale-x-0' : 'w-6'}`}></span>
+          <span className={`h-[2px] bg-white transition-all duration-300 origin-center ${isMobileMenuOpen ? 'w-8 -rotate-45 -translate-y-[8px]' : 'w-4'}`}></span>
         </button>
 
         {/* Mobile Menu Overlay */}
         <div 
-          className={`fixed inset-0 bg-black z-[105] transition-all duration-700 ease-in-out md:hidden flex flex-col items-center justify-center ${
+          className={`fixed inset-0 bg-[#050505] z-[200] transition-all duration-700 ease-in-out md:hidden flex flex-col items-center justify-center h-screen w-screen ${
             isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
           }`}
         >
-          <div className="flex flex-col items-center space-y-6 sm:space-y-8 w-full px-12">
+          <div className="flex flex-col items-center space-y-10 sm:space-y-12 w-full px-12">
             {navLinks.map((link, i) => (
               <a 
                 key={link.name} 
                 href={link.href} 
-                className={`text-2xl sm:text-4xl font-serif text-white hover:text-zinc-500 transition-colors duration-500 transform ${
-                  isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+                className={`text-3xl sm:text-5xl font-serif text-white hover:text-zinc-500 transition-all duration-500 transform py-2 ${
+                  isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
                 }`}
                 style={{ transitionDelay: `${i * 100}ms` }}
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -100,8 +100,8 @@ export const Navbar: React.FC = () => {
             ))}
           </div>
           
-          <div className={`mt-16 pt-8 border-t border-zinc-900 w-full max-w-[240px] text-center transition-all duration-1000 delay-500 ${isMobileMenuOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-            <p className="text-zinc-700 text-[8px] uppercase tracking-[0.6em] font-black">Mumbai • Worldwide</p>
+          <div className={`mt-24 pt-12 border-t border-zinc-900 w-full max-w-[280px] text-center transition-all duration-1000 delay-500 ${isMobileMenuOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+            <p className="text-zinc-700 text-[9px] uppercase tracking-[0.6em] font-black">Mumbai • Worldwide</p>
           </div>
         </div>
       </div>
