@@ -38,12 +38,10 @@
             font-family: 'Playfair Display', serif;
         }
         
-        /* Modern Scroll Margin for Fixed Headers */
         section {
             scroll-margin-top: clamp(80px, 10vh, 120px);
         }
 
-        /* Cinematic Grain Texture */
         .grain::before {
             content: "";
             position: fixed;
@@ -67,7 +65,6 @@
             90% { transform: translate(-10%, 10%); }
         }
 
-        /* Fluid Typography Helpers */
         .text-fluid-h1 { font-size: clamp(2.5rem, 8vw, 6rem); }
         .text-fluid-h2 { font-size: clamp(2rem, 6vw, 4rem); }
 
@@ -83,7 +80,6 @@
         }
         .animate-drift { animation: drift 25s ease-in-out infinite; }
 
-        /* Smooth reveal for modal */
         @keyframes modal-reveal {
             from { opacity: 0; transform: scale(0.98) translateY(20px); }
             to { opacity: 1; transform: scale(1) translateY(0); }
@@ -91,8 +87,6 @@
         .animate-modal { animation: modal-reveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
         ::selection { background: #ffffff; color: #000000; }
-        
-        /* Utility to prevent layout shift */
         .aspect-video-responsive { aspect-ratio: 16/9; }
     </style>
     <script type="importmap">
@@ -107,5 +101,6 @@
 </head>
 <body class="grain">
     <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { PERSONAL_INFO } from '../constants';
+import { PERSONAL_INFO } from '../constants.ts';
 
 export const Hero: React.FC = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -57,7 +57,6 @@ export const Hero: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-10 lg:gap-20">
         
-        {/* Image Component - Optimized for small screens */}
         <div className="relative w-full max-w-[340px] sm:max-w-[420px] md:max-w-none md:w-1/2 lg:w-[42%] aspect-[3/4] group order-2 md:order-1">
           <div className="absolute -inset-4 bg-white/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000 hidden lg:block"></div>
           
@@ -110,7 +109,6 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Text Content - Responsive Clamp sizing */}
         <div className="w-full md:w-1/2 flex flex-col items-start text-left order-1 md:order-2">
           <div className="mb-4 sm:mb-6">
             <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.4em] sm:tracking-[0.5em] text-zinc-500 mb-2 sm:mb-3 block">

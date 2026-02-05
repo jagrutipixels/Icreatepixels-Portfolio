@@ -1,6 +1,6 @@
 import React from 'react';
-import { PERSONAL_INFO, METHODOLOGY } from '../constants';
-import { Reveal } from './Reveal';
+import { PERSONAL_INFO, METHODOLOGY } from '../constants.ts';
+import { Reveal } from './Reveal.tsx';
 
 export const AboutSection: React.FC = () => {
   return (
@@ -8,7 +8,6 @@ export const AboutSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
           
-          {/* Narrative Column */}
           <div className="lg:col-span-7">
             <Reveal direction="left">
               <span className="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-700 block mb-6">
@@ -42,7 +41,6 @@ export const AboutSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Perspective Column */}
           <div className="lg:col-span-5 lg:sticky lg:top-32">
             <Reveal direction="right" delay={400}>
               <div className="relative p-8 md:p-10 border border-zinc-900 rounded-3xl bg-zinc-900/10 backdrop-blur-sm">

@@ -1,12 +1,10 @@
-
 import React from 'react';
-import { SKILLS, HARDWARE } from '../constants';
-import { Reveal } from './Reveal';
+import { SKILLS, HARDWARE } from '../constants.ts';
+import { Reveal } from './Reveal.tsx';
 
 export const SkillsSection: React.FC = () => {
   return (
     <div className="space-y-24">
-      {/* Software Skills Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {SKILLS.map((skill, index) => (
           <Reveal key={index} delay={index * 150} direction="none">
@@ -27,7 +25,6 @@ export const SkillsSection: React.FC = () => {
         ))}
       </div>
 
-      {/* Hardware / Gear Highlights */}
       <div className="border-t border-zinc-800 pt-16">
         <Reveal>
           <h3 className="text-xs font-bold uppercase tracking-[0.4em] text-zinc-500 mb-12">Production Gear & Hardware</h3>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { BRAND_PROJECTS } from '../constants';
-import { Reveal } from './Reveal';
+import { BRAND_PROJECTS } from '../constants.ts';
+import { Reveal } from './Reveal.tsx';
 
 const BrandCard: React.FC<{ brand: any; index: number }> = ({ brand, index }) => {
   const [isLoaded, setIsLoaded] = useState(false);

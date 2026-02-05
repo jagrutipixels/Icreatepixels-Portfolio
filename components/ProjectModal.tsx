@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Project } from '../types';
+import { Project } from '../types.ts';
 
 interface ProjectModalProps {
   project: Project;
@@ -24,16 +24,12 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-0 md:p-6 lg:p-12 overflow-hidden">
-      {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-black/98 backdrop-blur-xl transition-opacity duration-500" 
         onClick={onClose}
       />
       
-      {/* Modal Container */}
       <div className="relative bg-[#080808] w-full h-full md:h-auto md:max-h-[90vh] md:max-w-6xl overflow-y-auto md:rounded-3xl shadow-3xl flex flex-col md:flex-row animate-modal md:border md:border-zinc-800/50 scrollbar-hide">
-        
-        {/* Close Button - Responsive Position */}
         <button 
           onClick={onClose}
           className="fixed md:absolute top-4 right-4 md:top-6 md:right-6 z-[110] p-4 md:p-3 bg-white text-black rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all touch-manipulation"
@@ -42,7 +38,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
 
-        {/* Image Section - Sticky-ish for mobile */}
         <div className="w-full md:w-1/2 flex-shrink-0 relative h-[40vh] sm:h-[50vh] md:h-auto overflow-hidden bg-zinc-950">
           {!imageLoaded && (
             <div className="absolute inset-0 animate-pulse bg-zinc-900 flex items-center justify-center">
@@ -58,7 +53,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent md:hidden"></div>
         </div>
 
-        {/* Content Section */}
         <div className="w-full md:w-1/2 p-6 sm:p-10 md:p-12 lg:p-16 flex flex-col bg-[#080808]">
           <div className="mb-8">
             <div className="flex flex-col sm:flex-row justify-between items-start gap-4 mb-6">

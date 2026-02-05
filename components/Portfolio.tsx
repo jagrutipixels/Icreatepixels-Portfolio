@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { PROJECTS } from '../constants';
-import { Project } from '../types';
-import { Reveal } from './Reveal';
-import { ProjectModal } from './ProjectModal';
+import { PROJECTS } from '../constants.ts';
+import { Project } from '../types.ts';
+import { Reveal } from './Reveal.tsx';
+import { ProjectModal } from './ProjectModal.tsx';
 
 const ProjectCard: React.FC<{ project: Project; onClick: () => void; index: number }> = ({ project, onClick, index }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -33,7 +33,6 @@ const ProjectCard: React.FC<{ project: Project; onClick: () => void; index: numb
         </div>
 
         <div className="p-8 md:p-10 flex-grow flex flex-col relative bg-[#181818]">
-          {/* External Link Icon in top right - Matches Reference */}
           <div className="absolute top-10 right-10 text-zinc-400 group-hover:text-white transition-colors duration-300">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -42,24 +41,20 @@ const ProjectCard: React.FC<{ project: Project; onClick: () => void; index: numb
             </svg>
           </div>
           
-          {/* Category Label - Matches Reference */}
           <div className="text-[10px] md:text-xs font-bold text-zinc-500 uppercase tracking-[0.15em] mb-4">
               {project.client}
           </div>
 
-          {/* Title - Matches Reference serif style */}
           <h3 className="text-2xl md:text-3xl font-serif font-bold mb-6 text-[#f8f8f8] leading-tight">
             {project.title}
           </h3>
 
-          {/* Deliverable with vertical accent - Matches Reference */}
           <div className="mb-8 pl-4 border-l border-zinc-800">
             <p className="text-zinc-500 text-sm md:text-base italic leading-relaxed">
               {project.deliverable}
             </p>
           </div>
 
-          {/* Impact Section - Matches Reference */}
           <div className="mt-auto pt-8 border-t border-zinc-800/60">
             <span className="text-[9px] uppercase font-black tracking-widest text-zinc-600 block mb-2.5">Impact</span>
             <p className="text-xs md:text-sm text-zinc-200 font-bold leading-relaxed">{project.impact}</p>
