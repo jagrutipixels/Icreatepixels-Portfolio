@@ -6,7 +6,6 @@ export const Hero: React.FC = () => {
   const [lensPos, setLensPos] = useState({ x: 0, y: 0, active: false });
   const imageContainerRef = useRef<HTMLDivElement>(null);
 
-  // Reverting to original roles: cover as surface, base as reveal
   const baseImageUrl = "https://raw.githubusercontent.com/jagrutipixels/pixels/e28a8fddf87ed5b38a34d6c60d4be804132a2348/Hero_Image_base.jpg";
   const coverImageUrl = "https://raw.githubusercontent.com/jagrutipixels/pixels/58c0b1e5252344b7fd2c30e2b74dbcc0874b0870/Hero_Image_cover.jpg";
 
@@ -48,23 +47,19 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505] px-6 py-24 lg:py-20">
-      
-      {/* Background Atmosphere */}
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505] px-6 py-12 lg:py-20">
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
         <div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140vw] h-[140vw] opacity-[0.07] animate-drift"
-          style={{
-            background: 'radial-gradient(circle, rgba(100,100,150,1) 0%, rgba(5,5,5,0) 70%)',
-          }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140vw] h-[140vw] opacity-[0.05] animate-drift"
+          style={{ background: 'radial-gradient(circle, rgba(100,100,150,1) 0%, rgba(5,5,5,0) 70%)' }}
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20">
+      <div className="relative z-10 max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-10 lg:gap-20">
         
-        {/* Hero Image Component */}
-        <div className="relative w-full max-w-[420px] md:max-w-none md:w-1/2 lg:w-[42%] aspect-[3/4] group order-2 md:order-1">
-          <div className="absolute -inset-4 bg-white/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000 hidden md:block"></div>
+        {/* Image Component - Optimized for small screens */}
+        <div className="relative w-full max-w-[340px] sm:max-w-[420px] md:max-w-none md:w-1/2 lg:w-[42%] aspect-[3/4] group order-2 md:order-1">
+          <div className="absolute -inset-4 bg-white/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000 hidden lg:block"></div>
           
           <div 
             ref={imageContainerRef}
@@ -74,75 +69,61 @@ export const Hero: React.FC = () => {
             onMouseLeave={() => setLensPos(prev => ({ ...prev, active: false }))}
             onTouchStart={() => setLensPos(prev => ({ ...prev, active: true }))}
             onTouchEnd={() => setLensPos(prev => ({ ...prev, active: false }))}
-            className="relative w-full h-full overflow-hidden border border-zinc-800/50 bg-zinc-900 rounded-2xl shadow-2xl transition-transform duration-700 ease-out lg:cursor-none"
+            className="relative w-full h-full overflow-hidden border border-zinc-800/50 bg-zinc-900 rounded-3xl shadow-2xl transition-transform duration-700 ease-out lg:cursor-none touch-none"
             style={{ 
               transform: `perspective(1000px) rotateX(${mousePos.y * 0.05}deg) rotateY(${mousePos.x * -0.05}deg)` 
             }}
           >
-            {/* Background Layer: Sharp Photo */}
             <img 
               src={coverImageUrl} 
               alt="Abhishek Sanjay Gujar" 
               className="absolute inset-0 w-full h-full object-cover grayscale-[0.1]"
+              loading="eager"
             />
 
-            {/* Clipped Layer: Base Reveal */}
             <img 
               src={baseImageUrl} 
               alt="Revealed Detail" 
               className="absolute inset-0 w-full h-full object-cover"
               style={{
                 clipPath: lensPos.active 
-                  ? `circle(100px at ${lensPos.x}px ${lensPos.y}px)` 
+                  ? `circle(clamp(80px, 15vw, 110px) at ${lensPos.x}px ${lensPos.y}px)` 
                   : 'circle(0% at 50% 50%)',
                 WebkitClipPath: lensPos.active 
-                  ? `circle(100px at ${lensPos.x}px ${lensPos.y}px)` 
+                  ? `circle(clamp(80px, 15vw, 110px) at ${lensPos.x}px ${lensPos.y}px)` 
                   : 'circle(0% at 50% 50%)',
               }}
             />
 
-            {/* Clear Lens UI */}
             {lensPos.active && (
               <div 
-                className="absolute pointer-events-none z-30 w-[200px] h-[200px] rounded-full border-2 border-white/30 shadow-[0_0_80px_rgba(255,255,255,0.2),inset_0_0_20px_rgba(255,255,255,0.1)] flex items-center justify-center"
-                style={{
-                  left: lensPos.x - 100,
-                  top: lensPos.y - 100,
-                }}
+                className="absolute pointer-events-none z-30 w-[clamp(160px,30vw,220px)] h-[clamp(160px,30vw,220px)] rounded-full border-2 border-white/20 shadow-[0_0_80px_rgba(255,255,255,0.2)] flex items-center justify-center"
+                style={{ left: lensPos.x - (window.innerWidth < 768 ? 80 : 110), top: lensPos.y - (window.innerWidth < 768 ? 80 : 110) }}
               >
-                 <div className="absolute -top-10 left-1/2 -translate-x-1/2 text-[8px] uppercase tracking-[0.5em] font-black text-white whitespace-nowrap bg-black/80 px-3 py-1.5 rounded-md border border-white/10 shadow-xl">
+                 <div className="absolute -top-12 left-1/2 -translate-x-1/2 text-[7px] md:text-[8px] uppercase tracking-[0.4em] font-black text-white whitespace-nowrap bg-black/80 px-3 py-1.5 rounded-md border border-white/10 shadow-xl">
                   Focusing Detail
                 </div>
-                {/* Subtle lens reflection effect without blur */}
                 <div className="absolute inset-0 rounded-full border border-white/5 bg-gradient-to-tr from-transparent via-white/5 to-white/10 opacity-30"></div>
               </div>
             )}
-            <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(0,0,0,0.5)] pointer-events-none z-20"></div>
-          </div>
-
-          <div className="absolute -bottom-4 -right-4 bg-black/90 backdrop-blur-xl border border-zinc-800 p-4 hidden sm:block z-30 rounded-lg shadow-2xl">
-             <div className="text-[7px] uppercase tracking-[0.4em] font-black text-zinc-500 mb-0.5">Profile Status</div>
-             <div className="text-[10px] text-white font-bold tracking-widest uppercase flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-                Active Content
-             </div>
+            <div className="absolute inset-0 shadow-[inset_0_0_80px_rgba(0,0,0,0.6)] pointer-events-none z-20"></div>
           </div>
         </div>
 
-        {/* Text Content */}
+        {/* Text Content - Responsive Clamp sizing */}
         <div className="w-full md:w-1/2 flex flex-col items-start text-left order-1 md:order-2">
-          <div className="mb-6">
-            <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.5em] text-zinc-500 mb-3 block">
-              Creative Head | Brand Strategist
+          <div className="mb-4 sm:mb-6">
+            <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.4em] sm:tracking-[0.5em] text-zinc-500 mb-2 sm:mb-3 block">
+              Creative Head | Filmmaker
             </span>
           </div>
 
-          <h1 className="text-5xl sm:text-6xl lg:text-8xl font-serif font-bold mb-8 leading-[1] tracking-tighter text-white">
+          <h1 className="text-fluid-h1 font-serif font-bold mb-6 sm:mb-8 leading-[0.95] tracking-tighter text-white">
             Abhishek <br/> <span className="text-zinc-500">Sanjay Gujar</span>
           </h1>
           
-          <div className="max-w-lg mb-12 border-l-2 border-zinc-900 pl-6 py-1">
-            <p className="text-zinc-400 text-base md:text-xl font-light italic leading-relaxed">
+          <div className="max-w-lg mb-10 sm:mb-12 border-l-2 border-zinc-900/80 pl-6 py-1">
+            <p className="text-zinc-400 text-sm sm:text-lg lg:text-xl font-light italic leading-relaxed">
               "{PERSONAL_INFO.philosophy}"
             </p>
           </div>
@@ -150,28 +131,28 @@ export const Hero: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 w-full sm:w-auto">
             <a 
               href="#portfolio" 
-              className="px-10 py-5 bg-white text-black text-[11px] font-black uppercase tracking-[0.2em] rounded-full hover:bg-zinc-200 transition-all flex items-center justify-center gap-3 active:scale-95 shadow-[0_10px_40px_rgba(255,255,255,0.15)]"
+              className="px-8 sm:px-10 py-4 sm:py-5 bg-white text-black text-[10px] sm:text-[11px] font-black uppercase tracking-[0.2em] rounded-full hover:bg-zinc-200 transition-all flex items-center justify-center gap-3 active:scale-95 shadow-xl"
             >
               Explore Works
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
             </a>
             
             <a 
               href="#contact" 
-              className="px-10 py-5 border border-zinc-800 text-white text-[11px] font-black uppercase tracking-[0.2em] rounded-full hover:bg-white hover:text-black transition-all text-center active:scale-95"
+              className="px-8 sm:px-10 py-4 sm:py-5 border border-zinc-800 text-white text-[10px] sm:text-[11px] font-black uppercase tracking-[0.2em] rounded-full hover:bg-white hover:text-black transition-all text-center active:scale-95"
             >
               Start Project
             </a>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-12 pt-12 border-t border-zinc-900/50 w-full max-w-sm mt-12">
+          <div className="grid grid-cols-2 gap-x-8 sm:gap-x-12 pt-10 sm:pt-12 border-t border-zinc-900/50 w-full max-w-sm mt-10 sm:mt-12">
             <div>
-              <span className="text-[8px] font-black uppercase tracking-[0.4em] text-zinc-600 block mb-1">Based In</span>
-              <span className="text-xs text-zinc-400">Mumbai, IN</span>
+              <span className="text-[8px] font-black uppercase tracking-[0.3em] text-zinc-600 block mb-1">Based In</span>
+              <span className="text-[10px] sm:text-xs text-zinc-400">Mumbai, IN</span>
             </div>
             <div>
-              <span className="text-[8px] font-black uppercase tracking-[0.4em] text-zinc-600 block mb-1">Current Focus</span>
-              <span className="text-xs text-zinc-400">Digital Identity</span>
+              <span className="text-[8px] font-black uppercase tracking-[0.3em] text-zinc-600 block mb-1">Status</span>
+              <span className="text-[10px] sm:text-xs text-zinc-400">Available</span>
             </div>
           </div>
         </div>
