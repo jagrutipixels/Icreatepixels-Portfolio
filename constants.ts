@@ -1,4 +1,4 @@
-import { Project, Experience, SkillGroup, HardwareGroup } from './types';
+import { Project, Experience, SkillGroup, HardwareGroup, BrandProject } from './types';
 
 export const PERSONAL_INFO = {
   name: "ABHISHEK SANJAY GUJAR",
@@ -16,35 +16,6 @@ export const PERSONAL_INFO = {
 };
 
 export const PROJECTS: Project[] = [
-  {
-    title: "Wedding Portraits",
-    client: "Private Clients",
-    deliverable: "Photography + cinematic highlight reels",
-    impact: "Premium positioning; repeat & referral bookings",
-    image: "https://picsum.photos/seed/wedding/800/600",
-    description: "Capturing the intimate and grand moments of matrimonial celebrations with a focus on cinematic lighting and emotional authenticity.",
-    challenges: [
-      "Dynamic lighting conditions in heritage venues.",
-      "Managing tight schedules during high-pressure ceremonies.",
-      "Balancing candid storytelling with traditional portraits."
-    ],
-    technologies: ["Sony A7IV", "Adobe Lightroom", "Adobe Premiere Pro", "Gimbal Stabilizers"]
-  },
-  {
-    title: "Gentlemen Brand Film",
-    client: "Apparel/fashion client",
-    deliverable: "60–90 sec. lifestyle brand film",
-    impact: "Used across Instagram & e-commerce storefronts",
-    image: "https://picsum.photos/seed/fashion/800/600",
-    description: "A high-end lifestyle film showcasing a new collection of artisanal menswear, emphasizing texture, fit, and masculine elegance.",
-    challenges: [
-      "Creating a premium 'look' on a startup budget.",
-      "Ensuring color accuracy of fabrics across different screen types.",
-      "Choreographing movement to highlight suit functionality."
-    ],
-    technologies: ["DaVinci Resolve", "Sony A7IV", "Anamorphic Lenses", "Motion Graphics"],
-    liveLink: "https://www.instagram.com/abhishek_gujar_/"
-  },
   {
     title: "Puppycuddles Dog Café",
     client: "F&B/Lifestyle brand",
@@ -88,20 +59,33 @@ export const PROJECTS: Project[] = [
     ],
     technologies: ["After Effects", "Adobe Premiere Pro", "VFX Plugins", "Color Grading"],
     liveLink: "https://www.youtube.com/@icreatepixels"
+  }
+];
+
+export const BRAND_PROJECTS: BrandProject[] = [
+  {
+    name: "Savoir Studio",
+    category: "Identity • Web • Space Design",
+    description: "Developed the full visual ecosystem for Mumbai's premier creative studio, from the minimalist geometric logo to a high-conversion digital portfolio.",
+    deliverables: ["Visual Identity", "Web Architecture", "Spatial Art Direction"],
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000",
+    link: "https://www.ssbykmw.com/" 
   },
   {
-    title: "Luxe Brow Clinic",
-    client: "Beauty brand",
-    deliverable: "Launch visuals + product photography",
-    impact: "Used for social media & in-store brand collateral",
-    image: "https://picsum.photos/seed/beauty/800/600",
-    description: "Creating a clean, clinical yet inviting visual identity for a high-end beauty clinic launch.",
-    challenges: [
-      "Macro-photography of delicate cosmetic procedures.",
-      "Maintaining a consistent aesthetic across studio and location shoots.",
-      "Communicating 'luxury' through minimal color palettes."
-    ],
-    technologies: ["Sony A7IV", "Macro Lenses", "Softbox Lighting", "Skin Retouching Workflow"]
+    name: "DBN Fruits",
+    category: "E-commerce • Branding",
+    description: "Revitalized a traditional fruit distribution business with a premium, organic-first identity and an intuitive B2B ordering interface.",
+    deliverables: ["Brand Strategy", "UI/UX Design", "Packaging Systems"],
+    image: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&q=80&w=1000",
+    link: "https://icretepixels.vercel.app/"
+  },
+  {
+    name: "Tech Ev",
+    category: "Corporate Identity • Web",
+    description: "Crafting a forward-looking digital presence for a technology consultancy, emphasizing speed, modularity, and technical precision.",
+    deliverables: ["Digital Identity", "Web Development", "Design System"],
+    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1000",
+    link: "https://candid-pegasus-1f86d2.netlify.app/#/"
   }
 ];
 

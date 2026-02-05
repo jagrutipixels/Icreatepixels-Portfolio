@@ -10,6 +10,15 @@ export interface Project {
   liveLink?: string;
 }
 
+export interface BrandProject {
+  name: string;
+  category: string;
+  description: string;
+  deliverables: string[];
+  link?: string;
+  image: string;
+}
+
 export interface Experience {
   role: string;
   company: string;
