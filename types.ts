@@ -36,3 +36,8 @@ export interface HardwareGroup {
   category: string;
   items: string;
 }
+
+export interface Methodology {
+  label: string;
+  detail: string;
+}

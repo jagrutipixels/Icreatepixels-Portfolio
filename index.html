@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhishek Sanjay Gujar | Filmmaker & Creative Head</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Abhishek Sanjay Gujar | Creative Head & Brand Strategist</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
@@ -12,22 +11,72 @@
             font-family: 'Inter', sans-serif;
             background-color: #050505;
             color: #ffffff;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         .font-serif {
             font-family: 'Playfair Display', serif;
         }
+        
+        /* Ensure sections have offset for the fixed navbar */
+        section {
+            scroll-margin-top: 80px;
+        }
+
+        /* Cinematic Grain Texture */
+        .grain::before {
+            content: "";
+            position: fixed;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background-image: url("https://raw.githubusercontent.com/jagrutipixels/pixels/main/noise.png");
+            background-repeat: repeat;
+            background-size: 100px;
+            opacity: 0.04;
+            pointer-events: none;
+            z-index: 9999;
+            animation: grain-animation 8s steps(10) infinite;
+        }
+
+        @keyframes grain-animation {
+            0%, 100% { transform: translate(0, 0); }
+            10% { transform: translate(-5%, -10%); }
+            30% { transform: translate(-15%, 5%); }
+            50% { transform: translate(10%, 10%); }
+            70% { transform: translate(5%, -15%); }
+            90% { transform: translate(-10%, 10%); }
+        }
+
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
         ::-webkit-scrollbar-track {
-            background: #0a0a0a;
+            background: #050505;
         }
         ::-webkit-scrollbar-thumb {
-            background: #222;
-            border-radius: 4px;
+            background: #1a1a1a;
+            border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #333;
+            background: #252525;
+        }
+
+        @keyframes drift {
+            0% { transform: translate(-5%, -5%) scale(1); }
+            50% { transform: translate(5%, 5%) scale(1.05); }
+            100% { transform: translate(-5%, -5%) scale(1); }
+        }
+        .animate-drift {
+            animation: drift 20s ease-in-out infinite;
+        }
+
+        /* Custom selection color */
+        ::selection {
+            background: #ffffff;
+            color: #000000;
         }
     </style>
 <script type="importmap">
@@ -40,7 +89,7 @@
 }
 </script>
 </head>
-<body>
+<body class="grain">
     <div id="root"></div>
 </body>
 </html>

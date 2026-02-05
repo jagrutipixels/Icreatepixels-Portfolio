@@ -1,4 +1,4 @@
-import { Project, Experience, SkillGroup, HardwareGroup, BrandProject } from './types';
+import { Project, Experience, SkillGroup, HardwareGroup, BrandProject, Methodology } from './types';
 
 export const PERSONAL_INFO = {
   name: "ABHISHEK SANJAY GUJAR",
@@ -12,8 +12,20 @@ export const PERSONAL_INFO = {
     subscribers: "669",
     totalVideos: "61",
     musicVideoViews: "10M+"
+  },
+  socials: {
+    youtube: "https://www.youtube.com/@icreatepixels",
+    instagram: "https://www.instagram.com/icreatepixels",
+    linkedin: "https://www.linkedin.com/in/icreatepixels/"
   }
 };
+
+export const METHODOLOGY: Methodology[] = [
+  { label: "Narrative First", detail: "Every shot must serve the story. I don't just capture visuals; I capture intentions and emotions." },
+  { label: "Technical Precision", detail: "Leveraging industry-standard gear and software to ensure broadcast-quality output across all platforms." },
+  { label: "Brand Synergy", detail: "Aligning creative vision with corporate goals to drive real-world engagement and organic growth." },
+  { label: "Infinite Iteration", detail: "Refining the edit until the rhythm matches the soul of the subject, ensuring a lasting impact." }
+];
 
 export const PROJECTS: Project[] = [
   {
@@ -21,7 +33,7 @@ export const PROJECTS: Project[] = [
     client: "F&B/Lifestyle brand",
     deliverable: "50+ short-form reels & static posts",
     impact: "Grew Instagram to 25k followers; increased foot traffic",
-    image: "https://picsum.photos/seed/dogcafe/800/600",
+    image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=1200",
     description: "End-to-end content engine development for Mumbai's favorite pet café, focusing on high-engagement short-form video.",
     challenges: [
       "Managing unpredictable 'actors' (dogs) in a live cafe setting.",
@@ -29,36 +41,37 @@ export const PROJECTS: Project[] = [
       "Optimizing for rapidly changing social media algorithms."
     ],
     technologies: ["iPhone 15 Pro", "Sony FX3 (Support)", "Adobe Premiere Pro", "Social Analytics Tools"],
-    liveLink: "https://www.instagram.com/puppycuddlesdogcafe/"
+    liveLink: "https://www.instagram.com/puppycuddles_mumbai/?hl=en"
   },
   {
-    title: "Shivaji Maharaj Festival",
-    client: "Event/cultural content",
-    deliverable: "Travel vlog + event highlights",
-    impact: "1M+ combined views across platforms",
-    image: "https://picsum.photos/seed/festival/800/600",
-    description: "Comprehensive documentation of a large-scale cultural festival, capturing the scale, devotion, and vibrant energy of the crowds.",
+    title: "Shivaji Maharaj Art Festival 2025",
+    client: "EVENT/CULTURAL CONTENT",
+    deliverable: "Cinematic Vlog • Drone Documentation",
+    impact: "5.0K+ Impressions • 2.4% CTR • 230+ Organic Views",
+    image: "https://img.youtube.com/vi/73OewayWrQQ/maxresdefault.jpg",
+    description: "Comprehensive documentation of the grand Chattrapati Shivaji Maharaj Art festival at Shivaji Park, Dadar. Capturing high-stakes cultural performances, ancient weaponry displays, and grand fort replicas with drone and ground-level cinematography.",
     challenges: [
       "Filming in extremely crowded and high-energy environments.",
       "Rapid turnaround time for daily highlight reels during the event.",
       "Protecting gear from dust and environmental factors."
     ],
-    technologies: ["DJI Mavic Mini", "GoPro Hero 11", "External Audio Recording", "Fast-turnaround Proxy Workflow"]
+    technologies: ["DJI Mavic Mini", "GoPro Hero 11", "External Audio Recording", "Fast-turnaround Proxy Workflow"],
+    liveLink: "https://www.youtube.com/watch?v=73OewayWrQQ"
   },
   {
-    title: "Din Din Din (Music Video)",
-    client: "Music artist / label",
-    deliverable: "Short-form music video edits",
-    impact: "10M+ views across Moj and YouTube combined",
-    image: "https://picsum.photos/seed/music/800/600",
-    description: "Fast-paced, high-energy edits for a trending music track designed to maximize reach on vertical video platforms.",
+    title: "Bhadipa x Moti Soap Campaign",
+    client: "BHADIPA / MOTI SOAP",
+    deliverable: "Art Direction • Set Design",
+    impact: "Seamless brand integration for premium commercial content",
+    image: "https://img.youtube.com/vi/mtdVqpPFJkk/maxresdefault.jpg",
+    description: "Served as Assistant Art Director for a major collaboration between Bhadipa and Moti Soap. Bridged the gap between the creative team and the sponsor brand, ensuring the production-ready setup met high visual standards and brand requirements.",
     challenges: [
-      "Syncing complex beat drops with visual transitions.",
-      "Integrating user-generated content into a professional edit.",
-      "Creating a 'hook' in the first 3 seconds to drive viral potential."
+      "Coordinating between creators and corporate sponsors to maintain creative integrity.",
+      "Developing a 'shoot-ready' setup that balanced aesthetics with functional requirements.",
+      "Ensuring consistent product placement within a fast-paced production environment."
     ],
-    technologies: ["After Effects", "Adobe Premiere Pro", "VFX Plugins", "Color Grading"],
-    liveLink: "https://www.youtube.com/@icreatepixels"
+    technologies: ["Art Direction", "Set Design", "Production Management", "Brand Strategy"],
+    liveLink: "https://www.youtube.com/watch?v=mtdVqpPFJkk"
   }
 ];
 
@@ -68,7 +81,7 @@ export const BRAND_PROJECTS: BrandProject[] = [
     category: "Identity • Web • Space Design",
     description: "Developed the full visual ecosystem for Mumbai's premier creative studio, from the minimalist geometric logo to a high-conversion digital portfolio.",
     deliverables: ["Visual Identity", "Web Architecture", "Spatial Art Direction"],
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000",
+    image: "https://raw.githubusercontent.com/jagrutipixels/pixels/9acf4bd49cf1580f8e8d0cb4e4c49acf84e93880/savoir.jpg",
     link: "https://www.ssbykmw.com/" 
   },
   {
@@ -76,15 +89,15 @@ export const BRAND_PROJECTS: BrandProject[] = [
     category: "E-commerce • Branding",
     description: "Revitalized a traditional fruit distribution business with a premium, organic-first identity and an intuitive B2B ordering interface.",
     deliverables: ["Brand Strategy", "UI/UX Design", "Packaging Systems"],
-    image: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&q=80&w=1000",
+    image: "https://raw.githubusercontent.com/jagrutipixels/pixels/2b0e06602bed3b04510ba467b5e0b5ab7e2d0bb1/dbn.jpg",
     link: "https://icretepixels.vercel.app/"
   },
   {
     name: "Tech Ev",
     category: "Corporate Identity • Web",
-    description: "Crafting a forward-looking digital presence for a technology consultancy, emphasizing speed, modularity, and technical precision.",
-    deliverables: ["Digital Identity", "Web Development", "Design System"],
-    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1000",
+    description: "Architecting the 'Silent Revolution'. Developing a high-performance digital showroom for high-end electric mobility, featuring fireproof LFP battery tech.",
+    deliverables: ["Product Visualization", "Web Ecosystem", "E-mobility Branding"],
+    image: "https://raw.githubusercontent.com/jagrutipixels/pixels/d83e7276207c5022b98a652205fd257d5e6d0449/tech.jpg",
     link: "https://candid-pegasus-1f86d2.netlify.app/#/"
   }
 ];
