@@ -47,7 +47,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505] px-6 py-12 lg:py-20">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505] px-6 pt-24 pb-12 md:py-20">
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
         <div 
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140vw] h-[140vw] opacity-[0.05] animate-drift"
@@ -55,9 +55,10 @@ export const Hero: React.FC = () => {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-10 lg:gap-20">
+      <div className="relative z-10 max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20">
         
-        <div className="relative w-full max-w-[340px] sm:max-w-[420px] md:max-w-none md:w-1/2 lg:w-[42%] aspect-[3/4] group order-2 md:order-1">
+        {/* Left Column (Image) - Order flip for desktop */}
+        <div className="relative w-full max-w-[320px] sm:max-w-[400px] md:max-w-none md:w-1/2 lg:w-[42%] aspect-[3/4] group order-2 md:order-1">
           <div className="absolute -inset-4 bg-white/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000 hidden lg:block"></div>
           
           <div 
@@ -109,24 +110,25 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
+        {/* Right Column (Text) */}
         <div className="w-full md:w-1/2 flex flex-col items-start text-left order-1 md:order-2">
-          <div className="mb-4 sm:mb-6">
-            <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.4em] sm:tracking-[0.5em] text-zinc-500 mb-2 sm:mb-3 block">
+          <div className="mb-4 md:mb-6">
+            <span className="text-[9px] sm:text-xs font-black uppercase tracking-[0.35em] sm:tracking-[0.5em] text-zinc-500 mb-2 sm:mb-3 block leading-relaxed">
               Creative Head | Filmmaker
             </span>
           </div>
 
-          <h1 className="text-fluid-h1 font-serif font-bold mb-6 sm:mb-8 leading-[0.95] tracking-tighter text-white">
+          <h1 className="text-fluid-h1 font-serif font-bold mb-6 md:mb-8 leading-[0.95] tracking-tighter text-white">
             Abhishek <br/> <span className="text-zinc-500">Sanjay Gujar</span>
           </h1>
           
-          <div className="max-w-lg mb-10 sm:mb-12 border-l-2 border-zinc-900/80 pl-6 py-1">
+          <div className="max-w-lg mb-8 md:mb-12 border-l-2 border-zinc-900/80 pl-6 py-1">
             <p className="text-zinc-400 text-sm sm:text-lg lg:text-xl font-light italic leading-relaxed">
               "{PERSONAL_INFO.philosophy}"
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 w-full sm:w-auto mb-10 md:mb-0">
             <a 
               href="#portfolio" 
               className="px-8 sm:px-10 py-4 sm:py-5 bg-white text-black text-[10px] sm:text-[11px] font-black uppercase tracking-[0.2em] rounded-full hover:bg-zinc-200 transition-all flex items-center justify-center gap-3 active:scale-95 shadow-xl"
@@ -143,14 +145,14 @@ export const Hero: React.FC = () => {
             </a>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-8 sm:gap-x-12 pt-10 sm:pt-12 border-t border-zinc-900/50 w-full max-w-sm mt-10 sm:mt-12">
+          <div className="hidden sm:grid grid-cols-2 gap-x-12 pt-12 border-t border-zinc-900/50 w-full max-w-sm mt-12">
             <div>
               <span className="text-[8px] font-black uppercase tracking-[0.3em] text-zinc-600 block mb-1">Based In</span>
-              <span className="text-[10px] sm:text-xs text-zinc-400">Mumbai, IN</span>
+              <span className="text-xs text-zinc-400">Mumbai, IN</span>
             </div>
             <div>
               <span className="text-[8px] font-black uppercase tracking-[0.3em] text-zinc-600 block mb-1">Status</span>
-              <span className="text-[10px] sm:text-xs text-zinc-400">Available</span>
+              <span className="text-xs text-zinc-400">Available</span>
             </div>
           </div>
         </div>

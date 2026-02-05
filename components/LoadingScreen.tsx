@@ -23,14 +23,14 @@ export const LoadingScreen: React.FC = () => {
       }`}
     >
       <div className="relative flex flex-col items-center">
-        {/* Animated Logo */}
+        {/* Animated Logo - Increased from h-16/20 to h-24/32 */}
         <div className={`transition-all duration-1000 ease-out transform ${
           isExiting ? 'scale-110 blur-sm' : 'scale-100 blur-0'
         }`}>
           <img 
             src={logoUrl} 
             alt="Abhishek Sanjay Gujar" 
-            className="h-16 md:h-20 w-auto object-contain animate-pulse"
+            className="h-24 md:h-32 w-auto object-contain animate-pulse"
           />
         </div>
 
