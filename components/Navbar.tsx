@@ -20,11 +20,13 @@ export const Navbar: React.FC = () => {
     }
   }, [isMobileMenuOpen]);
 
+  // Reordered to match page flow: About -> Works -> Identity -> Journey -> Skills -> Contact
   const navLinks = [
-    { name: 'Works', href: '#portfolio' },
     { name: 'About', href: '#about' },
+    { name: 'Works', href: '#portfolio' },
     { name: 'Identity', href: '#identity' },
     { name: 'Journey', href: '#experience' },
+    { name: 'Skills', href: '#skills' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -46,7 +48,7 @@ export const Navbar: React.FC = () => {
         </a>
         
         {/* Desktop Links */}
-        <div className="hidden md:flex space-x-10 text-[10px] uppercase tracking-[0.3em] font-black text-zinc-500">
+        <div className="hidden md:flex space-x-8 lg:space-x-10 text-[10px] uppercase tracking-[0.3em] font-black text-zinc-500">
           {navLinks.map((link) => (
             <a 
               key={link.name} 
@@ -79,7 +81,7 @@ export const Navbar: React.FC = () => {
               <a 
                 key={link.name} 
                 href={link.href} 
-                className={`text-4xl font-serif text-white hover:text-zinc-500 transition-colors duration-500 transform ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                className={`text-3xl sm:text-4xl font-serif text-white hover:text-zinc-500 transition-colors duration-500 transform ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
                 style={{ transitionDelay: `${i * 100}ms` }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
