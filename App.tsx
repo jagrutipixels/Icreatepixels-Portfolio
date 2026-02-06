@@ -9,20 +9,22 @@ import { SkillsSection } from './components/SkillsSection.tsx';
 import { ContactSection } from './components/ContactSection.tsx';
 import { LoadingScreen } from './components/LoadingScreen.tsx';
 import { Reveal } from './components/Reveal.tsx';
+import { ProjectModal } from './components/ProjectModal.tsx';
+import { Project } from './types.ts';
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   useEffect(() => {
-    if (isLoading) {
+    if (isLoading || selectedProject) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
-  }, [isLoading]);
+  }, [isLoading, selectedProject]);
 
   useEffect(() => {
-    // Matches the duration of the loading screen exit logic
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 3000);
@@ -33,7 +35,23 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-[#050505] text-white selection:bg-white selection:text-black">
       <LoadingScreen />
       
-      <div className={`transition-all duration-1000 ${isLoading ? 'opacity-0 scale-95 blur-md pointer-events-none' : 'opacity-100 scale-100 blur-0'}`}>
+      {/* 
+        The Modal is rendered OUTSIDE the blurred container to prevent inheritance of filters 
+      */}
+      {selectedProject && (
+        <ProjectModal 
+          project={selectedProject} 
+          onClose={() => setSelectedProject(null)} 
+        />
+      )}
+      
+      <div 
+        className={`transition-all duration-1000 ${
+          isLoading 
+            ? 'opacity-0 scale-95 blur-md pointer-events-none' 
+            : 'opacity-100 scale-100 blur-none'
+        }`}
+      >
         <Navbar />
         <main>
           <section id="home">
@@ -55,7 +73,7 @@ const App: React.FC = () => {
                   </div>
                 </div>
               </Reveal>
-              <Portfolio />
+              <Portfolio onProjectSelect={setSelectedProject} />
             </div>
           </section>
 

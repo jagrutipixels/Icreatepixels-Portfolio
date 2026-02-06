@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { PROJECTS } from '../constants.ts';
 import { Project } from '../types.ts';
 import { Reveal } from './Reveal.tsx';
-import { ProjectModal } from './ProjectModal.tsx';
 
 const ProjectCard: React.FC<{ project: Project; onClick: () => void; index: number }> = ({ project, onClick, index }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -65,33 +64,17 @@ const ProjectCard: React.FC<{ project: Project; onClick: () => void; index: numb
   );
 };
 
-export const Portfolio: React.FC = () => {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-
-  const openModal = (project: Project) => {
-    setSelectedProject(project);
-  };
-
-  const closeModal = () => {
-    setSelectedProject(null);
-  };
-
+export const Portfolio: React.FC<{ onProjectSelect: (project: Project) => void }> = ({ onProjectSelect }) => {
   return (
-    <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-        {PROJECTS.map((project, index) => (
-          <ProjectCard 
-            key={index} 
-            project={project} 
-            onClick={() => openModal(project)} 
-            index={index} 
-          />
-        ))}
-      </div>
-
-      {selectedProject && (
-        <ProjectModal project={selectedProject} onClose={closeModal} />
-      )}
-    </>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+      {PROJECTS.map((project, index) => (
+        <ProjectCard 
+          key={index} 
+          project={project} 
+          onClick={() => onProjectSelect(project)} 
+          index={index} 
+        />
+      ))}
+    </div>
   );
 };

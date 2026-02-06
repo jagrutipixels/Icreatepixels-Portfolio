@@ -10,11 +10,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
   const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
-    document.body.style.overflow = 'hidden';
-    return () => { document.body.style.overflow = 'unset'; };
-  }, []);
-
-  useEffect(() => {
+    // Esc key handling
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
     };
@@ -23,16 +19,20 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
   }, [onClose]);
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-0 md:p-6 lg:p-12 overflow-hidden">
+    <div className="fixed inset-0 z-[1000] flex items-center justify-center p-0 md:p-6 lg:p-12 overflow-hidden isolation-auto">
+      {/* 
+        Background Overlay - Using high opacity instead of extreme blur 
+        to ensure sharp rendering of the modal itself 
+      */}
       <div 
-        className="absolute inset-0 bg-black/98 backdrop-blur-xl transition-opacity duration-500" 
+        className="absolute inset-0 bg-black/95 backdrop-blur-md transition-opacity duration-500 cursor-zoom-out" 
         onClick={onClose}
       />
       
-      <div className="relative bg-[#080808] w-full h-full md:h-auto md:max-h-[90vh] md:max-w-6xl overflow-y-auto md:rounded-3xl shadow-3xl flex flex-col md:flex-row animate-modal md:border md:border-zinc-800/50 scrollbar-hide">
+      <div className="relative bg-[#080808] w-full h-full md:h-auto md:max-h-[90vh] md:max-w-6xl overflow-y-auto md:rounded-3xl shadow-[0_0_100px_rgba(0,0,0,0.8)] flex flex-col md:flex-row animate-modal md:border md:border-zinc-800/50 scrollbar-hide z-10">
         <button 
           onClick={onClose}
-          className="fixed md:absolute top-4 right-4 md:top-6 md:right-6 z-[110] p-4 md:p-3 bg-white text-black rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all touch-manipulation"
+          className="fixed md:absolute top-4 right-4 md:top-6 md:right-6 z-[1100] p-4 md:p-3 bg-white text-black rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all touch-manipulation"
           aria-label="Close modal"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
