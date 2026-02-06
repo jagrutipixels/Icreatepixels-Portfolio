@@ -47,7 +47,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505] px-6 pt-24 pb-12 md:py-20">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505] px-6 pt-32 md:pt-52 pb-12 md:pb-20">
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
         <div 
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140vw] h-[140vw] opacity-[0.05] animate-drift"
