@@ -26,6 +26,7 @@ export const Hero: React.FC = () => {
     }
     
     const ctx = gsap.context(() => {
+      // Ensure the element starts at 0 opacity via GSAP rather than CSS classes
       gsap.fromTo(titleRef.current, 
         { 
           opacity: 0, 
@@ -38,8 +39,8 @@ export const Hero: React.FC = () => {
           y: 0,
           duration: 1.5,
           ease: "expo.out",
-          delay: 2.2, // Matches the start of the fade-out from the loading screen
-          clearProps: "opacity,scale,y"
+          delay: 2.4, // Slightly adjusted to perfectly follow the loading screen fade
+          clearProps: "all"
         }
       );
     });
@@ -160,7 +161,7 @@ export const Hero: React.FC = () => {
 
           <h1 
             ref={titleRef}
-            className="text-fluid-h1 font-serif font-bold mb-6 md:mb-8 leading-[0.95] tracking-tighter opacity-0 translate-y-4"
+            className="text-fluid-h1 font-serif font-bold mb-6 md:mb-8 leading-[0.95] tracking-tighter will-change-transform"
           >
             Abhishek <br/> <span className="text-zinc-500">Gujar</span>
           </h1>
