@@ -5,6 +5,7 @@ import { Reveal } from './Reveal.tsx';
 
 const ProjectCard: React.FC<{ project: Project; onClick: () => void; index: number }> = ({ project, onClick, index }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const isInProgress = project.impact.toLowerCase().includes('in-progress') || project.deliverable.toLowerCase().includes('construction');
 
   return (
     <Reveal delay={index * 100}>
@@ -29,6 +30,15 @@ const ProjectCard: React.FC<{ project: Project; onClick: () => void; index: numb
             onLoad={() => setImageLoaded(true)}
             className={`w-full h-full object-cover transform group-hover:scale-105 transition-all duration-1000 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
           />
+
+          {isInProgress && (
+            <div className="absolute top-4 left-4 z-10">
+              <div className="flex items-center gap-1.5 px-3 py-1 bg-black/80 backdrop-blur-md border border-white/10 rounded-full">
+                <div className="w-1 h-1 rounded-full bg-yellow-500 animate-pulse"></div>
+                <span className="text-[7px] font-black uppercase tracking-widest text-white">In Progress</span>
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="p-8 md:p-10 flex-grow flex flex-col relative transition-colors duration-800">

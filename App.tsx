@@ -37,6 +37,7 @@ const App: React.FC = () => {
     return saved === 'studio';
   });
 
+  // Handle body overflow
   useEffect(() => {
     if (isLoading || selectedProject) {
       document.body.style.overflow = 'hidden';
@@ -45,9 +46,21 @@ const App: React.FC = () => {
     }
   }, [isLoading, selectedProject]);
 
+  // Loading timer & Hash Sync (Fixes refresh glitch)
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
+      
+      // Delay the hash scroll to ensure layout is stable after reveal animation
+      setTimeout(() => {
+        if (window.location.hash) {
+          const id = window.location.hash.substring(1);
+          const element = document.getElementById(id);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      }, 500);
     }, 3000);
     return () => clearTimeout(timer);
   }, []);
@@ -83,7 +96,7 @@ const App: React.FC = () => {
       <div 
         className={`transition-all duration-1000 relative z-10 ${
           isLoading 
-            ? 'opacity-0 scale-95 blur-md pointer-events-none' 
+            ? 'opacity-0 scale-100 blur-md pointer-events-none' 
             : 'opacity-100 scale-100 blur-none'
         }`}
       >
