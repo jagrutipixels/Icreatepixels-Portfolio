@@ -105,50 +105,54 @@ export const BRAND_PROJECTS: BrandProject[] = [
 export const EXPERIENCES: Experience[] = [
   {
     role: "Creative Head",
-    company: "Savoir Studio",
-    location: "Mumbai, Maharashtra",
-    period: "October 2025 – Present",
+    company: "KARN Marketing Warfare LLP",
+    location: "On-site",
+    period: "Aug 2025 – Present",
     highlights: [
-      "Leading creative strategy, production, and post-production for client campaigns across photography, videography, and UGC content",
-      "Designing and overseeing multi-color backdrop setups, podcast studios, and cyclorama installations",
-      "Managing creative teams and vendors for end-to-end project delivery",
-      "Building client portfolios and brand identity through cohesive visual storytelling"
+      "Spearheading Creative Direction and Brand Strategy for comprehensive marketing campaigns",
+      "Managing Marketing Campaign Management and Digital Marketing initiatives",
+      "Expert execution of Visual Storytelling across various brand touchpoints",
+      "Social Media Marketing leadership focused on organic and paid growth"
     ]
   },
   {
-    role: "Content Creator / Social Media Executive",
-    company: "Puppycuddles Dog Café",
-    location: "Bandra, Mumbai",
-    period: "January 2025 – July 2025",
+    role: "Social Media Manager",
+    company: "Puppycuddles dog cafe",
+    location: "Mumbai, Maharashtra",
+    period: "Nov 2024 – Jun 2025",
     highlights: [
-      "Produced high-performing short-form reels and Instagram content",
-      "Grew Instagram following from initial base to ~25k followers",
-      "Managed influencer collaborations and brand partnership integration",
-      "Analyzed platform metrics to optimize content themes and visual direction"
+      "Developed and executed integrated Campaign Strategies and Marketing Campaign Plans",
+      "Expert Online Campaign Management and Social Media Advertising oversight",
+      "Utilized Meta-analysis for data-driven campaign optimization",
+      "Led Social Media Marketing efforts resulting in sustained community growth"
     ]
   },
   {
-    role: "Video Editor (Social Media)",
-    company: "Gulbadan Talkies / Bhadipa",
-    location: "Mumbai, Maharashtra",
-    period: "March 2024 – December 2024",
+    role: "Assistant Art Director",
+    company: "Vertex Sets",
+    location: "India • On-site",
+    period: "Sep 2023 – Oct 2024",
     highlights: [
-      "Revitalized legacy content library by adapting classic film clips for trending formats",
-      "Created BTS (behind-the-scenes) videos and live event promos",
-      "Shot and edited 25+ short-form videos leveraging trend cycles",
-      "Collaborated to maintain consistent brand voice across multiple series"
+      "Supported Art Direction and set design utilizing SketchUp for spatial visualization",
+      "Facilitated on-site Film Production workflows and logistical coordination",
+      "Created high-fidelity visual assets using Adobe Photoshop for production pitches",
+      "Collaborated with production teams to realize cinematic visual concepts"
     ]
   },
   {
-    role: "Assistant Art Director / Editor",
-    company: "Various Productions (TV & Freelance)",
-    location: "Mumbai, Maharashtra",
-    period: "2019 – 2024",
+    role: "Video Editor",
+    company: "eClerx",
+    location: "Maharashtra, India",
+    period: "Jul 2022 – Aug 2023",
     highlights: [
-      "Provided art direction and set design support for 10+ television shows",
-      "Executed final cut editing for episodic content managing multiple timelines",
-      "Collaborated with directors to realize visual concepts within budget",
-      "Conducted color grading and sound design to broadcast-quality standards"
+      "Created appropriate structures and timelines from training raw data to ensure logical flow",
+      "Designed custom graphics and icons for enhanced educational visualization",
+      "Executed end-to-end video integration and publishing at peak broadcast quality",
+      "Managed scheduled reporting and strictly adhered to project Turnaround Time (TAT)",
+      "Performed comprehensive editing (cut/copy/paste) for training session recordings",
+      "Visualized complex content for optimal audience presentation and engagement",
+      "Analyzed recordings to enlist key topics and sub-topics for structured learning",
+      "Proficient in Adobe Premiere Pro, Illustrator, Photoshop, Lightroom, and After Effects"
     ]
   }
 ];
