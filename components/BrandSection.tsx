@@ -11,12 +11,12 @@ const BrandCard: React.FC<{ brand: any; index: number }> = ({ brand, index }) =>
         href={brand.link} 
         target="_blank" 
         rel="noopener noreferrer"
-        className="group relative flex flex-col h-full bg-[#0a0a0a] border border-zinc-900 hover:border-zinc-700 transition-all duration-500 rounded-[2rem] sm:rounded-[2.5rem] block outline-none focus:ring-2 focus:ring-white/20 overflow-hidden shadow-xl"
+        className="group relative flex flex-col h-full bg-zinc-500/5 border border-zinc-500/10 hover:border-zinc-500/30 transition-all duration-500 rounded-[2rem] sm:rounded-[2.5rem] block outline-none focus:ring-2 focus:ring-zinc-500/20 overflow-hidden shadow-xl"
       >
-        <div className="relative aspect-video overflow-hidden bg-zinc-950">
+        <div className="relative aspect-video overflow-hidden bg-zinc-950/10">
           {!isLoaded && (
-            <div className="absolute inset-0 animate-pulse bg-zinc-900 flex items-center justify-center">
-               <div className="w-8 h-8 border-2 border-zinc-800 border-t-zinc-600 rounded-full animate-spin"></div>
+            <div className="absolute inset-0 animate-pulse bg-zinc-500/5 flex items-center justify-center">
+               <div className="w-8 h-8 border-2 border-zinc-500/20 border-t-zinc-500/50 rounded-full animate-spin"></div>
             </div>
           )}
           
@@ -28,7 +28,7 @@ const BrandCard: React.FC<{ brand: any; index: number }> = ({ brand, index }) =>
             className={`w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-all duration-1000 ease-out ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
           />
           
-          <div className="absolute inset-0 bg-black/50 group-hover:bg-black/10 transition-all duration-700 ease-in-out"></div>
+          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-all duration-700 ease-in-out"></div>
           
           <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 transform group-hover:translate-x-2 transition-transform duration-500 z-10">
             <div className="px-4 py-2 sm:px-5 sm:py-2.5 bg-black/60 backdrop-blur-xl border border-white/10 text-white text-[8px] sm:text-[10px] font-black uppercase tracking-[0.2em] rounded-full">
@@ -47,15 +47,15 @@ const BrandCard: React.FC<{ brand: any; index: number }> = ({ brand, index }) =>
         </div>
 
         <div className="p-6 sm:p-8 md:p-10 flex flex-col flex-grow">
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white mb-3 sm:mb-4">{brand.name}</h3>
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold mb-3 sm:mb-4">{brand.name}</h3>
           <p className="text-zinc-500 text-xs sm:text-sm lg:text-base leading-relaxed mb-6 sm:mb-8 flex-grow font-light">
             {brand.description}
           </p>
 
-          <div className="flex flex-wrap gap-x-4 gap-y-2 pt-5 sm:pt-6 border-t border-zinc-900">
+          <div className="flex flex-wrap gap-x-4 gap-y-2 pt-5 sm:pt-6 border-t border-zinc-500/10">
             {brand.deliverables.map((item: string, i: number) => (
-              <span key={i} className="text-[7px] sm:text-[9px] font-black text-zinc-700 uppercase tracking-widest flex items-center gap-1.5">
-                <span className="w-1 h-1 bg-zinc-800 rounded-full"></span>
+              <span key={i} className="text-[7px] sm:text-[9px] font-black text-zinc-400 uppercase tracking-widest flex items-center gap-1.5">
+                <span className="w-1 h-1 bg-zinc-500/40 rounded-full"></span>
                 {item}
               </span>
             ))}

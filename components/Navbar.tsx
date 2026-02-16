@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import { ThemeToggle } from './ThemeToggle.tsx';
 
-export const Navbar: React.FC = () => {
+interface NavbarProps {
+  isStudioMode: boolean;
+  toggleTheme: () => void;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ isStudioMode, toggleTheme }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -33,65 +39,84 @@ export const Navbar: React.FC = () => {
 
   return (
     <nav 
-      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ease-in-out ${
+      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-700 ease-in-out ${
         isScrolled || isMobileMenuOpen 
-          ? 'bg-[#050505]/95 backdrop-blur-xl py-4 md:py-5 border-b border-white/5 shadow-2xl' 
-          : 'bg-transparent py-8 md:py-10'
+          ? `${isStudioMode ? 'bg-white/95 border-zinc-200 shadow-sm' : 'bg-[#050505]/95 border-white/5 shadow-2xl'} backdrop-blur-xl py-3 md:py-4 border-b` 
+          : 'bg-transparent py-10 md:py-14'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        {/* Logo */}
+        {/* Hero-to-Compact Logo Container */}
         <a 
           href="#home" 
-          className="relative z-[210] block transition-transform duration-300 hover:scale-105 active:scale-95" 
+          className="relative z-[210] block group" 
           onClick={() => setIsMobileMenuOpen(false)}
         >
+          {/* Subtle Glow Effect behind logo in Cinema Mode */}
+          {!isStudioMode && (
+            <div className={`absolute inset-0 bg-white/10 blur-2xl rounded-full transition-all duration-1000 ${isScrolled ? 'opacity-0 scale-50' : 'opacity-40 scale-125'}`}></div>
+          )}
+          
           <img 
             src={logoUrl} 
             alt="Abhishek" 
-            className="h-10 sm:h-14 md:h-20 w-auto object-contain"
+            className={`w-auto object-contain logo-invert transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] transform will-change-transform ${
+              isScrolled 
+                ? 'h-8 sm:h-10 md:h-12 translate-y-0' 
+                : 'h-16 sm:h-24 md:h-32 -translate-y-2'
+            } group-hover:scale-[1.03] active:scale-95`}
           />
         </a>
         
         {/* Desktop Links */}
-        <div className="hidden md:flex space-x-8 lg:space-x-10 text-[10px] uppercase tracking-[0.3em] font-black text-zinc-400">
-          {navLinks.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href} 
-              className="hover:text-white transition-colors duration-300 relative group py-2"
-            >
-              {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-white transition-all duration-500 group-hover:w-full"></span>
-            </a>
-          ))}
+        <div className="hidden md:flex items-center space-x-8 lg:space-x-10">
+          <div className="flex space-x-8 lg:space-x-10 text-[10px] uppercase tracking-[0.3em] font-black text-zinc-500">
+            {navLinks.map((link) => (
+              <a 
+                key={link.name} 
+                href={link.href} 
+                className={`transition-colors duration-300 relative group py-2 ${isStudioMode ? 'hover:text-black' : 'hover:text-white'}`}
+              >
+                {link.name}
+                <span className={`absolute -bottom-1 left-0 w-0 h-[1.5px] transition-all duration-500 group-hover:w-full ${isStudioMode ? 'bg-black' : 'bg-white'}`}></span>
+              </a>
+            ))}
+          </div>
+          
+          <div className="w-[1px] h-6 bg-zinc-800/20 mx-4"></div>
+          
+          <ThemeToggle isStudioMode={isStudioMode} onToggle={toggleTheme} />
         </div>
 
-        {/* Mobile Trigger */}
-        <button 
-          className="md:hidden relative z-[210] p-2 flex flex-col items-end gap-1.5 focus:outline-none"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle Menu"
-        >
-          <span className={`h-[2px] bg-white transition-all duration-300 origin-center ${isMobileMenuOpen ? 'w-8 rotate-45 translate-y-[8px]' : 'w-8'}`}></span>
-          <span className={`h-[2px] bg-white transition-all duration-300 ${isMobileMenuOpen ? 'w-0 opacity-0 scale-x-0' : 'w-6'}`}></span>
-          <span className={`h-[2px] bg-white transition-all duration-300 origin-center ${isMobileMenuOpen ? 'w-8 -rotate-45 -translate-y-[8px]' : 'w-4'}`}></span>
-        </button>
+        {/* Mobile Trigger & Theme Toggle */}
+        <div className="flex items-center gap-6 md:hidden relative z-[210]">
+          <ThemeToggle isStudioMode={isStudioMode} onToggle={toggleTheme} />
+          
+          <button 
+            className="p-2 flex flex-col items-end gap-1.5 focus:outline-none touch-target"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle Menu"
+          >
+            <span className={`h-[2px] transition-all duration-300 origin-center ${isMobileMenuOpen ? 'w-8 rotate-45 translate-y-[8px]' : 'w-8'} ${isStudioMode ? 'bg-black' : 'bg-white'}`}></span>
+            <span className={`h-[2px] transition-all duration-300 ${isMobileMenuOpen ? 'w-0 opacity-0 scale-x-0' : 'w-6'} ${isStudioMode ? 'bg-black' : 'bg-white'}`}></span>
+            <span className={`h-[2px] transition-all duration-300 origin-center ${isMobileMenuOpen ? 'w-8 -rotate-45 -translate-y-[8px]' : 'w-4'} ${isStudioMode ? 'bg-black' : 'bg-white'}`}></span>
+          </button>
+        </div>
 
         {/* Mobile Menu Overlay */}
         <div 
-          className={`fixed inset-0 bg-[#050505] z-[200] transition-all duration-700 ease-in-out md:hidden flex flex-col items-center justify-center h-screen w-screen ${
+          className={`fixed inset-0 z-[200] transition-all duration-700 ease-in-out md:hidden flex flex-col items-center justify-center h-screen w-screen ${
             isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
-          }`}
+          } ${isStudioMode ? 'bg-[#f5f5f7]' : 'bg-[#050505]'}`}
         >
           <div className="flex flex-col items-center space-y-10 sm:space-y-12 w-full px-12">
             {navLinks.map((link, i) => (
               <a 
                 key={link.name} 
                 href={link.href} 
-                className={`text-3xl sm:text-5xl font-serif text-white hover:text-zinc-500 transition-all duration-500 transform py-2 ${
+                className={`text-3xl sm:text-5xl font-serif hover:text-zinc-500 transition-all duration-500 transform py-2 ${
                   isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-                }`}
+                } ${isStudioMode ? 'text-black' : 'text-white'}`}
                 style={{ transitionDelay: `${i * 100}ms` }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -100,8 +125,8 @@ export const Navbar: React.FC = () => {
             ))}
           </div>
           
-          <div className={`mt-24 pt-12 border-t border-zinc-900 w-full max-w-[280px] text-center transition-all duration-1000 delay-500 ${isMobileMenuOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-            <p className="text-zinc-700 text-[9px] uppercase tracking-[0.6em] font-black">Mumbai • Worldwide</p>
+          <div className={`mt-24 pt-12 border-t w-full max-w-[280px] text-center transition-all duration-1000 delay-500 ${isMobileMenuOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95'} ${isStudioMode ? 'border-zinc-200' : 'border-zinc-900'}`}>
+            <p className="text-zinc-500 text-[9px] uppercase tracking-[0.6em] font-black">Mumbai • Worldwide</p>
           </div>
         </div>
       </div>
