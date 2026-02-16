@@ -28,8 +28,8 @@ export const Navbar: React.FC<NavbarProps> = ({ isStudioMode, toggleTheme }) => 
 
   const navLinks = [
     { name: 'About', href: '#about' },
-    { name: 'Works', href: '#portfolio' },
     { name: 'Identity', href: '#identity' },
+    { name: 'Works', href: '#portfolio' },
     { name: 'Journey', href: '#experience' },
     { name: 'Skills', href: '#skills' },
     { name: 'Contact', href: '#contact' },
@@ -63,7 +63,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isStudioMode, toggleTheme }) => 
             className={`w-auto object-contain logo-invert transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] transform will-change-transform ${
               isScrolled 
                 ? 'h-8 sm:h-10 md:h-12 translate-y-0' 
-                : 'h-16 sm:h-24 md:h-32 -translate-y-2'
+                : 'h-20 sm:h-28 md:h-36 -translate-y-2'
             } group-hover:scale-[1.03] active:scale-95`}
           />
         </a>

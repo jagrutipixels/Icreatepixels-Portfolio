@@ -1,17 +1,18 @@
 import { Project, Experience, SkillGroup, HardwareGroup, BrandProject, Methodology } from './types';
 
 export const PERSONAL_INFO = {
-  name: "ABHISHEK SANJAY GUJAR",
-  title: "Filmmaker • Editor • Creative Head",
+  name: "ABHISHEK GUJAR",
+  title: "Creative Head • Filmmaker",
   email: "abhishek.gujar1202@gmail.com",
-  location: "Mumbai, Maharashtra, India",
-  philosophy: "Make it feel real. Make it feel cinematic. Make it feel like a memory someone wants to watch again.",
-  bio: "Accomplished filmmaker and creative professional with 6+ years of experience in cinematography, video editing, and creative direction. Passionate about turning brands and creators into visual stories that resonate with audiences, from script to final pixel.",
+  phone: "+91 7400310443",
+  location: "Mumbai, Maharashtra",
+  philosophy: "Unifying the physical and digital worlds—crafting visually stunning sets and ensuring broadcast-quality stories.",
+  bio: "Multidisciplinary Creative Head and BMM Graduate with a 360-degree perspective gained from working as an Assistant Art Director and Senior Video Editor. Currently leading creative operations at Karn Marketing Warfare, specializing in engineering viral content and establishing end-to-end production infrastructures.",
   stats: {
-    views: "291k+",
+    views: "290k+",
     subscribers: "669",
-    totalVideos: "61",
-    musicVideoViews: "10M+"
+    totalVideos: "60+",
+    reach: "10M+"
   },
   socials: {
     youtube: "https://www.youtube.com/@icreatepixels",
@@ -21,163 +22,171 @@ export const PERSONAL_INFO = {
 };
 
 export const METHODOLOGY: Methodology[] = [
-  { label: "Narrative First", detail: "Every shot must serve the story. I don't just capture visuals; I capture intentions and emotions." },
-  { label: "Technical Precision", detail: "Leveraging industry-standard gear and software to ensure broadcast-quality output across all platforms." },
-  { label: "Brand Synergy", detail: "Aligning creative vision with corporate goals to drive real-world engagement and organic growth." },
-  { label: "Infinite Iteration", detail: "Refining the edit until the rhythm matches the soul of the subject, ensuring a lasting impact." }
+  { label: "Viral Engineering", detail: "Applying advanced editing psychology and 'Retention Editing' to maximize audience hooks and shareability." },
+  { label: "Studio Management", detail: "Establishing operational infrastructure and end-to-end production pipelines for premium creative arms." },
+  { label: "Spatial Aesthetics", detail: "Leveraging set design expertise to ensure physical environments perfectly complement camera angles and lighting." },
+  { label: "360° Creative Vision", detail: "Bridging the gap between commercial films, social assets, and client ROI through strategic storytelling." }
 ];
 
 export const PROJECTS: Project[] = [
   {
-    title: "Puppycuddles Dog Café",
-    client: "F&B/Lifestyle brand",
-    deliverable: "50+ short-form reels & static posts",
-    impact: "Grew Instagram to 25k followers; increased foot traffic",
-    image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=1200",
-    description: "End-to-end content engine development for Mumbai's favorite pet café, focusing on high-engagement short-form video.",
+    title: "Bhadipa Viral Content",
+    client: "GULBADAN TALKIES",
+    deliverable: "Viral Strategy • Retention Editing",
+    impact: "India's premier Marathi digital network strategist",
+    image: "https://img.youtube.com/vi/mtdVqpPFJkk/maxresdefault.jpg",
+    description: "Applied advanced editing psychology to short-form content for Bhadipa, Vishay Khol, and Bha2pa to maximize retention and organic reach.",
     challenges: [
-      "Managing unpredictable 'actors' (dogs) in a live cafe setting.",
-      "Developing a consistent brand voice across 50+ unique pieces of content.",
-      "Optimizing for rapidly changing social media algorithms."
+      "Optimizing hooks for Marathi regional audience.",
+      "Adapting tone across diverse infotainment genres.",
+      "Managing high-frequency content repurposing."
     ],
-    technologies: ["iPhone 15 Pro", "Sony FX3 (Support)", "Adobe Premiere Pro", "Social Analytics Tools"],
+    technologies: ["Retention Psychology", "Adobe Premiere Pro", "Content Strategy"],
+    liveLink: "https://www.youtube.com/watch?v=mtdVqpPFJkk&list=RDmtdVqpPFJkk&start_radio=1"
+  },
+  {
+    title: "Puppycuddles Experience",
+    client: "PUPPYCUDDLES DOG CAFE",
+    deliverable: "Content Direction • Social Growth",
+    impact: "Boosted cafe footfall through digital alignment",
+    image: "https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?auto=format&fit=crop&q=80&w=1200",
+    description: "Transformed the brand’s digital presence by aligning daily reel content with the physical in-cafe experience.",
+    challenges: [
+      "Creating engaging frames within physical cafe constraints.",
+      "Managing influencer collaborations.",
+      "Strengthening customer loyalty through events."
+    ],
+    technologies: ["Set Design", "Daily Reels", "Influencer Strategy"],
     liveLink: "https://www.instagram.com/puppycuddles_mumbai/?hl=en"
   },
   {
-    title: "Shivaji Maharaj Art Festival 2025",
-    client: "EVENT/CULTURAL CONTENT",
-    deliverable: "Cinematic Vlog • Drone Documentation",
-    impact: "5.0K+ Impressions • 2.4% CTR • 230+ Organic Views",
-    image: "https://img.youtube.com/vi/73OewayWrQQ/maxresdefault.jpg",
-    description: "Comprehensive documentation of the grand Chattrapati Shivaji Maharaj Art festival at Shivaji Park, Dadar. Capturing high-stakes cultural performances, ancient weaponry displays, and grand fort replicas with drone and ground-level cinematography.",
+    title: "Bharat Realty Showcase",
+    client: "BHARAT REALTY",
+    deliverable: "Visual Storytelling [IN PROGRESS]",
+    impact: "Project currently under production",
+    image: "https://images.unsplash.com/photo-1464933055329-4ba3c089970b?auto=format&fit=crop&q=80&w=1200",
+    description: "Revamping the digital property showcase for a real estate firm. Note: This project is currently in progress and under maintenance.",
     challenges: [
-      "Filming in extremely crowded and high-energy environments.",
-      "Rapid turnaround time for daily highlight reels during the event.",
-      "Protecting gear from dust and environmental factors."
+      "Translating physical architecture to cinematic digital tours.",
+      "Developing high-impact visual lead magnets.",
+      "Under production: Finalizing rendering and UI structure."
     ],
-    technologies: ["DJI Mavic Mini", "GoPro Hero 11", "External Audio Recording", "Fast-turnaround Proxy Workflow"],
-    liveLink: "https://www.youtube.com/watch?v=73OewayWrQQ"
-  },
-  {
-    title: "Bhadipa x Moti Soap Campaign",
-    client: "BHADIPA / MOTI SOAP",
-    deliverable: "Art Direction • Set Design",
-    impact: "Seamless brand integration for premium commercial content",
-    image: "https://img.youtube.com/vi/mtdVqpPFJkk/maxresdefault.jpg",
-    description: "Served as Assistant Art Director for a major collaboration between Bhadipa and Moti Soap. Bridged the gap between the creative team and the sponsor brand, ensuring the production-ready setup met high visual standards and brand requirements.",
-    challenges: [
-      "Coordinating between creators and corporate sponsors to maintain creative integrity.",
-      "Developing a 'shoot-ready' setup that balanced aesthetics with functional requirements.",
-      "Ensuring consistent product placement within a fast-paced production environment."
-    ],
-    technologies: ["Art Direction", "Set Design", "Production Management", "Brand Strategy"],
-    liveLink: "https://www.youtube.com/watch?v=mtdVqpPFJkk"
+    technologies: ["Cinematography", "Lead Gen", "UI/UX Strategy"],
+    liveLink: ""
   }
 ];
 
 export const BRAND_PROJECTS: BrandProject[] = [
   {
     name: "Savoir Studio",
-    category: "Identity • Web • Space Design",
-    description: "Developed the full visual ecosystem for Mumbai's premier creative studio, from the minimalist geometric logo to a high-conversion digital portfolio.",
-    deliverables: ["Visual Identity", "Web Architecture", "Spatial Art Direction"],
+    category: "Studio Inception • Live",
+    description: "Built the full-service content production arm for Karn Marketing Warfare from scratch. Live operational infrastructure.",
+    deliverables: ["Operational Infrastructure", "Creative Leadership", "Production Pipeline"],
     image: "https://raw.githubusercontent.com/jagrutipixels/pixels/9acf4bd49cf1580f8e8d0cb4e4c49acf84e93880/savoir.jpg",
     link: "https://www.ssbykmw.com/" 
   },
   {
-    name: "DBN Fruits",
-    category: "E-commerce • Branding",
-    description: "Revitalized a traditional fruit distribution business with a premium, organic-first identity and an intuitive B2B ordering interface.",
-    deliverables: ["Brand Strategy", "UI/UX Design", "Packaging Systems"],
-    image: "https://raw.githubusercontent.com/jagrutipixels/pixels/2b0e06602bed3b04510ba467b5e0b5ab7e2d0bb1/dbn.jpg",
-    link: "https://icretepixels.vercel.app/"
-  },
-  {
-    name: "Tech Ev",
-    category: "Corporate Identity • Web",
-    description: "Architecting the 'Silent Revolution'. Developing a high-performance digital showroom for high-end electric mobility, featuring fireproof LFP battery tech.",
-    deliverables: ["Product Visualization", "Web Ecosystem", "E-mobility Branding"],
+    name: "Tech EV Launch",
+    category: "Electric Mobility • Live",
+    description: "Designed the digital launch strategy and high-performance UI structure for a new EV scooter brand. Live site.",
+    deliverables: ["Website Architecture", "Digital Strategy", "UI/UX Design"],
     image: "https://raw.githubusercontent.com/jagrutipixels/pixels/d83e7276207c5022b98a652205fd257d5e6d0449/tech.jpg",
     link: "https://candid-pegasus-1f86d2.netlify.app/#/"
+  },
+  {
+    name: "DBN D2C Brand",
+    category: "Premium D2C • Live",
+    description: "Complete brand launch for premium Alphonso mango distribution. Covers naming, packaging, and digital infrastructure.",
+    deliverables: ["Brand Identity", "Packaging Design", "D2C Logistics"],
+    image: "https://raw.githubusercontent.com/jagrutipixels/pixels/2b0e06602bed3b04510ba467b5e0b5ab7e2d0bb1/dbn.jpg",
+    link: "https://icretepixels.vercel.app/"
   }
 ];
 
 export const EXPERIENCES: Experience[] = [
   {
-    role: "Creative Head",
-    company: "KARN Marketing Warfare LLP",
-    location: "On-site",
-    period: "Aug 2025 – Present",
+    role: "Creative Head & Project Lead",
+    company: "Karn Marketing Warfare (Savoir Studio)",
+    location: "Mumbai",
+    period: "Sep 2025 – Present",
     highlights: [
-      "Spearheading Creative Direction and Brand Strategy for comprehensive marketing campaigns",
-      "Managing Marketing Campaign Management and Digital Marketing initiatives",
-      "Expert execution of Visual Storytelling across various brand touchpoints",
-      "Social Media Marketing leadership focused on organic and paid growth"
+      "Conceptualized and built Savoir Studio from scratch, established Hiring and production workflows",
+      "Lead creative vision for key accounts, ensuring output aligns with client ROI and brand identity",
+      "Mentor a multidisciplinary team of editors, designers, and strategists",
+      "Spearheaded 'Pixel Craft' proprietary IP, managing pitch decks and GTM strategy"
     ]
   },
   {
-    role: "Social Media Manager",
-    company: "Puppycuddles dog cafe",
-    location: "Mumbai, Maharashtra",
-    period: "Nov 2024 – Jun 2025",
+    role: "Creative Lead & Social Media Manager",
+    company: "Puppycuddles Dog Cafe",
+    location: "Mumbai",
+    period: "Jan 2025 – Aug 2025",
     highlights: [
-      "Developed and executed integrated Campaign Strategies and Marketing Campaign Plans",
-      "Expert Online Campaign Management and Social Media Advertising oversight",
-      "Utilized Meta-analysis for data-driven campaign optimization",
-      "Led Social Media Marketing efforts resulting in sustained community growth"
+      "Transformed digital presence by aligning online content with physical in-cafe experience",
+      "Directed, shot, and edited daily reels, utilizing set design background for engaging frames",
+      "Executed influencer collaborations and on-ground events boosting cafe footfall",
+      "Maintained brand voice across high-frequency content schedules"
+    ]
+  },
+  {
+    role: "Social Media Content Strategist",
+    company: "Bhadipa (Gulbadan Talkies)",
+    location: "Mumbai",
+    period: "Mar 2024 – Dec 2024",
+    highlights: [
+      "Key strategist for India’s premier Marathi digital network (Bhadipa, Vishay Khol, Bha2pa)",
+      "Applied 'Retention Editing' psychology to optimize hooks and pacing for short-form content",
+      "Successfully adapted editing styles across diverse genres proving tone versatility",
+      "Managed content repurposing workflows for multi-platform distribution"
     ]
   },
   {
     role: "Assistant Art Director",
-    company: "Vertex Sets",
-    location: "India • On-site",
-    period: "Sep 2023 – Oct 2024",
+    company: "Vertex Set Designing",
+    location: "Mumbai",
+    period: "Apr 2023 – Feb 2024",
     highlights: [
-      "Supported Art Direction and set design utilizing SketchUp for spatial visualization",
-      "Facilitated on-site Film Production workflows and logistical coordination",
-      "Created high-fidelity visual assets using Adobe Photoshop for production pitches",
-      "Collaborated with production teams to realize cinematic visual concepts"
+      "Conceptualized and built physical sets for high-end commercial shoots",
+      "Managed prop sourcing, set dressing, and on-set continuity",
+      "Coordinated with vendors to ensure sets were delivered on time and within budget",
+      "Ensured physical environments perfectly complemented camera lighting and angles"
     ]
   },
   {
-    role: "Video Editor",
+    role: "Senior Video Editor",
     company: "eClerx",
-    location: "Maharashtra, India",
-    period: "Jul 2022 – Aug 2023",
+    location: "Mumbai",
+    period: "Feb 2022 – Mar 2023",
     highlights: [
-      "Created appropriate structures and timelines from training raw data to ensure logical flow",
-      "Designed custom graphics and icons for enhanced educational visualization",
-      "Executed end-to-end video integration and publishing at peak broadcast quality",
-      "Managed scheduled reporting and strictly adhered to project Turnaround Time (TAT)",
-      "Performed comprehensive editing (cut/copy/paste) for training session recordings",
-      "Visualized complex content for optimal audience presentation and engagement",
-      "Analyzed recordings to enlist key topics and sub-topics for structured learning",
-      "Proficient in Adobe Premiere Pro, Illustrator, Photoshop, Lightroom, and After Effects"
+      "Delivered high-volume, broadcast-standard video edits for global clients",
+      "Mastered advanced workflows in Adobe Premiere Pro and After Effects",
+      "Refined raw footage into coherent narratives with seamless color grading",
+      "Troubleshot technical issues and strictly adhered to corporate brand guidelines"
     ]
   }
 ];
 
 export const SKILLS: SkillGroup[] = [
   {
-    category: "Video Editing",
-    items: ["Adobe Premiere Pro (Expert)", "DaVinci Resolve (Intermediate)", "Multi-camera editing", "VFX basics"]
+    category: "Leadership & Strategy",
+    items: ["Creative Direction", "Studio Management", "Viral Content Strategy", "Team Leadership"]
   },
   {
-    category: "Graphics & Design",
-    items: ["Adobe Photoshop (Expert)", "Adobe After Effects (Intermediate)", "Storyboarding tools"]
+    category: "Post-Production",
+    items: ["Advanced Video Editing", "Color Grading", "Sound Design", "Motion Graphics"]
   },
   {
-    category: "Photography & Workflow",
-    items: ["Adobe Lightroom (Intermediate)", "Color Grading", "Sound Design", "Motion Graphics"]
+    category: "Digital Architecture",
+    items: ["Website Structure", "UI/UX Strategy", "AI-Driven Workflows", "Retrospective Psychology"]
   },
   {
-    category: "Strategic Skills",
-    items: ["Brand Storytelling", "Trend Awareness", "UGC Production", "Audience Strategy"]
+    category: "Production Design",
+    items: ["Set Design", "Spatial Aesthetics", "Prop Sourcing", "Continuity Management"]
   }
 ];
 
 export const HARDWARE: HardwareGroup[] = [
-  { category: "Cameras", items: "DJI Mavic Mini, Sony A7IV, GoPro Hero 11 Black, DJI Osmo 2" },
-  { category: "Production", items: "Multi-color backdrops, Podcast mic & acoustic treatment, Cyclorama rigs" },
-  { category: "Lighting", items: "Key/Fill/Backlight setups, Gel color theory, Practical application" }
+  { category: "Cameras & Aerial", items: "DJI Mavic Mini, GoPro Hero 11 Black, DJI Action 2, Sony Workflow" },
+  { category: "Specialized Gear", items: "Action POV rigs, Studio Lighting setups, Spatial acoustics" },
+  { category: "Post Hardware", items: "High-performance edit rigs, Color-accurate monitoring" }
 ];

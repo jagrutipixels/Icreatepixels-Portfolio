@@ -13,7 +13,8 @@ export const StatsSection: React.FC = () => {
       </div>
       <div className="text-center group p-6">
         <div className="text-4xl md:text-5xl font-serif font-bold mb-2 group-hover:scale-110 transition-transform">
-          {PERSONAL_INFO.stats.musicVideoViews}
+          {/* Fix: use existing 'reach' property instead of non-existent 'musicVideoViews' */}
+          {PERSONAL_INFO.stats.reach}
         </div>
         <div className="text-zinc-500 uppercase tracking-widest text-[10px] font-bold">Music Video Reach</div>
       </div>

@@ -95,6 +95,20 @@ const App: React.FC = () => {
 
           <AboutSection />
 
+          <section id="identity" className="py-20 md:py-28 px-6 md:px-12 lg:px-24 border-b border-zinc-500/10">
+            <div className="max-w-7xl mx-auto">
+              <Reveal>
+                <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                  <div className="max-w-xl">
+                    <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-fluid-h2">Brand Architect</h2>
+                    <p className="text-zinc-500 text-base leading-relaxed italic">Developing full visual identities and digital ecosystems from scratch.</p>
+                  </div>
+                </div>
+              </Reveal>
+              <BrandSection />
+            </div>
+          </section>
+
           <section id="portfolio" className="py-20 md:py-28 px-6 md:px-12 lg:px-24">
             <div className="max-w-7xl mx-auto">
               <Reveal>
@@ -112,21 +126,7 @@ const App: React.FC = () => {
             </div>
           </section>
 
-          <section id="identity" className="py-20 md:py-28 px-6 md:px-12 lg:px-24 border-y border-zinc-500/10">
-            <div className="max-w-7xl mx-auto">
-              <Reveal>
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-                  <div className="max-w-xl">
-                    <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-fluid-h2">Brand Architect</h2>
-                    <p className="text-zinc-500 text-base leading-relaxed italic">Developing full visual identities and digital ecosystems from scratch.</p>
-                  </div>
-                </div>
-              </Reveal>
-              <BrandSection />
-            </div>
-          </section>
-
-          <section id="experience" className="py-20 md:py-28 px-6 md:px-12 lg:px-24">
+          <section id="experience" className="py-20 md:py-28 px-6 md:px-12 lg:px-24 border-t border-zinc-500/10">
             <div className="max-w-7xl mx-auto">
               <Reveal>
                 <h2 className="text-4xl md:text-5xl font-serif font-bold mb-16 text-center text-fluid-h2">Journey</h2>

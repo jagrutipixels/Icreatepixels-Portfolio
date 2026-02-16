@@ -1,10 +1,14 @@
+
+// Added React to imports to fix 'Cannot find namespace React' errors
 import React, { useState, useEffect, useRef } from 'react';
 import { PERSONAL_INFO } from '../constants.ts';
+import { gsap } from 'https://esm.sh/gsap';
 
 export const Hero: React.FC = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [lensPos, setLensPos] = useState({ x: 0, y: 0, active: false });
   const imageContainerRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
 
   const baseImageUrl = "https://raw.githubusercontent.com/jagrutipixels/pixels/e28a8fddf87ed5b38a34d6c60d4be804132a2348/Hero_Image_base.jpg";
   const coverImageUrl = "https://raw.githubusercontent.com/jagrutipixels/pixels/58c0b1e5252344b7fd2c30e2b74dbcc0874b0870/Hero_Image_cover.jpg";
@@ -21,7 +25,29 @@ export const Hero: React.FC = () => {
       window.addEventListener('mousemove', handleGlobalMouseMove);
     }
     
-    return () => window.removeEventListener('mousemove', handleGlobalMouseMove);
+    const ctx = gsap.context(() => {
+      gsap.fromTo(titleRef.current, 
+        { 
+          opacity: 0, 
+          scale: 0.98, 
+          y: 15 
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          duration: 1.5,
+          ease: "expo.out",
+          delay: 2.2, // Matches the start of the fade-out from the loading screen
+          clearProps: "opacity,scale,y"
+        }
+      );
+    });
+    
+    return () => {
+      window.removeEventListener('mousemove', handleGlobalMouseMove);
+      ctx.revert();
+    };
   }, []);
 
   const handleImageInteraction = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
@@ -57,7 +83,6 @@ export const Hero: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20">
         
-        {/* Left Column (Image) - Adjusted sizing for small mobile */}
         <div className="relative w-full max-w-[280px] sm:max-w-[400px] md:max-w-none md:w-1/2 lg:w-[42%] aspect-[3/4] group order-2 md:order-1">
           <div className="absolute -inset-4 bg-white/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000 hidden lg:block"></div>
           
@@ -74,7 +99,6 @@ export const Hero: React.FC = () => {
               transform: `perspective(1000px) rotateX(${mousePos.y * 0.05}deg) rotateY(${mousePos.x * -0.05}deg)` 
             }}
           >
-            {/* Instruction Badge */}
             <div 
               className={`absolute top-6 left-6 z-40 transition-all duration-500 ease-in-out pointer-events-none ${
                 lensPos.active ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
@@ -90,7 +114,7 @@ export const Hero: React.FC = () => {
 
             <img 
               src={coverImageUrl} 
-              alt="Abhishek Sanjay Gujar" 
+              alt={PERSONAL_INFO.name} 
               className="absolute inset-0 w-full h-full object-cover grayscale-[0.1]"
               loading="eager"
             />
@@ -127,7 +151,6 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Column (Text) */}
         <div className="w-full md:w-1/2 flex flex-col items-start text-left order-1 md:order-2">
           <div className="mb-4 md:mb-6">
             <span className="text-[9px] sm:text-xs font-black uppercase tracking-[0.35em] sm:tracking-[0.5em] text-zinc-500 mb-2 sm:mb-3 block leading-relaxed">
@@ -135,8 +158,11 @@ export const Hero: React.FC = () => {
             </span>
           </div>
 
-          <h1 className="text-fluid-h1 font-serif font-bold mb-6 md:mb-8 leading-[0.95] tracking-tighter">
-            Abhishek <br/> <span className="text-zinc-500">Sanjay Gujar</span>
+          <h1 
+            ref={titleRef}
+            className="text-fluid-h1 font-serif font-bold mb-6 md:mb-8 leading-[0.95] tracking-tighter opacity-0 translate-y-4"
+          >
+            Abhishek <br/> <span className="text-zinc-500">Gujar</span>
           </h1>
           
           <div className="max-w-lg mb-8 md:mb-12 border-l-2 border-zinc-500/20 pl-6 py-1">
