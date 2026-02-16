@@ -10,6 +10,7 @@ import { ContactSection } from './components/ContactSection.tsx';
 import { LoadingScreen } from './components/LoadingScreen.tsx';
 import { Reveal } from './components/Reveal.tsx';
 import { ProjectModal } from './components/ProjectModal.tsx';
+import { ScrollToTop } from './components/ScrollToTop.tsx';
 import { Project } from './types.ts';
 
 const App: React.FC = () => {
@@ -44,6 +45,11 @@ const App: React.FC = () => {
           onClose={() => setSelectedProject(null)} 
         />
       )}
+      
+      {/* 
+        Floating Navigation Elements
+      */}
+      <ScrollToTop />
       
       <div 
         className={`transition-all duration-1000 ${
