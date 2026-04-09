@@ -49,7 +49,7 @@ export const PROJECTS: Project[] = [
     client: "PUPPYCUDDLES DOG CAFE",
     deliverable: "Content Direction • Social Growth",
     impact: "Boosted cafe footfall through digital alignment",
-    image: "https://images.unsplash.com/photo-1541591415600-d1e60f173bcc?auto=format&fit=crop&q=80&w=1200",
+    image: "https://raw.githubusercontent.com/jagrutipixels/Icreatepixels-Portfolio/5923419598a5eeff86d46dff83f1f2be50c378cd/ChatGPT%20Image%20Apr%209%2C%202026%2C%2006_19_56%20PM.png",
     description: "Transformed the brand’s digital presence by aligning daily reel content with the physical in-cafe experience.",
     challenges: [
       "Creating engaging frames within physical cafe constraints.",
@@ -64,7 +64,7 @@ export const PROJECTS: Project[] = [
     client: "BHARAT REALTY",
     deliverable: "Visual Storytelling [UNDER CONSTRUCTION]",
     impact: "Production In-Progress",
-    image: "https://images.unsplash.com/photo-1503387762-592dee58c160?auto=format&fit=crop&q=80&w=1200",
+    image: "https://raw.githubusercontent.com/jagrutipixels/Icreatepixels-Portfolio/3b8c4278cf6ecbc618fe5eef54170856797cd9ae/ChatGPT%20Image%20Apr%209%2C%202026%2C%2006_21_20%20PM.png",
     description: "Revamping the digital property showcase for a real estate firm. This project involves a high-fidelity site-to-screen pipeline currently under development.",
     challenges: [
       "Translating physical architecture to cinematic digital tours.",
