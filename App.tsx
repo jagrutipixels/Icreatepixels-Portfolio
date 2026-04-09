@@ -12,6 +12,7 @@ import { Reveal } from './components/Reveal.tsx';
 import { ProjectModal } from './components/ProjectModal.tsx';
 import { ScrollToTop } from './components/ScrollToTop.tsx';
 import { Project } from './types.ts';
+import { RecentWorkSection } from './components/RecentWorkSection.tsx';
 
 const CinematicAtmosphere: React.FC = () => {
   return (
@@ -138,6 +139,8 @@ const App: React.FC = () => {
               <Portfolio onProjectSelect={setSelectedProject} />
             </div>
           </section>
+
+          <RecentWorkSection />
 
           <section id="experience" className="py-20 md:py-28 px-6 md:px-12 lg:px-24 border-t border-zinc-500/10">
             <div className="max-w-7xl mx-auto">

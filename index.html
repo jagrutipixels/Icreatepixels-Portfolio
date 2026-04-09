@@ -9,6 +9,10 @@
     <meta name="description" content="Portfolio of Abhishek Sanjay Gujar, a Mumbai-based Creative Head, Filmmaker, and Brand Strategist specializing in cinematic storytelling and digital identity.">
     <meta name="keywords" content="Filmmaker, Video Editor, Creative Head, Mumbai, Brand Strategist, Savoir Studio, iCreatePixels">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/jagrutipixels/pixels/2a4100de1fb6b50a220f0ca500322b2a91316285/logo_white.png">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/jagrutipixels/pixels/2a4100de1fb6b50a220f0ca500322b2a91316285/logo_white.png">
+
     <!-- Open Graph / Social sharing -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Abhishek Sanjay Gujar | Creative Head">
@@ -142,6 +146,11 @@
             .text-fluid-h1 { font-size: clamp(2.2rem, 14vw, 4rem); }
             .text-fluid-h2 { font-size: clamp(1.8rem, 12vw, 3rem); }
         }
+        
+        /* Fix for smaller device margins */
+        @media (max-width: 380px) {
+            .px-6 { padding-left: 1rem; padding-right: 1rem; }
+        }
     </style>
     <script type="importmap">
     {
@@ -152,9 +161,11 @@
       }
     }
     </script>
+<link rel="stylesheet" href="/index.css">
 </head>
 <body class="grain">
     <div id="root"></div>
     <script type="module" src="./index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
 </body>
 </html>

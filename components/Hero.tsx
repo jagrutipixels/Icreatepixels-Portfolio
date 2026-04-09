@@ -1,4 +1,3 @@
-
 // Added React to imports to fix 'Cannot find namespace React' errors
 import React, { useState, useEffect, useRef } from 'react';
 import { PERSONAL_INFO } from '../constants.ts';
@@ -74,7 +73,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-24 sm:pt-32 md:pt-48 pb-12 md:pb-20 transition-colors duration-1000">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-32 sm:pt-36 md:pt-48 pb-12 md:pb-20 transition-colors duration-1000">
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
         <div 
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140vw] h-[140vw] opacity-[0.05] animate-drift"
@@ -84,7 +83,7 @@ export const Hero: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20">
         
-        <div className="relative w-full max-w-[280px] sm:max-w-[400px] md:max-w-none md:w-1/2 lg:w-[42%] aspect-[3/4] group order-2 md:order-1">
+        <div className="relative w-full max-w-[300px] sm:max-w-[420px] md:max-w-none md:w-1/2 lg:w-[42%] aspect-[3/4] group order-2 md:order-1">
           <div className="absolute -inset-4 bg-white/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000 hidden lg:block"></div>
           
           <div 
@@ -107,7 +106,7 @@ export const Hero: React.FC = () => {
             >
               <div className="flex items-center gap-2 px-3 py-1.5 bg-black/80 backdrop-blur-md rounded-full border border-white/10 shadow-2xl">
                 <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></div>
-                <span className="text-[8px] font-black uppercase tracking-[0.3em] text-white whitespace-nowrap">
+                <span className="text-[7px] sm:text-[8px] font-black uppercase tracking-[0.3em] text-white whitespace-nowrap">
                   {window.innerWidth < 1024 ? 'Tap to reveal' : 'Hover to reveal'}
                 </span>
               </div>
