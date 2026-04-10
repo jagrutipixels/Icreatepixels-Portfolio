@@ -29,7 +29,7 @@ const ReelRow: React.FC<{ categoryKey: string, reels: {url: string, thumb: strin
     <div className="mb-16 last:mb-0 relative">
       <div className="flex items-center justify-between mb-6 px-6 md:px-0">
         <div className="flex items-center gap-3">
-          <img src={config.icon} alt={config.title} className="w-8 h-8 rounded-sm object-cover shadow-sm" />
+          <img src={config.icon} alt={config.title} loading="lazy" decoding="async" className="w-8 h-8 rounded-sm object-cover shadow-sm" />
           <h3 className="text-2xl md:text-3xl font-serif font-bold">{config.title}</h3>
         </div>
         
@@ -76,13 +76,15 @@ const ReelRow: React.FC<{ categoryKey: string, reels: {url: string, thumb: strin
                     <img 
                       src={reel.thumb} 
                       alt={`${config.title} Reel ${index + 1}`}
+                      loading="lazy"
+                      decoding="async"
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none"></div>
                     
                     {/* Overlay Content */}
                     <div className="absolute bottom-3 left-3 right-3 flex items-center gap-2.5 pointer-events-none">
-                      <img src={config.icon} alt="" className="w-8 h-8 rounded-sm border border-white/50 object-cover shadow-sm" />
+                      <img src={config.icon} alt="" loading="lazy" decoding="async" className="w-8 h-8 rounded-sm border border-white/50 object-cover shadow-sm" />
                       <div className="flex flex-col">
                         <span className="text-white font-bold text-[13px] leading-tight drop-shadow-md">{config.title}</span>
                         <span className="text-white/90 text-[11px] font-medium drop-shadow-md">Reel {index + 1}</span>
