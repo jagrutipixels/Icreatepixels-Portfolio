@@ -181,8 +181,8 @@ export const ExperienceSection: React.FC = () => {
           </Reveal>
         ))}
         
-        {/* Spacer at the end to allow scrolling past the last item */}
-        <div className="w-[10vw] md:w-[20vw] flex-shrink-0"></div>
+        {/* Small spacer at the end for symmetrical padding */}
+        <div className="w-6 md:w-12 lg:w-24 flex-shrink-0"></div>
       </div>
 
       {/* Custom Scrubber Slider */}
