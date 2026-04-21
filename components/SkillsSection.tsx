@@ -15,15 +15,15 @@ export const SkillsSection: React.FC = () => {
         
         {/* Card 1: Video Production (Leadership & Strategy) */}
         <Reveal className="md:col-span-5" direction="up">
-          <div className="h-full p-10 bg-zinc-900/40 backdrop-blur-md rounded-[2.5rem] border border-zinc-800/50 flex flex-col text-left">
-            <div className="flex justify-between items-center mb-12">
+          <div className="h-full p-6 sm:p-10 bg-zinc-900/40 backdrop-blur-md rounded-[2rem] sm:rounded-[2.5rem] border border-zinc-800/50 flex flex-col text-left">
+            <div className="flex justify-between items-center mb-8 sm:mb-12">
               <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-100">Video Production</h3>
               <div className="w-8 h-8 rounded-full border border-zinc-700/50 flex items-center justify-center">
                 <div className="w-1.5 h-1.5 rounded-full bg-red-600 animate-pulse"></div>
               </div>
             </div>
             
-            <div className="space-y-8 flex-grow">
+            <div className="space-y-6 sm:space-y-8 flex-grow">
               {SKILLS[0].items.map((item, i) => (
                 <div key={i} className="group">
                   <div className="flex justify-between items-end mb-3">
@@ -42,9 +42,9 @@ export const SkillsSection: React.FC = () => {
 
         {/* Card 2: Visual Identity (Post-Production) */}
         <Reveal className="md:col-span-4" direction="up" delay={100}>
-          <div className="h-full p-10 bg-zinc-900/40 backdrop-blur-md rounded-[2.5rem] border border-zinc-800/50 flex flex-col text-left">
-            <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-100 mb-12">Visual Identity</h3>
-            <ul className="space-y-6">
+          <div className="h-full p-6 sm:p-10 bg-zinc-900/40 backdrop-blur-md rounded-[2rem] sm:rounded-[2.5rem] border border-zinc-800/50 flex flex-col text-left">
+            <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-100 mb-8 sm:mb-12">Visual Identity</h3>
+            <ul className="space-y-4 sm:space-y-6">
               {SKILLS[1].items.map((item, i) => (
                 <li key={i} className="flex items-center gap-4 group">
                   <span className="w-1 h-1 bg-zinc-700 group-hover:bg-zinc-100 transition-colors"></span>
@@ -60,9 +60,9 @@ export const SkillsSection: React.FC = () => {
         <div className="md:col-span-3 flex flex-col gap-6">
           {/* Post-Process Tags */}
           <Reveal className="flex-grow" direction="up" delay={200}>
-            <div className="h-full p-8 bg-zinc-900/40 backdrop-blur-md rounded-[2.5rem] border border-zinc-800/50 text-left">
+            <div className="h-full p-6 sm:p-8 bg-zinc-900/40 backdrop-blur-md rounded-[2rem] sm:rounded-[2.5rem] border border-zinc-800/50 text-left">
               <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-500 mb-6">Post-Process</h3>
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2.5 sm:gap-3">
                 {SKILLS[2].items.map((item, i) => (
                   <div 
                     key={i} 
@@ -77,9 +77,9 @@ export const SkillsSection: React.FC = () => {
 
           {/* High Contrast Strategy Card */}
           <Reveal direction="up" delay={300}>
-            <div className="p-8 bg-white text-black rounded-[2.5rem] shadow-2xl transition-transform duration-500 hover:scale-[1.02] text-left">
+            <div className="p-6 sm:p-8 bg-white text-black rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl transition-transform duration-500 hover:scale-[1.02] text-left">
               <h3 className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 mb-6">Strategy</h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2.5 sm:space-y-3">
                 {SKILLS[3].items.map((item, i) => (
                   <li key={i} className="text-[11px] font-black uppercase tracking-tight leading-none hover:translate-x-1 transition-transform cursor-default">
                     {item}

@@ -142,7 +142,52 @@ export const RecentWorkSection: React.FC = () => {
           </div>
         </Reveal>
 
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-12 md:gap-24">
+          {/* Featured Cinematic Showcase */}
+          <Reveal delay={200}>
+            <div className="relative group rounded-xl overflow-hidden bg-zinc-950 border border-zinc-500/10 shadow-2xl mx-6 md:mx-0">
+              <div className="aspect-[16/10] md:aspect-video w-full overflow-hidden relative">
+                <img 
+                  src="https://img.youtube.com/vi/UYhxcfgainM/maxresdefault.jpg" 
+                  alt="BNI Inesh Featured Video" 
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+                
+                {/* Visual Label */}
+                <div className="absolute top-4 left-4 md:top-6 md:left-6 flex items-center gap-2">
+                  <div className="px-2 py-0.5 md:px-3 md:py-1 bg-[#0D8ABC] text-white text-[8px] md:text-[10px] font-black uppercase tracking-widest rounded-sm shadow-xl">
+                    Featured Production
+                  </div>
+                </div>
+
+                {/* Content Overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-10 flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6">
+                  <div className="max-w-2xl px-2 md:px-0">
+                    <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
+                      <img src={BRAND_CONFIG.bni.icon} alt="" className="w-8 h-8 md:w-10 md:h-10 rounded-sm border border-white/20" />
+                      <span className="text-[#0D8ABC] font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:xs">BNI Inesh</span>
+                    </div>
+                    <h4 className="text-xl sm:text-2xl md:text-4xl font-serif font-bold text-white mb-2 md:mb-3 leading-tight">The Vision of BNI Inesh</h4>
+                    <p className="text-zinc-300 text-[11px] sm:text-xs md:text-base font-light max-w-lg line-clamp-3 md:line-clamp-none">
+                      A cinematic showcase for the biggest networking group in Navi Mumbai. Captured the essence of collaboration, growth, and professional excellence.
+                    </p>
+                  </div>
+                  
+                  <a 
+                    href="https://youtu.be/UYhxcfgainM" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="shrink-0 flex items-center justify-center gap-2 md:gap-3 bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-[11px] md:text-sm tracking-wide hover:bg-[#0D8ABC] hover:text-white transition-all duration-500 shadow-xl active:scale-95 group/btn"
+                  >
+                    <svg width="16" height="16" md:width="20" md:height="20" viewBox="0 0 24 24" fill="currentColor" className="group-hover/btn:scale-110 transition-transform"><path d="M8 5v14l11-7z"/></svg>
+                    WATCH FILM
+                  </a>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
           {['bhadipa', 'vishaykhol', 'puppycuddles', 'savoir', 'bni', 'luxe'].map((key) => {
             const reels = (reelsData as Record<string, any>)[key];
             if (!reels) return null;

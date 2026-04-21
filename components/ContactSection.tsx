@@ -17,21 +17,21 @@ export const ContactSection: React.FC = () => {
         <div>TAKE: 01</div>
       </div>
 
-      <div className="text-center mb-16 md:mb-40">
-        <span className="text-[9px] font-black uppercase tracking-[0.8em] text-zinc-500 mb-8 block">Project Inquiry</span>
-        <h2 className="text-[14vw] sm:text-[12vw] md:text-[8vw] font-serif font-bold leading-[0.85] tracking-tighter mb-12">
+      <div className="text-center mb-12 sm:mb-16 md:mb-40">
+        <span className="text-[9px] font-black uppercase tracking-[0.8em] text-zinc-500 mb-6 sm:mb-8 block">Project Inquiry</span>
+        <h2 className="text-[14vw] sm:text-[12vw] md:text-[8vw] font-serif font-bold leading-[0.85] tracking-tighter mb-8 sm:mb-12">
           Let’s make <br/> <span className="text-zinc-500">History.</span>
         </h2>
         
-        <div className="flex flex-col items-center px-4 gap-4">
+        <div className="flex flex-col items-center px-4 gap-2 sm:gap-4">
           <a 
             href={`mailto:${PERSONAL_INFO.email}`} 
-            className="group relative inline-flex flex-col items-center py-4 w-full sm:w-auto"
+            className="group relative inline-flex flex-col items-center py-2 sm:py-4 w-full sm:w-auto"
           >
-            <span className="text-lg xs:text-xl sm:text-2xl md:text-5xl font-light text-zinc-500 group-hover:text-current transition-all duration-500 tracking-tight break-all sm:break-normal">
+            <span className="text-[5.5vw] xs:text-xl sm:text-2xl md:text-5xl font-light text-zinc-500 group-hover:text-current transition-all duration-500 tracking-tight break-all sm:break-normal">
               {PERSONAL_INFO.email}
             </span>
-            <div className="mt-4 w-12 h-[2px] bg-zinc-500/20 group-hover:w-full group-hover:bg-current transition-all duration-700"></div>
+            <div className="mt-2 sm:mt-4 w-12 h-[2px] bg-zinc-500/20 group-hover:w-full group-hover:bg-current transition-all duration-700"></div>
           </a>
           
           <a 
