@@ -1,7 +1,7 @@
 // Added React to imports to fix 'Cannot find namespace React' errors
 import React, { useState, useEffect, useRef } from 'react';
 import { PERSONAL_INFO } from '../constants.ts';
-import { gsap } from 'https://esm.sh/gsap';
+import gsap from 'gsap';
 
 export const Hero: React.FC = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });

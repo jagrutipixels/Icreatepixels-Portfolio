@@ -180,9 +180,6 @@ export const ExperienceSection: React.FC = () => {
             </div>
           </Reveal>
         ))}
-        
-        {/* Small spacer at the end for symmetrical padding */}
-        <div className="w-6 md:w-12 lg:w-24 flex-shrink-0"></div>
       </div>
 
       {/* Custom Scrubber Slider */}

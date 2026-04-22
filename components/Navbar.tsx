@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ThemeToggle } from './ThemeToggle.tsx';
 
 interface NavbarProps {
@@ -8,11 +8,28 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ isStudioMode, toggleTheme }) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      
+      // Prevent jitter on very slight scrolls or iOS rubber banding
+      if (Math.abs(currentScrollY - lastScrollY.current) < 5) return;
+
+      setIsScrolled(currentScrollY > 50);
+
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        // Scrolling down
+        setIsHidden(true);
+      } else {
+        // Scrolling up or at the very top
+        setIsHidden(false);
+      }
+      
+      lastScrollY.current = currentScrollY;
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -21,6 +38,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isStudioMode, toggleTheme }) => 
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
+      setIsHidden(false); // Ensure header stays visible when opening menu
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -39,10 +57,12 @@ export const Navbar: React.FC<NavbarProps> = ({ isStudioMode, toggleTheme }) => 
 
   return (
     <nav 
-      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-700 ease-in-out ${
+      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${
+        isHidden && !isMobileMenuOpen ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'
+      } ${
         isScrolled || isMobileMenuOpen 
-          ? `${isStudioMode ? 'bg-white/95 border-zinc-200 shadow-sm' : 'bg-[#050505]/95 border-white/5 shadow-2xl'} backdrop-blur-xl py-3 md:py-4 border-b` 
-          : 'bg-transparent py-10 md:py-14'
+          ? `${isStudioMode ? 'bg-white/95 border-zinc-200 shadow-sm' : 'bg-[#050505]/95 border-white/5 shadow-2xl'} backdrop-blur-xl py-3 md:py-4 ${isMobileMenuOpen ? 'border-b-0' : 'border-b'}` 
+          : 'bg-transparent py-5 md:py-8'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
@@ -54,16 +74,16 @@ export const Navbar: React.FC<NavbarProps> = ({ isStudioMode, toggleTheme }) => 
         >
           {/* Subtle Glow Effect behind logo in Cinema Mode */}
           {!isStudioMode && (
-            <div className={`absolute inset-0 bg-white/10 blur-2xl rounded-full transition-all duration-1000 ${isScrolled ? 'opacity-0 scale-50' : 'opacity-40 scale-125'}`}></div>
+            <div className={`absolute inset-0 bg-white/10 blur-2xl rounded-full transition-all duration-1000 ${isScrolled || isMobileMenuOpen ? 'opacity-0 scale-50' : 'opacity-40 scale-125'}`}></div>
           )}
           
           <img 
             src={logoUrl} 
             alt="Abhishek" 
             className={`w-auto object-contain logo-invert transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] transform will-change-transform ${
-              isScrolled 
-                ? 'h-8 sm:h-10 md:h-12 translate-y-0' 
-                : 'h-20 sm:h-28 md:h-36 -translate-y-2'
+              isScrolled || isMobileMenuOpen
+                ? 'h-6 sm:h-8 md:h-12 translate-y-0' 
+                : 'h-10 sm:h-14 md:h-36 -translate-y-1 md:-translate-y-2'
             } group-hover:scale-[1.03] active:scale-95`}
           />
         </a>
