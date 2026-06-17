@@ -58,6 +58,22 @@ const ProjectCard: React.FC<{ project: Project; onClick: () => void; index: numb
             {project.title}
           </h3>
 
+          <div className="sr-only">
+            <div><strong>PROJECT METADATA</strong></div>
+            <div>Project Name: {project.title}</div>
+            <div>Client: {project.client}</div>
+            <div>Category: {project.deliverable}</div>
+            <div>Service Type: {project.deliverable}</div>
+            <div>Key Result: {project.impact}</div>
+            <div>
+              <strong>Description:</strong>
+              This project for {project.client} focused on {project.deliverable}. The challenge was to deliver top-tier services that drive business growth. As a result, we achieved {project.impact}.
+            </div>
+            <div>Keywords: {project.deliverable.toLowerCase()}, video production, brand strategy, digital marketing, Navi Mumbai, project portfolio.</div>
+            <a href="/production-house-navi-mumbai">See more production work</a>
+            <a href="/social-media-marketing-navi-mumbai">See more marketing work</a>
+          </div>
+
           <div className="mb-8 pl-4 border-l border-zinc-800/20">
             <p className="text-zinc-500 text-sm md:text-base italic leading-relaxed">
               {project.deliverable}

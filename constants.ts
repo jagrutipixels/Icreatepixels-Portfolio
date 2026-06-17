@@ -3,8 +3,8 @@ import { Project, Experience, SkillGroup, HardwareGroup, BrandProject, Methodolo
 export const PERSONAL_INFO = {
   name: "ABHISHEK GUJAR",
   title: "Creative Head • Filmmaker",
-  email: "abhishek.gujar1202@gmail.com",
-  phone: "+91 7400310443",
+  email: "abhishek@icreatepixels.in",
+  phone: "7400310443",
   location: "Mumbai, Maharashtra",
   philosophy: "Unifying the physical and digital worlds—crafting visually stunning sets and ensuring broadcast-quality stories.",
   bio: "Multidisciplinary Creative Head and BMM Graduate with a 360-degree perspective gained from working as an Assistant Art Director and Senior Video Editor. Currently leading creative operations at Karn Marketing Warfare, specializing in engineering viral content and establishing end-to-end production infrastructures.",
@@ -16,8 +16,8 @@ export const PERSONAL_INFO = {
   },
   socials: {
     youtube: "https://www.youtube.com/@icreatepixels",
-    instagram: "https://www.instagram.com/icreatepixels",
-    linkedin: "https://www.linkedin.com/in/icreatepixels/"
+    instagram: "https://www.instagram.com/icreatepixels/",
+    linkedin: "https://in.linkedin.com/in/icreatepixels"
   }
 };
 

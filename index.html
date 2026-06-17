@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     
     <!-- Primary SEO -->
-    <title>Abhishek Sanjay Gujar | Creative Head & Filmmaker</title>
-    <meta name="description" content="Portfolio of Abhishek Sanjay Gujar, a Mumbai-based Creative Head, Filmmaker, and Brand Strategist specializing in cinematic storytelling and digital identity.">
-    <meta name="keywords" content="Filmmaker, Video Editor, Creative Head, Mumbai, Brand Strategist, Savoir Studio, iCreatePixels">
+    <title>iCreatePixels | Top Production House & Growth Agency in Navi Mumbai</title>
+    <meta name="description" content="iCreatePixels is a premium production house and growth agency based in Navi Mumbai. We merge cinematic video production with data-driven social media marketing, local SEO, and digital strategy.">
+    <meta name="keywords" content="Production House Navi Mumbai, Video Agency, SEO Navi Mumbai, Social Media Marketing, Performance Agency, Videographer Mumbai, Brand Strategist, iCreatePixels">
+    <meta name="author" content="iCreatePixels">
+    <link rel="canonical" href="https://www.icreatepixels.com/" />
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/jagrutipixels/Icreatepixels-Portfolio/7c4250b0e1dd15b100b36b5494c664dfc2258118/fav-icon-icreatepixels.png">
@@ -15,16 +17,64 @@
 
     <!-- Open Graph / Social sharing -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Abhishek Sanjay Gujar | Creative Head">
-    <meta property="og:description" content="Cinematic storytelling and brand architecture. Portfolio of creative works 2024-2025.">
+    <meta property="og:url" content="https://www.icreatepixels.com/">
+    <meta property="og:title" content="iCreatePixels | Top Production House in Navi Mumbai">
+    <meta property="og:description" content="Premium film production, local SEO, and performance marketing in Navi Mumbai. We build brands that dominate.">
     <meta property="og:image" content="https://raw.githubusercontent.com/jagrutipixels/pixels/58c0b1e5252344b7fd2c30e2b74dbcc0874b0870/Hero_Image_cover.jpg">
+    <meta property="og:site_name" content="iCreatePixels">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.icreatepixels.com/">
+    <meta name="twitter:title" content="iCreatePixels | Top Production House in Navi Mumbai">
+    <meta name="twitter:description" content="Premium film production, local SEO, and performance marketing in Navi Mumbai. We build brands that dominate.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/jagrutipixels/pixels/58c0b1e5252344b7fd2c30e2b74dbcc0874b0870/Hero_Image_cover.jpg">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "iCreatePixels",
+      "description": "Premium production house and growth agency in Navi Mumbai.",
+      "url": "https://www.icreatepixels.com",
+      "image": "https://raw.githubusercontent.com/jagrutipixels/pixels/2a4100de1fb6b50a220f0ca500322b2a91316285/logo_white.png",
+      "sameAs": [
+        "https://www.instagram.com/icreatepixels/",
+        "https://in.linkedin.com/in/icreatepixels",
+        "https://www.youtube.com/@icreatepixels"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Abhishek Sanjay Gujar"
+      },
+      "telephone": "7400310443",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Navi Mumbai",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      }
+    }
+    </script>
 
     <!-- Fonts & Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            screens: {
+              'xs': '475px',
+            }
+          }
+        }
+      }
+    </script>
     <style>
         :root {
             --bg-color: #050505;
@@ -34,22 +84,9 @@
             --zinc-700: #3f3f46;
             --zinc-500: #71717a;
             --invert: 0;
-            --selection-bg: #ffffff;
-            --selection-text: #050505;
-            --flare-opacity: 0.15;
-        }
-
-        .theme-studio {
-            --bg-color: #f5f5f7;
-            --text-color: #050505;
-            --zinc-900: #e4e4e7;
-            --zinc-800: #d4d4d8;
-            --zinc-700: #a1a1aa;
-            --zinc-500: #52525b;
-            --invert: 1;
-            --selection-bg: #050505;
+            --selection-bg: #ff4d00;
             --selection-text: #ffffff;
-            --flare-opacity: 0;
+            --flare-opacity: 0.15;
         }
 
         body {
@@ -73,7 +110,7 @@
         }
 
         .font-serif {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Space Grotesk', sans-serif;
         }
         
         section {

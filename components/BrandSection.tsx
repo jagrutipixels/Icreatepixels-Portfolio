@@ -68,10 +68,20 @@ const BrandCard: React.FC<{ brand: any; index: number }> = ({ brand, index }) =>
 
 export const BrandSection: React.FC = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-      {BRAND_PROJECTS.map((brand, index) => (
-        <BrandCard key={index} brand={brand} index={index} />
-      ))}
-    </div>
+    <>
+      <div className="sr-only">
+        <h2>Brand Architecture & Strategy</h2>
+        <p>What We Offer: iCreatePixels provides complete brand strategy and positioning services designed to help businesses establish authority and market presence in Navi Mumbai and beyond.</p>
+        <p>Services Include: Brand positioning and market analysis, Messaging architecture and tone guidelines, Visual identity and logo design, Brand guidelines and standards, Rebranding and brand refresh strategies, Brand storytelling and content framework.</p>
+        <p>Why Branding Matters: Strong brands command premium pricing, build customer loyalty, and generate organic referrals. Weak branding leaves money on the table and forces reliance on paid advertising.</p>
+        <p>Results: Clients typically see 40-100% increase in brand awareness, improved market positioning, and stronger customer recognition within 6 months.</p>
+        <p>Keywords: Brand strategy, brand architecture, visual identity, logo design, brand positioning, rebranding, Navi Mumbai branding.</p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+        {BRAND_PROJECTS.map((brand, index) => (
+          <BrandCard key={index} brand={brand} index={index} />
+        ))}
+      </div>
+    </>
   );
 };

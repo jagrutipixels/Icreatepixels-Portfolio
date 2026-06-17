@@ -143,7 +143,7 @@ export const ExperienceSection: React.FC = () => {
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {/* Horizontal Timeline Line */}
-        <div className="absolute top-[42px] left-0 w-[200vw] h-[1px] bg-gradient-to-r from-transparent via-zinc-500/30 to-transparent pointer-events-none"></div>
+        <div className="absolute top-[42px] left-0 w-[4000px] h-[1px] bg-gradient-to-r from-transparent via-zinc-500/30 to-transparent pointer-events-none -z-10"></div>
 
         {EXPERIENCES.map((exp, index) => (
           <Reveal key={index} direction="up" delay={index * 100} width="fit-content" className="flex-shrink-0">

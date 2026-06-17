@@ -84,7 +84,7 @@ const ReelRow: React.FC<{ categoryKey: string, reels: {url: string, thumb: strin
                     
                     {/* Overlay Content */}
                     <div className="absolute bottom-3 left-3 right-3 flex items-center gap-2.5 pointer-events-none">
-                      <img src={config.icon} alt="" loading="lazy" decoding="async" className="w-8 h-8 rounded-sm border border-white/50 object-cover shadow-sm" />
+                      <img src={config.icon} alt={`${config.title} Brand Icon`} loading="lazy" decoding="async" className="w-8 h-8 rounded-sm border border-white/50 object-cover shadow-sm" />
                       <div className="flex flex-col">
                         <span className="text-white font-bold text-[13px] leading-tight drop-shadow-md">{config.title}</span>
                         <span className="text-white/90 text-[11px] font-medium drop-shadow-md">Reel {index + 1}</span>
@@ -99,13 +99,14 @@ const ReelRow: React.FC<{ categoryKey: string, reels: {url: string, thumb: strin
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="flex-1 flex items-center justify-center font-medium text-[13px] hover:bg-white/10 transition-colors"
+                      aria-label={`Watch ${config.title} Reel ${index + 1}`}
                     >
                       Watch Reel
                     </a>
                     <button 
                       className="w-[42px] flex items-center justify-center border-l border-white/20 hover:bg-white/10 transition-colors"
                       onClick={() => window.open(reel.url, '_blank')}
-                      aria-label="More options"
+                      aria-label={`Open ${config.title} Reel ${index + 1} in a new tab`}
                     >
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
                     </button>
@@ -165,7 +166,7 @@ export const RecentWorkSection: React.FC = () => {
                 <div className="absolute bottom-0 left-0 right-0 p-5 md:p-10 flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6">
                   <div className="max-w-2xl px-2 md:px-0">
                     <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
-                      <img src={BRAND_CONFIG.bni.icon} alt="" className="w-8 h-8 md:w-10 md:h-10 rounded-sm border border-white/20" />
+                      <img src={BRAND_CONFIG.bni.icon} alt="BNI Inesh Brand Icon" loading="lazy" decoding="async" className="w-8 h-8 md:w-10 md:h-10 rounded-sm border border-white/20" />
                       <span className="text-[#0D8ABC] font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:xs">BNI Inesh</span>
                     </div>
                     <h4 className="text-xl sm:text-2xl md:text-4xl font-serif font-bold text-white mb-2 md:mb-3 leading-tight">The Vision of BNI Inesh</h4>

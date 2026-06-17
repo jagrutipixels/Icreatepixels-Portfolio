@@ -23,6 +23,15 @@ export const ContactSection: React.FC = () => {
           Let’s make <br/> <span className="text-zinc-500">History.</span>
         </h2>
         
+        <div className="sr-only">
+          <h3>READY TO GROW?</h3>
+          <p>Let's discuss your goals and how iCreatePixels can help you dominate your market.</p>
+          <p>Call to Action: Fill out the form below or call us directly at 7400310443. We'll schedule a free 30-minute strategy consultation to understand your challenges and opportunities.</p>
+          <p>What to Expect: Free consultation (no obligation). Honest assessment of your current situation. Strategic recommendations tailored to your goals. Clear pricing and timeline. Direct access to Abhishek Sanjay Gujar (founder).</p>
+          <p>Response Commitment: We respond to all inquiries within 24 hours on business days.</p>
+          <p>Keywords: Get in touch, consultation, quote, strategy call, contact agency, Navi Mumbai.</p>
+        </div>
+
         <div className="flex flex-col items-center px-4 gap-2 sm:gap-4">
           <a 
             href={`mailto:${PERSONAL_INFO.email}`} 
