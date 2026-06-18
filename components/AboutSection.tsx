@@ -91,7 +91,7 @@ export const AboutSection: React.FC = () => {
             </Reveal>
 
             <Reveal delay={600} direction="none" className="mt-10">
-               <div className="p-6 border-l border-zinc-500/20 flex gap-12">
+               <div className="p-6 border-l border-zinc-500/20 flex flex-col sm:flex-row gap-8 sm:gap-12">
                   <div>
                     <div className="text-5xl font-serif font-bold text-zinc-500/20 mb-1">6+</div>
                     <div className="text-[9px] font-black uppercase tracking-[0.4em] text-zinc-500">

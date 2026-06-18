@@ -1,205 +1,138 @@
 // Added React to imports to fix 'Cannot find namespace React' errors
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { PERSONAL_INFO } from '../constants.ts';
 import gsap from 'gsap';
 
 export const Hero: React.FC = () => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [lensPos, setLensPos] = useState({ x: 0, y: 0, active: false });
-  const imageContainerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
-
-  const baseImageUrl = "https://raw.githubusercontent.com/jagrutipixels/pixels/e28a8fddf87ed5b38a34d6c60d4be804132a2348/Hero_Image_base.jpg";
-  const coverImageUrl = "https://raw.githubusercontent.com/jagrutipixels/pixels/58c0b1e5252344b7fd2c30e2b74dbcc0874b0870/Hero_Image_cover.jpg";
+  const subtitleRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+  const [showreelPlaying, setShowreelPlaying] = useState(false);
 
   useEffect(() => {
-    const handleGlobalMouseMove = (e: MouseEvent) => {
-      setMousePos({
-        x: (e.clientX / window.innerWidth - 0.5) * 20,
-        y: (e.clientY / window.innerHeight - 0.5) * 20,
-      });
-    };
-    
-    if (window.matchMedia('(min-width: 1024px)').matches) {
-      window.addEventListener('mousemove', handleGlobalMouseMove);
-    }
-    
     const ctx = gsap.context(() => {
-      // Ensure the element starts at 0 opacity via GSAP rather than CSS classes
-      gsap.fromTo(titleRef.current, 
-        { 
-          opacity: 0, 
-          scale: 0.98, 
-          y: 15 
-        },
-        {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          duration: 1.5,
-          ease: "expo.out",
-          delay: 2.4, // Slightly adjusted to perfectly follow the loading screen fade
-          clearProps: "all"
-        }
+      const tl = gsap.timeline({ delay: 0.5 }); // Sync with loading screen
+
+      tl.fromTo(subtitleRef.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }
+      )
+      .fromTo(titleRef.current?.querySelectorAll('.char'),
+        { opacity: 0, y: 40, rotateX: -90 },
+        { opacity: 1, y: 0, rotateX: 0, duration: 1.2, stagger: 0.05, ease: 'expo.out' },
+        "-=0.8"
+      )
+      .fromTo(ctaRef.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 1, ease: 'power3.out' },
+        "-=0.8"
       );
     });
-    
-    return () => {
-      window.removeEventListener('mousemove', handleGlobalMouseMove);
-      ctx.revert();
-    };
+
+    return () => ctx.revert();
   }, []);
 
-  const handleImageInteraction = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
-    if (!imageContainerRef.current) return;
-    const rect = imageContainerRef.current.getBoundingClientRect();
-    let clientX, clientY;
-
-    if ('touches' in e && e.touches.length > 0) {
-      clientX = e.touches[0].clientX;
-      clientY = e.touches[0].clientY;
-    } else if ('clientX' in e) {
-      clientX = (e as React.MouseEvent).clientX;
-      clientY = (e as React.MouseEvent).clientY;
-    } else {
-      return;
-    }
-
-    setLensPos({
-      x: clientX - rect.left,
-      y: clientY - rect.top,
-      active: true,
-    });
-  };
+  // Split text for animation
+  const titleText = "Visually Stunning Stories.";
+  const titleWords = titleText.split(" ");
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-32 sm:pt-36 md:pt-48 pb-12 md:pb-20 transition-colors duration-1000">
-      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+    <div className="relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-[#050505]">
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover opacity-60"
+          src="https://assets.mixkit.co/videos/preview/mixkit-set-of-lights-in-a-video-studio-32400-large.mp4"
+        />
+        {/* Overlays for dark cinematic feel */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505]/40" />
+        <div className="absolute inset-0 bg-black/40" />
+        {/* Grain overlay for film look */}
         <div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140vw] h-[140vw] opacity-[0.05] animate-drift"
-          style={{ background: 'radial-gradient(circle, rgba(100,100,150,1) 0%, rgba(5,5,5,0) 70%)' }}
+          className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay"
+          style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")' }}
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex flex-col items-center text-center mt-20">
         
-        <div className="relative w-full max-w-[300px] sm:max-w-[420px] md:max-w-none md:w-1/2 lg:w-[42%] aspect-[3/4] group order-2 md:order-1">
-          <div className="absolute -inset-4 bg-white/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000 hidden lg:block"></div>
-          
-          <div 
-            ref={imageContainerRef}
-            onMouseMove={handleImageInteraction}
-            onTouchMove={handleImageInteraction}
-            onMouseEnter={() => setLensPos(prev => ({ ...prev, active: true }))}
-            onMouseLeave={() => setLensPos(prev => ({ ...prev, active: false }))}
-            onTouchStart={() => setLensPos(prev => ({ ...prev, active: true }))}
-            onTouchEnd={() => setLensPos(prev => ({ ...prev, active: false }))}
-            className="relative w-full h-full overflow-hidden border border-zinc-500/20 bg-zinc-900 rounded-[2.5rem] shadow-2xl transition-transform duration-700 ease-out lg:cursor-none touch-none"
-            style={{ 
-              transform: `perspective(1000px) rotateX(${mousePos.y * 0.05}deg) rotateY(${mousePos.x * -0.05}deg)` 
-            }}
-          >
-            <div 
-              className={`absolute top-6 left-6 z-40 transition-all duration-500 ease-in-out pointer-events-none ${
-                lensPos.active ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
-              }`}
-            >
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-black/80 backdrop-blur-md rounded-full border border-white/10 shadow-2xl">
-                <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></div>
-                <span className="text-[7px] sm:text-[8px] font-black uppercase tracking-[0.3em] text-white whitespace-nowrap">
-                  {window.innerWidth < 1024 ? 'Tap to reveal' : 'Hover to reveal'}
-                </span>
-              </div>
-            </div>
-
-            <img 
-              src={coverImageUrl} 
-              alt={PERSONAL_INFO.name} 
-              className="absolute inset-0 w-full h-full object-cover grayscale-[0.1]"
-              loading="eager"
-            />
-
-            <img 
-              src={baseImageUrl} 
-              alt="Revealed Detail" 
-              className="absolute inset-0 w-full h-full object-cover"
-              style={{
-                clipPath: lensPos.active 
-                  ? `circle(clamp(80px, 15vw, 110px) at ${lensPos.x}px ${lensPos.y}px)` 
-                  : 'circle(0% at 50% 50%)',
-                WebkitClipPath: lensPos.active 
-                  ? `circle(clamp(80px, 15vw, 110px) at ${lensPos.x}px ${lensPos.y}px)` 
-                  : 'circle(0% at 50% 50%)',
-              }}
-            />
-
-            {lensPos.active && (
-              <div 
-                className="absolute pointer-events-none z-30 w-[clamp(160px,30vw,220px)] h-[clamp(160px,30vw,220px)] rounded-full border-2 border-white/20 shadow-[0_0_80px_rgba(255,255,255,0.2)] flex items-center justify-center"
-                style={{ 
-                  left: lensPos.x - (window.innerWidth < 768 ? 80 : 110), 
-                  top: lensPos.y - (window.innerWidth < 768 ? 80 : 110) 
-                }}
-              >
-                 <div className="absolute -top-12 left-1/2 -translate-x-1/2 text-[7px] md:text-[8px] uppercase tracking-[0.4em] font-black text-white whitespace-nowrap bg-black/80 px-3 py-1.5 rounded-md border border-white/10 shadow-xl">
-                  Focusing Detail
-                </div>
-                <div className="absolute inset-0 rounded-full border border-white/5 bg-gradient-to-tr from-transparent via-white/5 to-white/10 opacity-30"></div>
-              </div>
-            )}
-            <div className="absolute inset-0 shadow-[inset_0_0_80px_rgba(0,0,0,0.4)] pointer-events-none z-20"></div>
-          </div>
-        </div>
-
-        <div className="w-full md:w-1/2 flex flex-col items-start text-left order-1 md:order-2">
-          <div className="mb-4 md:mb-6">
-            <span className="text-[9px] sm:text-xs font-black uppercase tracking-[0.35em] sm:tracking-[0.5em] text-zinc-500 mb-2 sm:mb-3 block leading-relaxed">
-              Creative Head | Filmmaker
+        <div ref={subtitleRef} className="mb-6 overflow-hidden">
+          <div className="inline-flex items-center gap-3 px-4 py-2 border border-white/10 rounded-full bg-black/40 backdrop-blur-md">
+            <span className="w-2 h-2 rounded-full bg-[#ff4d00] animate-pulse"></span>
+            <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] text-zinc-300">
+              Creative Head & Filmmaker
             </span>
           </div>
+        </div>
 
-          <h1 
-            ref={titleRef}
-            className="text-fluid-h1 font-serif font-bold mb-6 md:mb-8 leading-[0.95] tracking-tighter will-change-transform"
+        <h1 
+          ref={titleRef}
+          className="text-fluid-h1 font-serif font-black text-white leading-[0.9] tracking-tighter mb-8 max-w-5xl"
+          style={{ perspective: '1000px' }}
+        >
+          {titleWords.map((word, wordIndex) => (
+            <span key={wordIndex} className="inline-block mr-[2vw]" style={{ paddingBottom: '0.1em' }}>
+              {word.split('').map((char, charIndex) => (
+                <span key={charIndex} className="char inline-block origin-bottom will-change-transform">
+                  {char}
+                </span>
+              ))}
+            </span>
+          ))}
+        </h1>
+
+        <div ref={ctaRef} className="flex flex-col sm:flex-row items-center gap-6 mt-4">
+          <button 
+            onClick={() => setShowreelPlaying(true)}
+            className="group relative flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 rounded-full border border-white/20 bg-black/20 backdrop-blur-md hover:bg-white hover:border-white transition-all duration-500"
           >
-            Abhishek <br/> <span className="text-zinc-500">Gujar</span>
-          </h1>
-          
-          <div className="max-w-lg mb-8 md:mb-12 border-l-2 border-zinc-500/20 pl-6 py-1">
-            <p className="text-zinc-500 text-sm sm:text-lg lg:text-xl font-light italic leading-relaxed">
-              "{PERSONAL_INFO.philosophy}"
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 w-full sm:w-auto mb-10 md:mb-0">
-            <a 
-              href="#portfolio" 
-              className="px-8 sm:px-10 py-4 sm:py-5 bg-[var(--text-color)] text-[var(--bg-color)] text-[10px] sm:text-[11px] font-black uppercase tracking-[0.2em] rounded-full hover:opacity-90 transition-all flex items-center justify-center gap-3 active:scale-95 shadow-xl touch-target"
+            <div className="absolute inset-0 rounded-full border border-[#ff4d00]/30 scale-[1.3] group-hover:scale-100 group-hover:opacity-0 transition-all duration-700 ease-out"></div>
+            <div className="absolute inset-0 rounded-full border border-[#ff4d00]/10 scale-[1.6] group-hover:scale-100 group-hover:opacity-0 transition-all duration-1000 ease-out delay-75"></div>
+            <svg 
+              className="w-6 h-6 sm:w-8 sm:h-8 text-white group-hover:text-black translate-x-0.5 transition-colors duration-500" 
+              viewBox="0 0 24 24" 
+              fill="currentColor"
             >
-              Explore Works
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-            </a>
-            
-            <a 
-              href="#contact" 
-              className="px-8 sm:px-10 py-4 sm:py-5 border border-zinc-500/40 text-[var(--text-color)] text-[10px] sm:text-[11px] font-black uppercase tracking-[0.2em] rounded-full hover:bg-[var(--text-color)] hover:text-[var(--bg-color)] transition-all text-center active:scale-95 touch-target"
-            >
-              Start Project
-            </a>
-          </div>
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            <span className="absolute -bottom-10 whitespace-nowrap text-[10px] font-black uppercase tracking-[0.3em] text-white/50 group-hover:text-white transition-colors duration-500">
+              Play Showreel
+            </span>
+          </button>
+        </div>
 
-          <div className="grid grid-cols-2 gap-x-8 sm:gap-x-12 pt-8 sm:pt-12 border-t border-zinc-500/10 w-full max-w-sm mt-8 sm:mt-12">
-            <div>
-              <span className="text-[8px] font-black uppercase tracking-[0.3em] text-zinc-500 block mb-1">Based In</span>
-              <span className="text-xs text-zinc-500/80">Mumbai, IN</span>
-            </div>
-            <div>
-              <span className="text-[8px] font-black uppercase tracking-[0.3em] text-zinc-500 block mb-1">Status</span>
-              <span className="text-xs text-zinc-500/80">Available</span>
-            </div>
-          </div>
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-50 animate-bounce">
+          <span className="text-[8px] font-black uppercase tracking-[0.4em] text-white rotate-90 translate-y-6">Scroll</span>
+          <div className="w-[1px] h-12 bg-gradient-to-b from-transparent via-white to-transparent mt-8"></div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      {showreelPlaying && (
+        <div className="fixed inset-0 z-[500] flex items-center justify-center bg-black/95 backdrop-blur-xl">
+          <button 
+            onClick={() => setShowreelPlaying(false)}
+            className="absolute top-8 right-8 z-[510] text-white/50 hover:text-white uppercase text-[10px] tracking-[0.3em] font-black"
+          >
+            Close [X]
+          </button>
+          <div className="w-full max-w-6xl aspect-video bg-black relative shadow-[0_0_100px_rgba(255,77,0,0.1)]">
+            <iframe 
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/mtdVqpPFJkk?autoplay=1" 
+              title="Showreel" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
