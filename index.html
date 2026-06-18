@@ -117,6 +117,15 @@
             scroll-margin-top: clamp(80px, 12vh, 120px);
         }
 
+        .light-mode {
+            filter: invert(1) hue-rotate(180deg);
+        }
+        .light-mode img:not([alt*="Logo"]),
+        .light-mode video,
+        .light-mode iframe,
+        .light-mode .no-invert {
+            filter: invert(1) hue-rotate(180deg);
+        }
         .grain::before {
             content: "";
             position: fixed;

@@ -106,15 +106,15 @@ export const BRAND_PROJECTS: BrandProject[] = [
 
 export const EXPERIENCES: Experience[] = [
   {
-    role: "Creative Head & Project Lead",
+    role: "Consultant - Creative Head & Project Lead",
     company: "Karn Marketing Warfare (Savoir Studio)",
     location: "Mumbai",
     period: "Sep 2025 – Present",
     highlights: [
-      "Conceptualized and built Savoir Studio from scratch, established Hiring and production workflows",
-      "Lead creative vision for key accounts, ensuring output aligns with client ROI and brand identity",
-      "Mentor a multidisciplinary team of editors, designers, and strategists",
-      "Spearheaded 'Pixel Craft' proprietary IP, managing pitch decks and GTM strategy"
+      "Architected the launch of Savoir Studio from the ground up, establishing scalable hiring operations and end-to-end production workflows",
+      "Spearheaded the creative vision for key accounts, directly aligning visual output with client ROI and core brand identity",
+      "Mentored and directed a multidisciplinary team comprising video editors, designers, and marketing strategists",
+      "Developed the 'Pixel Craft' proprietary IP from concept to execution, managing pitch formulations and comprehensive GTM strategies"
     ]
   },
   {

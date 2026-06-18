@@ -195,72 +195,100 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Core Capabilities Bento Grid */}
-      <section className="py-24 px-6 border-b border-white/10">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-24 md:py-32 px-6 border-b border-white/10 relative overflow-hidden bg-[#050505]">
+        {/* Subtle background glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-[800px] bg-[#ff4d00]/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <Reveal>
-            <div className="mb-16">
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-white text-center">Core Capabilities</h2>
+            <div className="mb-16 md:mb-20 text-center max-w-3xl mx-auto">
+              <span className="text-[#ff4d00] font-bold tracking-widest uppercase text-xs sm:text-sm block mb-4">Our Expertise</span>
+              <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-black text-white leading-tight">Capabilities <br/><span className="text-zinc-500 font-light">& Integrations.</span></h2>
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[340px]">
             {/* Bento 1: Video Production */}
-            <Reveal className="lg:col-span-2">
-              <Link to="/production-house-navi-mumbai" className="block relative h-[320px] rounded-sm overflow-hidden group border border-white/10">
-                <div className="absolute inset-0 bg-[#0a0a0a] transition-all duration-500 group-hover:scale-105 z-0">
-                  <div className="absolute inset-0 opacity-40 bg-gradient-to-tr from-[#ff4d00]/20 to-transparent"></div>
+            <Reveal className="lg:col-span-2 h-full">
+              <Link to="/production-house-navi-mumbai" className="block relative h-full rounded-[2rem] overflow-hidden group border border-white/10 bg-[#0a0a0a]">
+                <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105 z-0">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-[#ff4d00]/20 via-[#0a0a0a] to-[#0a0a0a] opacity-60"></div>
+                  {/* Subtle noise pattern */}
+                  <div className="absolute inset-0 opacity-[0.15] mix-blend-overlay" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")' }}></div>
                 </div>
-                <div className="relative z-10 p-8 flex flex-col h-full justify-between">
-                  <Video size={36} className="text-[#ff4d00]" />
+                <div className="relative z-10 p-8 md:p-10 flex flex-col h-full justify-between">
+                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-sm group-hover:-translate-y-2 transition-transform duration-500 shadow-2xl">
+                    <Video size={28} className="text-[#ff4d00]" />
+                  </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Video Production</h3>
-                    <p className="text-zinc-400 max-w-sm mb-4">Corporate films, TVCs, reels, and podcast production.</p>
-                    <span className="text-[#ff4d00] font-bold text-sm tracking-wider uppercase flex items-center gap-2 group-hover:gap-4 transition-all">Explore Service <ArrowRight size={16} /></span>
+                    <h3 className="text-3xl lg:text-4xl font-serif font-bold text-white mb-3 tracking-tight">Video Production</h3>
+                    <p className="text-zinc-400 max-w-md mb-6 leading-relaxed">High-end TVCs, corporate films, and viral short-form content engineered for maximum retention.</p>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-white uppercase tracking-widest group-hover:bg-[#ff4d00] group-hover:border-[#ff4d00] transition-colors duration-300">
+                      Explore Service <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
                 </div>
               </Link>
             </Reveal>
 
             {/* Bento 2: Marketing */}
-            <Reveal delay={100}>
-              <Link to="/social-media-marketing-navi-mumbai" className="block relative h-[320px] rounded-sm overflow-hidden group border border-white/10 bg-[#0a0a0a]">
-                <div className="relative z-10 p-8 flex flex-col h-full justify-between">
-                  <LineChart size={36} className="text-[#ff4d00]" />
+            <Reveal delay={100} className="h-full">
+              <Link to="/social-media-marketing-navi-mumbai" className="block relative h-full rounded-[2rem] overflow-hidden group border border-white/10 bg-gradient-to-b from-[#0a0a0a] to-[#050505]">
+                <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#ff4d00]/10 blur-[50px] group-hover:bg-[#ff4d00]/20 transition-colors duration-700"></div>
+                <div className="relative z-10 p-8 md:p-10 flex flex-col h-full justify-between">
+                  <div className="w-14 h-14 rounded-2xl bg-[#ff4d00]/10 border border-[#ff4d00]/20 flex items-center justify-center group-hover:-translate-y-2 transition-transform duration-500 shadow-[0_0_30px_rgba(255,77,0,0.1)]">
+                    <LineChart size={28} className="text-[#ff4d00]" />
+                  </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Social Marketing</h3>
-                    <p className="text-zinc-400 mb-4">Data-backed social media management.</p>
-                    <span className="text-[#ff4d00] font-bold text-sm tracking-wider uppercase flex items-center gap-2 group-hover:gap-4 transition-all">Explore Service <ArrowRight size={16} /></span>
+                    <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">Social & Growth</h3>
+                    <p className="text-zinc-400 mb-6 leading-relaxed text-sm">Data-backed social media management and performance marketing.</p>
+                    <div className="inline-flex items-center gap-2 text-xs font-bold text-[#ff4d00] uppercase tracking-widest">
+                      Explore Service <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
                 </div>
               </Link>
             </Reveal>
 
             {/* Bento 3: Web Dev */}
-            <Reveal>
-              <Link to="/social-media-marketing-navi-mumbai" className="block relative h-[320px] rounded-sm overflow-hidden group border border-white/10 bg-[#0a0a0a]">
-                <div className="relative z-10 p-8 flex flex-col h-full justify-between">
-                  <Globe size={36} className="text-[#ff4d00]" />
+            <Reveal className="h-full">
+              <Link to="/social-media-marketing-navi-mumbai" className="block relative h-full rounded-[2rem] overflow-hidden group border border-white/10 bg-gradient-to-b from-[#0a0a0a] to-[#050505]">
+                <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                <div className="absolute bottom-0 right-0 w-40 h-40 bg-blue-500/10 blur-[60px] group-hover:bg-blue-500/20 transition-colors duration-700"></div>
+                <div className="relative z-10 p-8 md:p-10 flex flex-col h-full justify-between">
+                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:-translate-y-2 transition-transform duration-500">
+                    <Globe size={28} className="text-zinc-300" />
+                  </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Web Development</h3>
-                    <p className="text-zinc-400 mb-4">High-performance digital storefronts and Local SEO.</p>
-                    <span className="text-[#ff4d00] font-bold text-sm tracking-wider uppercase flex items-center gap-2 group-hover:gap-4 transition-all">Explore Service <ArrowRight size={16} /></span>
+                    <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">Web & Local SEO</h3>
+                    <p className="text-zinc-400 mb-6 leading-relaxed text-sm">High-performance digital storefronts engineered for search visibility.</p>
+                    <div className="inline-flex items-center gap-2 text-xs font-bold text-zinc-300 uppercase tracking-widest group-hover:text-white transition-colors">
+                      Explore Service <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
                 </div>
               </Link>
             </Reveal>
 
             {/* Bento 4: Photography */}
-            <Reveal delay={100} className="lg:col-span-2">
-              <Link to="/production-house-navi-mumbai" className="block relative h-[320px] rounded-sm overflow-hidden group border border-white/10">
-                <div className="absolute inset-0 bg-[#0a0a0a] transition-all duration-500 group-hover:scale-105 z-0">
-                  <div className="absolute inset-0 opacity-40 bg-gradient-to-bl from-purple-500/10 to-transparent"></div>
+            <Reveal delay={100} className="lg:col-span-2 h-full">
+              <Link to="/production-house-navi-mumbai" className="block relative h-full rounded-[2rem] overflow-hidden group border border-white/10 bg-[#0a0a0a]">
+                <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105 z-0">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-[#0a0a0a] to-[#0a0a0a] opacity-60"></div>
+                  {/* Subtle noise pattern */}
+                  <div className="absolute inset-0 opacity-[0.15] mix-blend-overlay" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")' }}></div>
                 </div>
-                <div className="relative z-10 p-8 flex flex-col h-full justify-between">
-                  <Camera size={36} className="text-[#ff4d00]" />
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Commercial Photography</h3>
-                    <p className="text-zinc-400 max-w-sm mb-4">Product shoots, fashion, and architectural captures.</p>
-                    <span className="text-[#ff4d00] font-bold text-sm tracking-wider uppercase flex items-center gap-2 group-hover:gap-4 transition-all">Explore Service <ArrowRight size={16} /></span>
+                <div className="relative z-10 p-8 md:p-10 flex flex-col h-full justify-between items-end text-right">
+                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-sm group-hover:-translate-y-2 transition-transform duration-500 shadow-2xl">
+                    <Camera size={28} className="text-zinc-300" />
+                  </div>
+                  <div className="flex flex-col items-end">
+                    <h3 className="text-3xl lg:text-4xl font-serif font-bold text-white mb-3 tracking-tight">Photography</h3>
+                    <p className="text-zinc-400 max-w-sm mb-6 leading-relaxed">Commercial product shoots, brand portraits, and architectural captures defined by light.</p>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-white uppercase tracking-widest group-hover:bg-white group-hover:text-black transition-colors duration-300">
+                      Explore Service <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
                 </div>
               </Link>

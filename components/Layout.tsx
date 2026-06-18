@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { Navbar } from './Navbar.tsx';
 import { StickyCTA } from './StickyCTA.tsx';
@@ -15,10 +15,19 @@ const CinematicAtmosphere: React.FC = () => {
 
 export const Layout: React.FC = () => {
   const { pathname } = useLocation();
+  const [isLightMode, setIsLightMode] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  useEffect(() => {
+    if (isLightMode) {
+      document.documentElement.classList.add('light-mode');
+    } else {
+      document.documentElement.classList.remove('light-mode');
+    }
+  }, [isLightMode]);
 
   return (
     <div className="min-h-screen bg-[#050505] text-white flex flex-col font-sans">
@@ -26,7 +35,7 @@ export const Layout: React.FC = () => {
       <CinematicAtmosphere />
       
       <div className="relative z-10 flex flex-col flex-1">
-        <Navbar />
+        <Navbar isLightMode={isLightMode} onToggleTheme={() => setIsLightMode(!isLightMode)} />
         
         <main className="flex-1">
           <Outlet />

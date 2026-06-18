@@ -7,6 +7,7 @@ import { MarketingService } from './pages/MarketingService.tsx';
 import { PortfolioPage } from './pages/PortfolioPage.tsx';
 import { AboutUs } from './pages/AboutUs.tsx';
 import { Blog } from './pages/Blog.tsx';
+import { BlogPost } from './pages/BlogPost.tsx';
 import { Contact } from './pages/Contact.tsx';
 
 const App: React.FC = () => {
@@ -19,6 +20,7 @@ const App: React.FC = () => {
         <Route path="portfolio" element={<PortfolioPage />} />
         <Route path="about-us" element={<AboutUs />} />
         <Route path="blog" element={<Blog />} />
+        <Route path="blog/:slug" element={<BlogPost />} />
         <Route path="contact" element={<Contact />} />
       </Route>
     </Routes>

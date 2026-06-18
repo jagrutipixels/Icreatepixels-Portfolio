@@ -139,18 +139,19 @@ export const ExperienceSection: React.FC = () => {
         onMouseLeave={handleMouseLeave}
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
-        className={`relative z-10 flex overflow-x-auto gap-12 md:gap-20 pb-8 pt-8 [&::-webkit-scrollbar]:hidden ${isDragging ? 'cursor-grabbing' : 'cursor-grab'} select-none`}
+        className={`relative z-10 overflow-x-auto pb-8 pt-8 [&::-webkit-scrollbar]:hidden ${isDragging ? 'cursor-grabbing' : 'cursor-grab'} select-none`}
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
-        {/* Horizontal Timeline Line */}
-        <div className="absolute top-[42px] left-0 w-[4000px] h-[1px] bg-gradient-to-r from-transparent via-zinc-500/30 to-transparent pointer-events-none -z-10"></div>
+        <div className="relative flex w-max gap-12 md:gap-20">
+          {/* Horizontal Timeline Line */}
+          <div className="absolute top-[14px] left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-500/30 to-transparent pointer-events-none -z-10"></div>
 
-        {EXPERIENCES.map((exp, index) => (
-          <Reveal key={index} direction="up" delay={index * 100} width="fit-content" className="flex-shrink-0">
-            <div className="relative w-[280px] md:w-[380px] flex flex-col pt-12">
-              
-              {/* Timeline Dot */}
-              <div className="absolute left-0 top-2 w-3 h-3 bg-[var(--text-color)] rounded-full border-4 border-[var(--bg-color)] z-10 shadow-[0_0_15px_rgba(255,255,255,0.1)]"></div>
+          {EXPERIENCES.map((exp, index) => (
+            <Reveal key={index} direction="up" delay={index * 100} width="fit-content" className="flex-shrink-0">
+              <div className="relative w-[280px] md:w-[380px] flex flex-col pt-12">
+                
+                {/* Timeline Dot */}
+                <div className="absolute left-0 top-2 w-3 h-3 bg-[var(--text-color)] rounded-full border-4 border-[var(--bg-color)] z-10 shadow-[0_0_15px_rgba(255,255,255,0.1)]"></div>
 
               {/* Content Side */}
               <div className="text-left">
@@ -180,6 +181,7 @@ export const ExperienceSection: React.FC = () => {
             </div>
           </Reveal>
         ))}
+        </div>
       </div>
 
       {/* Custom Scrubber Slider */}

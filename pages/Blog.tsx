@@ -1,16 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Reveal } from '../components/Reveal.tsx';
 import { SEO } from '../components/SEO.tsx';
 import { ArrowRight } from 'lucide-react';
-
-const MOCK_ARTICLES = [
-  { id: 1, category: "SEO", title: "Navi Mumbai SEO: How to Rank in the Local Map Pack in 2026", date: "June 12, 2026", readTime: "5 min read" },
-  { id: 2, category: "Production", title: "Why Your Smartphone Video Ads Are Costing You Customers", date: "June 05, 2026", readTime: "8 min read" },
-  { id: 3, category: "Marketing", title: "The Psychology of High-Converting Landing Pages", date: "May 28, 2026", readTime: "6 min read" },
-  { id: 4, category: "Production", title: "Lighting Breakdown: Cinematic Corporate Interviews", date: "May 15, 2026", readTime: "4 min read" },
-  { id: 5, category: "SEO", title: "Technical Audits: The Hidden Errors Killing Your Traffic", date: "May 02, 2026", readTime: "7 min read" },
-  { id: 6, category: "Marketing", title: "Meta Ads Strategy: Scaling Beyond Zero ROAS", date: "April 18, 2026", readTime: "10 min read" }
-];
+import { BLOG_POSTS } from '../blogs.ts';
 
 export const Blog: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -18,8 +11,8 @@ export const Blog: React.FC = () => {
   const categories = ["All", "Production", "Marketing", "SEO"];
 
   const filteredArticles = activeCategory === "All" 
-    ? MOCK_ARTICLES 
-    : MOCK_ARTICLES.filter(a => a.category === activeCategory);
+    ? BLOG_POSTS 
+    : BLOG_POSTS.filter(a => a.category === activeCategory);
 
   return (
     <>
@@ -82,7 +75,7 @@ export const Blog: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredArticles.map((article, idx) => (
               <Reveal key={article.id} delay={idx * 50}>
-                <div className="border border-white/10 bg-[#050505] p-8 h-full flex flex-col justify-between group cursor-pointer hover:border-[#ff4d00]/50 transition-colors">
+                <Link to={`/blog/${article.slug}`} className="block border border-white/10 bg-[#050505] p-8 h-full flex flex-col justify-between group hover:border-[#ff4d00]/50 transition-colors">
                   <div>
                     <div className="flex items-center justify-between mb-6">
                       <span className="text-[#ff4d00] text-[10px] font-black uppercase tracking-widest bg-[#ff4d00]/10 px-3 py-1 rounded-sm">
@@ -98,7 +91,7 @@ export const Blog: React.FC = () => {
                     <span className="text-xs">{article.date}</span>
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                   </div>
-                </div>
+                </Link>
               </Reveal>
             ))}
           </div>

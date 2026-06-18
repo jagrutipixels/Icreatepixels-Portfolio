@@ -40,7 +40,7 @@ export const AboutUs: React.FC = () => {
                 <h2>Meet Abhishek Sanjay Gujar, founder and director of iCreatePixels—a production house and growth agency built on principles of creative excellence and measurable business results.</h2>
                 <p>Abhishek Sanjay Gujar founded iCreatePixels with a clear vision: help businesses in Navi Mumbai and beyond achieve measurable growth through world-class production and data-driven marketing.</p>
                 <p>With 15+ years of experience in production, branding, and digital marketing, Abhishek has worked with 200+ brands across 50+ industries. He's directed hundreds of video productions, developed brand strategies for startups and enterprises, and built marketing campaigns generating millions of impressions and millions in revenue.</p>
-                <p>Before founding iCreatePixels, Abhishek led marketing and strategic initiatives at Karn Marketing Warfare...</p>
+                <p>Before founding iCreatePixels, Abhishek consulted as Creative Head and Project Lead at Karn Marketing Warfare. He has directed hundreds of video productions, developed brand strategies for startups and enterprises, and built marketing campaigns generating millions in revenue.</p>
                 <p>Philosophy: "Great creative work and smart marketing aren't separate. They work best when merged. That's what iCreatePixels does."</p>
                 <p>Keywords: About iCreatePixels, Abhishek Sanjay Gujar, founder, production house, growth agency, Navi Mumbai.</p>
               </div>

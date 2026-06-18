@@ -1,7 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { ThemeToggle } from './ThemeToggle.tsx';
 
-export const Navbar: React.FC = () => {
+interface NavbarProps {
+  isLightMode: boolean;
+  onToggleTheme: () => void;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -100,6 +106,8 @@ export const Navbar: React.FC = () => {
           
           <div className="w-[1px] h-6 bg-white/20 mx-4"></div>
           
+          <ThemeToggle isStudioMode={isLightMode} onToggle={onToggleTheme} />
+
           <Link 
             to="/contact"
             className="bg-[#ff4d00] text-white px-5 py-2.5 rounded-sm font-bold text-sm tracking-wide hover:bg-[#ff4d00]/90 transition-all hover:scale-105 active:scale-95"
@@ -110,6 +118,7 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Trigger */}
         <div className="flex items-center gap-6 md:hidden relative z-[210]">
+          <ThemeToggle isStudioMode={isLightMode} onToggle={onToggleTheme} />
           <button 
             className="p-2 flex flex-col items-end gap-1.5 focus:outline-none touch-target"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
