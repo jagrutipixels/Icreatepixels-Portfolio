@@ -56,32 +56,52 @@ export const AboutSection: React.FC = () => {
 
           <div className="lg:col-span-5 lg:sticky lg:top-32">
             <Reveal direction="right" delay={400}>
-              <div className="relative p-8 md:p-10 border border-zinc-500/10 rounded-3xl bg-zinc-500/5 backdrop-blur-sm shadow-sm">
-                <div className="absolute top-0 left-10 -translate-y-1/2 px-4 py-1 bg-[var(--bg-color)] border border-zinc-500/20 text-[8px] font-black uppercase tracking-[0.4em] text-zinc-500">
-                  Director's Note
-                </div>
-                
-                <div className="text-2xl md:text-3xl font-serif italic leading-snug mb-6 opacity-90">
-                  "{PERSONAL_INFO.philosophy}"
-                </div>
-                
-                <div className="flex items-center gap-6 pt-6 border-t border-zinc-500/10">
-                   <div className="w-10 h-10 rounded-full border border-zinc-500/20 flex items-center justify-center">
-                      <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse"></div>
-                   </div>
-                   <div>
-                      <div className="text-[10px] font-bold uppercase tracking-widest">In Production</div>
-                      <div className="text-[9px] text-zinc-500 uppercase tracking-widest">Mumbai, IN</div>
-                   </div>
+              <div className="relative border border-zinc-500/10 rounded-3xl bg-zinc-500/5 backdrop-blur-sm shadow-sm overflow-hidden">
+                {PERSONAL_INFO.image && (
+                  <div className="w-full h-64 md:h-80 overflow-hidden relative">
+                     <img 
+                       src={PERSONAL_INFO.image} 
+                       alt={PERSONAL_INFO.name} 
+                       className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                     />
+                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent"></div>
+                  </div>
+                )}
+                <div className="relative p-8 md:p-10">
+                  <div className="absolute top-0 left-10 -translate-y-1/2 px-4 py-1 bg-[#0a0a0a] border border-zinc-500/20 text-[8px] font-black uppercase tracking-[0.4em] text-zinc-500 z-10">
+                    Director's Note
+                  </div>
+                  
+                  <div className="text-2xl md:text-3xl font-serif italic leading-snug mb-6 opacity-90 relative z-10 mt-2">
+                    "{PERSONAL_INFO.philosophy}"
+                  </div>
+                  
+                  <div className="flex items-center gap-6 pt-6 border-t border-zinc-500/10 relative z-10">
+                     <div className="w-10 h-10 rounded-full border border-zinc-500/20 flex items-center justify-center">
+                        <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse"></div>
+                     </div>
+                     <div>
+                        <div className="text-[10px] font-bold uppercase tracking-widest">{PERSONAL_INFO.name}</div>
+                        <div className="text-[9px] text-zinc-500 uppercase tracking-widest">{PERSONAL_INFO.title} • {PERSONAL_INFO.location}</div>
+                     </div>
+                  </div>
                 </div>
               </div>
             </Reveal>
 
             <Reveal delay={600} direction="none" className="mt-10">
-               <div className="p-6 border-l border-zinc-500/20">
-                  <div className="text-5xl font-serif font-bold text-zinc-500/20 mb-1">6+</div>
-                  <div className="text-[9px] font-black uppercase tracking-[0.4em] text-zinc-500">
-                    Years of Visual Storytelling
+               <div className="p-6 border-l border-zinc-500/20 flex gap-12">
+                  <div>
+                    <div className="text-5xl font-serif font-bold text-zinc-500/20 mb-1">6+</div>
+                    <div className="text-[9px] font-black uppercase tracking-[0.4em] text-zinc-500">
+                      Years of Visual Storytelling
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-5xl font-serif font-bold text-zinc-500/20 mb-1">{PERSONAL_INFO.stats.views}</div>
+                    <div className="text-[9px] font-black uppercase tracking-[0.4em] text-zinc-500">
+                      Views Engineered
+                    </div>
                   </div>
                </div>
             </Reveal>

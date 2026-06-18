@@ -16,11 +16,8 @@ export const Navbar: React.FC = () => {
 
       setIsScrolled(currentScrollY > 50);
 
-      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
-        setIsHidden(true);
-      } else {
-        setIsHidden(false);
-      }
+      // Header is locked (always visible)
+      setIsHidden(false);
       
       lastScrollY.current = currentScrollY;
     };
@@ -75,8 +72,8 @@ export const Navbar: React.FC = () => {
             alt="iCreatePixels Logo" 
             className={`w-auto object-contain transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] transform will-change-transform ${
               isScrolled || isMobileMenuOpen
-                ? 'h-6 sm:h-8 md:h-10 translate-y-0' 
-                : 'h-10 sm:h-14 md:h-16 -translate-y-1 md:-translate-y-2'
+                ? 'h-10 sm:h-12 md:h-16 translate-y-0' 
+                : 'h-16 sm:h-24 md:h-32 -translate-y-1 md:-translate-y-2'
             } group-hover:scale-[1.03] active:scale-95`}
           />
         </Link>

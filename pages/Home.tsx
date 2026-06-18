@@ -66,28 +66,20 @@ export const Home: React.FC = () => {
               Premium Agency in Navi Mumbai
             </div>
           </Reveal>
+          
           <Reveal delay={200}>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-black leading-[1.05] tracking-tight text-white mb-6">
               We Build Brands <br className="hidden md:block"/>
               that <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4d00] to-orange-400">Dominate.</span>
             </h1>
           </Reveal>
-          <div className="sr-only">
-            <h2>iCreatePixels combines cinematic video production with data-driven digital marketing to help businesses in Navi Mumbai achieve measurable growth.</h2>
-            <p>iCreatePixels is Navi Mumbai's premier production house and growth agency founded by Abhishek Sanjay Gujar. We specialize in broadcast-quality video production, professional photography, podcast production, social media marketing, and local SEO. We help businesses generate measurable results through integrated creative and marketing solutions.</p>
-            <ul>
-              <li>15+ years experience</li>
-              <li>500+ projects completed</li>
-              <li>4.8/5 client rating</li>
-              <li>₹1Cr+ revenue generated for clients</li>
-              <li>85% client retention rate</li>
-            </ul>
-          </div>
+
           <Reveal delay={300}>
             <p className="text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed mb-8">
               iCreatePixels is a high-end production house and growth agency merging cinematic video production with ruthless, data-driven marketing.
             </p>
           </Reveal>
+
           <Reveal delay={400}>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/contact" className="bg-[#ff4d00] text-white px-8 py-4 rounded-sm font-bold tracking-widest uppercase text-sm hover:bg-[#ff4d00]/90 transition-all">
@@ -114,6 +106,7 @@ export const Home: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { num: "01", title: "Produce", desc: "Cinematic videos, premium photography, and undeniable visual identity.",
+                features: ["Commercial Campaigns", "Brand Photography", "Visual Identity Design", "Motion & 3D Graphics"],
                 hiddenContent: (
                   <div className="sr-only">
                     <h4>Strategy. Creativity. Foundation.</h4>
@@ -125,6 +118,7 @@ export const Home: React.FC = () => {
                 )
               },
               { num: "02", title: "Develop", desc: "High-converting, brutalist websites that turn traffic into revenue.",
+                features: ["Custom React/Next.js Apps", "High-Converting Landers", "E-Commerce Platforms", "Performance Optimization"],
                 hiddenContent: (
                   <div className="sr-only">
                     <h4>Execution. Quality. Results.</h4>
@@ -136,6 +130,7 @@ export const Home: React.FC = () => {
                 )
               },
               { num: "03", title: "Dominate", desc: "Local SEO, targeted funnels, and aggressive social marketing.",
+                features: ["Local & Technical SEO", "Data-Driven Ad Funnels", "Social Media Growth", "Conversion Rate Optimization"],
                 hiddenContent: (
                   <div className="sr-only">
                     <h4>Growth. Optimization. Scaling.</h4>
@@ -151,7 +146,15 @@ export const Home: React.FC = () => {
                 <div className="border border-white/10 p-8 hover:border-[#ff4d00]/50 transition-colors h-full bg-[#050505] group">
                   <div className="text-5xl font-black text-white/5 mb-6 group-hover:text-[#ff4d00]/20 transition-colors">{step.num}</div>
                   <h4 className="text-xl font-bold text-white mb-3 tracking-tight">{step.title}</h4>
-                  <p className="text-zinc-400 text-sm leading-relaxed">{step.desc}</p>
+                  <p className="text-zinc-400 text-sm leading-relaxed mb-6">{step.desc}</p>
+                  <ul className="space-y-1">
+                    {step.features.map((feature, fIdx) => (
+                      <li key={fIdx} className="text-xs text-zinc-500 flex items-center border-t border-white/5 py-2.5">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#ff4d00]/40 mr-3 group-hover:bg-[#ff4d00] transition-colors"></div>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                   {step.hiddenContent}
                 </div>
               </Reveal>

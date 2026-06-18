@@ -2,6 +2,7 @@ import React from 'react';
 import { Reveal } from '../components/Reveal.tsx';
 import { SEO } from '../components/SEO.tsx';
 import { ExperienceSection } from '../components/ExperienceSection.tsx';
+import { PERSONAL_INFO } from '../constants.ts';
 
 export const AboutUs: React.FC = () => {
   const structuredData = JSON.stringify({
@@ -77,7 +78,7 @@ export const AboutUs: React.FC = () => {
               <div className="relative aspect-[4/5] w-full max-w-md mx-auto">
                 <div className="absolute inset-0 bg-[#ff4d00] translate-x-4 translate-y-4 rounded-sm"></div>
                 <img 
-                  src="https://images.unsplash.com/photo-1601072901962-cfcd56eec4e4?auto=format&fit=crop&q=80&w=800" 
+                  src={PERSONAL_INFO.image} 
                   alt="Abhishek Sanjay Gujar - Founder & Creative Director" 
                   className="absolute inset-0 w-full h-full object-cover rounded-sm grayscale contrast-125 hover:grayscale-0 transition-all duration-1000 z-10"
                 />

@@ -6,6 +6,7 @@ export const PERSONAL_INFO = {
   email: "abhishek@icreatepixels.in",
   phone: "7400310443",
   location: "Mumbai, Maharashtra",
+  image: "https://raw.githubusercontent.com/jagrutipixels/pixels/main/abhishek.jpg", // Replace with correct image later if needed
   philosophy: "Unifying the physical and digital worlds—crafting visually stunning sets and ensuring broadcast-quality stories.",
   bio: "Multidisciplinary Creative Head and BMM Graduate with a 360-degree perspective gained from working as an Assistant Art Director and Senior Video Editor. Currently leading creative operations at Karn Marketing Warfare, specializing in engineering viral content and establishing end-to-end production infrastructures.",
   stats: {
