@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { PROJECTS } from '../constants.ts';
 import { Project } from '../types.ts';
 import { Reveal } from './Reveal.tsx';
@@ -27,6 +28,7 @@ const ProjectCard: React.FC<{ project: Project; onClick: () => void; index: numb
             src={project.image} 
             alt={project.title} 
             loading="lazy"
+            decoding="async"
             onLoad={() => setImageLoaded(true)}
             className={`w-full h-full object-cover transform group-hover:scale-105 transition-all duration-1000 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
           />
@@ -70,8 +72,8 @@ const ProjectCard: React.FC<{ project: Project; onClick: () => void; index: numb
               This project for {project.client} focused on {project.deliverable}. The challenge was to deliver top-tier services that drive business growth. As a result, we achieved {project.impact}.
             </div>
             <div>Keywords: {project.deliverable.toLowerCase()}, video production, brand strategy, digital marketing, Navi Mumbai, project portfolio.</div>
-            <a href="/production-house-navi-mumbai">See more production work</a>
-            <a href="/social-media-marketing-navi-mumbai">See more marketing work</a>
+            <Link to="/production-house-navi-mumbai">See more production work</Link>
+            <Link to="/social-media-marketing-navi-mumbai">See more marketing work</Link>
           </div>
 
           <div className="mb-8 pl-4 border-l border-zinc-800/20">

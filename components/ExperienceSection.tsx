@@ -142,7 +142,7 @@ export const ExperienceSection: React.FC = () => {
         className={`relative z-10 overflow-x-auto pb-8 pt-8 [&::-webkit-scrollbar]:hidden ${isDragging ? 'cursor-grabbing' : 'cursor-grab'} select-none`}
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
-        <div className="relative flex w-max gap-12 md:gap-20">
+        <div className="relative flex w-max gap-12 md:gap-20 pr-6 md:pr-12 lg:pr-24">
           {/* Horizontal Timeline Line */}
           <div className="absolute top-[14px] left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-500/30 to-transparent pointer-events-none -z-10"></div>
 

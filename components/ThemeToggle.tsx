@@ -25,7 +25,7 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({ isStudioMode, onToggle
           : 'bg-zinc-900 border-zinc-800'
       }`}>
         {/* Toggle Knob */}
-        <div className={`absolute top-1/2 -translate-y-1/2 w-5 h-5 rounded-full transition-all duration-700 cubic-bezier(0.16, 1, 0.3, 1) shadow-xl flex items-center justify-center ${
+        <div className={`absolute top-1/2 -translate-y-1/2 w-5 h-5 rounded-full transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-xl flex items-center justify-center ${
           isStudioMode 
             ? 'left-[calc(100%-1.5rem)] bg-white rotate-180' 
             : 'left-1 bg-black rotate-0'

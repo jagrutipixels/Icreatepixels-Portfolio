@@ -24,6 +24,7 @@ const BrandCard: React.FC<{ brand: any; index: number }> = ({ brand, index }) =>
             src={brand.image} 
             alt={brand.name} 
             loading="lazy"
+            decoding="async"
             onLoad={() => setIsLoaded(true)}
             className={`w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-all duration-1000 ease-out ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
           />

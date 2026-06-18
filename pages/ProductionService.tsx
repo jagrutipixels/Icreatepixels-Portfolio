@@ -142,7 +142,7 @@ export const ProductionService: React.FC = () => {
               <p>What's Included: Concept development and creative direction, Professional crew, Multi-camera setup, Location scouting, Post-production color grading, Music licensing.</p>
               <p>Price Range: ₹1,00,000 - ₹10,00,000+ | Timeline: 4-8 weeks</p>
               <p>Keywords: Commercial video production, advertising video, TV commercial, YouTube ad, commercial filmmaker.</p>
-              <a href="/portfolio">See commercial video case studies</a>
+              <Link to="/portfolio">See commercial video case studies</Link>
             </div>
             
             <div>

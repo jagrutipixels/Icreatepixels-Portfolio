@@ -62,6 +62,8 @@ export const AboutSection: React.FC = () => {
                      <img 
                        src={PERSONAL_INFO.image} 
                        alt={PERSONAL_INFO.name} 
+                       loading="lazy"
+                       decoding="async"
                        referrerPolicy="no-referrer"
                        className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                      />
