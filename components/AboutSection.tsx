@@ -62,6 +62,7 @@ export const AboutSection: React.FC = () => {
                      <img 
                        src={PERSONAL_INFO.image} 
                        alt={PERSONAL_INFO.name} 
+                       referrerPolicy="no-referrer"
                        className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                      />
                      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent"></div>

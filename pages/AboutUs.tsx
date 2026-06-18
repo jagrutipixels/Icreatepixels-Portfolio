@@ -80,6 +80,7 @@ export const AboutUs: React.FC = () => {
                 <img 
                   src={PERSONAL_INFO.image} 
                   alt="Abhishek Sanjay Gujar - Founder & Creative Director" 
+                  referrerPolicy="no-referrer"
                   className="absolute inset-0 w-full h-full object-cover rounded-sm grayscale contrast-125 hover:grayscale-0 transition-all duration-1000 z-10"
                 />
                 <div className="absolute bottom-6 left-6 z-20 bg-[#050505]/90 backdrop-blur-md px-6 py-4 border border-white/10">
