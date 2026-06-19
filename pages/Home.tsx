@@ -19,7 +19,7 @@ export const Home: React.FC = () => {
     "@type": "LocalBusiness",
     "name": "icreatepixels",
     "image": "https://raw.githubusercontent.com/jagrutipixels/pixels/2a4100de1fb6b50a220f0ca500322b2a91316285/logo_white.png",
-    "@id": "https://www.icreatepixels.com",
+    "@id": "https://www.icreatepixels.in",
     "url": "https://www.icreatepixels.com",
     "telephone": "7400310443",
     "email": "hello@icreatepixels.com",
