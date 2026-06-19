@@ -31,7 +31,7 @@ export const BlogPost: React.FC = () => {
       <div className="pt-32 pb-24 px-6 relative bg-[#050505] min-h-screen">
         <div className="max-w-4xl mx-auto">
           {/* Back Button */}
-          <Link to="/blog" className="inline-flex items-center gap-2 text-zinc-500 hover:text-white transition-colors mb-12 text-sm font-bold uppercase tracking-widest">
+          <Link to="/blog" className="relative z-50 cursor-pointer inline-flex items-center gap-2 text-zinc-500 hover:text-[#ff4d00] transition-colors mb-12 text-sm font-bold uppercase tracking-widest">
             <ArrowLeft size={16} />
             Back to Hub
           </Link>

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { Layout } from './components/Layout.tsx';
 import { Home } from './pages/Home.tsx';
 import { ProductionService } from './pages/ProductionService.tsx';
@@ -9,6 +9,16 @@ import { AboutUs } from './pages/AboutUs.tsx';
 import { Blog } from './pages/Blog.tsx';
 import { BlogPost } from './pages/BlogPost.tsx';
 import { Contact } from './pages/Contact.tsx';
+
+const ScrollToTopHelper = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 const App: React.FC = () => {
   // Phase 3: Scroll-Triggered Polish (Makora Studio style)
@@ -48,18 +58,21 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="production-house-navi-mumbai" element={<ProductionService />} />
-        <Route path="social-media-marketing-navi-mumbai" element={<MarketingService />} />
-        <Route path="portfolio" element={<PortfolioPage />} />
-        <Route path="about-us" element={<AboutUs />} />
-        <Route path="blog" element={<Blog />} />
-        <Route path="blog/:slug" element={<BlogPost />} />
-        <Route path="contact" element={<Contact />} />
-      </Route>
-    </Routes>
+    <>
+      <ScrollToTopHelper />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="production-house-navi-mumbai" element={<ProductionService />} />
+          <Route path="social-media-marketing-navi-mumbai" element={<MarketingService />} />
+          <Route path="portfolio" element={<PortfolioPage />} />
+          <Route path="about-us" element={<AboutUs />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="blog/:slug" element={<BlogPost />} />
+          <Route path="contact" element={<Contact />} />
+        </Route>
+      </Routes>
+    </>
   );
 };
 

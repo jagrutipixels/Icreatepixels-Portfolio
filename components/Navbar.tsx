@@ -62,7 +62,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
       } ${
         isScrolled || isMobileMenuOpen 
           ? `bg-[#050505]/95 backdrop-blur-xl py-3 md:py-4 ${isMobileMenuOpen ? 'border-b-0' : 'border-b border-white/10 shadow-2xl'}` 
-          : 'bg-transparent py-5 md:py-8'
+          : 'bg-transparent py-3 md:py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -76,11 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
           <img 
             src={logoUrl} 
             alt="icreatepixels Logo" 
-            className={`w-auto object-contain transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] transform will-change-transform ${
-              isScrolled || isMobileMenuOpen
-                ? 'h-10 sm:h-12 md:h-16 translate-y-0' 
-                : 'h-16 sm:h-24 md:h-32 -translate-y-1 md:-translate-y-2'
-            } group-hover:scale-[1.03] active:scale-95`}
+            className={`w-auto object-contain transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] h-10 sm:h-12 md:h-16 group-hover:scale-[1.03] active:scale-95`}
           />
         </Link>
         
