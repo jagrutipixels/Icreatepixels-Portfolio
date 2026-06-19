@@ -11,6 +11,8 @@ import { SEO } from '../components/SEO.tsx';
 import { ArrowRight, Video, Camera, LineChart, Globe } from 'lucide-react';
 import { ContactSection } from '../components/ContactSection.tsx';
 
+import { DynamicFlipText } from '../components/DynamicFlipText.tsx';
+
 export const Home: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
@@ -59,33 +61,51 @@ export const Home: React.FC = () => {
       )}
 
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 lg:pt-36 lg:pb-24 border-b border-white/10 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col items-start gap-6">
+      <section className="relative min-h-[90vh] flex items-center pt-24 pb-16 lg:pt-36 lg:pb-24 border-b border-white/10 px-6 overflow-hidden">
+        {/* Background Video Layer */}
+        <div className="absolute inset-0 z-0">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity"
+            src="https://assets.mixkit.co/videos/preview/mixkit-set-of-lights-in-a-video-studio-32400-large.mp4"
+          />
+          {/* Gradients to ensure text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505]/50" />
+          
+          {/* Subtle noise pattern */}
+          <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")' }}></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto flex flex-col items-center text-center gap-6 relative z-10 w-full">
           <Reveal delay={100}>
-            <div className="inline-block border border-[#ff4d00]/30 bg-[#ff4d00]/10 px-4 py-1.5 rounded-full text-[#ff4d00] text-[10px] font-bold tracking-widest uppercase mb-4">
+            <div className="inline-block border border-[#ff4d00]/30 bg-[#ff4d00]/10 px-4 py-1.5 rounded-full text-[#ff4d00] text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-4 backdrop-blur-md">
               Premium Agency in Navi Mumbai
             </div>
           </Reveal>
           
           <Reveal delay={200}>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-black leading-[1.05] tracking-tight text-white mb-6">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-black leading-[1.05] tracking-tight text-white mb-6">
               We Build Brands <br className="hidden md:block"/>
-              that <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4d00] to-orange-400">Dominate.</span>
+              that <DynamicFlipText />
             </h1>
           </Reveal>
 
           <Reveal delay={300}>
-            <p className="text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed mb-8">
               icreatepixels is a high-end production house and growth agency merging cinematic video production with ruthless, data-driven marketing.
             </p>
           </Reveal>
 
           <Reveal delay={400}>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/contact" className="bg-[#ff4d00] text-white px-8 py-4 rounded-sm font-bold tracking-widest uppercase text-sm hover:bg-[#ff4d00]/90 transition-all">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto">
+              <Link to="/contact" className="bg-[#ff4d00] text-white px-8 py-4 rounded-sm font-bold tracking-widest uppercase text-sm hover:bg-[#ff4d00]/90 transition-all text-center">
                 Let's Build Together
               </Link>
-              <Link to="/portfolio" className="border border-white/10 bg-white/5 text-white px-8 py-4 rounded-sm font-bold tracking-widest uppercase text-sm hover:bg-white/10 transition-all text-center">
+              <Link to="/portfolio" className="border border-white/20 bg-black/40 backdrop-blur-md text-white px-8 py-4 rounded-sm font-bold tracking-widest uppercase text-sm hover:bg-white/10 hover:border-white/40 transition-all text-center">
                 Explore Our Work
               </Link>
             </div>
