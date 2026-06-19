@@ -7,7 +7,7 @@ export const Contact: React.FC = () => {
   const structuredData = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "iCreatePixels",
+    "name": "icreatepixels",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Navi Mumbai",
@@ -25,9 +25,9 @@ export const Contact: React.FC = () => {
   return (
     <>
       <SEO 
-        title="Contact iCreatePixels | Let's Build Your Brand"
+        title="Contact icreatepixels | Let's Build Your Brand"
         description="Ready to scale? Contact our Navi Mumbai production and growth agency to request a strategy call or a quote."
-        keywords="Contact iCreatePixels, Navi Mumbai agency contact, hire videographer, hire SEO expert"
+        keywords="Contact icreatepixels, Navi Mumbai agency contact, hire videographer, hire SEO expert"
         schema={structuredData}
       />
       

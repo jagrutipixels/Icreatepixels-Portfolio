@@ -75,7 +75,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
           
           <img 
             src={logoUrl} 
-            alt="iCreatePixels Logo" 
+            alt="icreatepixels Logo" 
             className={`w-auto object-contain transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] transform will-change-transform ${
               isScrolled || isMobileMenuOpen
                 ? 'h-10 sm:h-12 md:h-16 translate-y-0' 

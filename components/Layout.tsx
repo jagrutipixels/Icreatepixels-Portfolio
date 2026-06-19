@@ -86,7 +86,7 @@ export const Layout: React.FC = () => {
           
           <div className="max-w-7xl mx-auto border-t border-white/10 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center">
             <p className="text-xs text-zinc-600 uppercase tracking-widest mb-4 md:mb-0">
-              © {new Date().getFullYear()} iCreatePixels | Abhishek Sanjay Gujar
+              © {new Date().getFullYear()} icreatepixels | Abhishek Sanjay Gujar
             </p>
             <div className="flex gap-4">
               {/* social links placeholders */}

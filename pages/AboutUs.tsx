@@ -14,7 +14,7 @@ export const AboutUs: React.FC = () => {
       "jobTitle": "Founder & Creative Director",
       "worksFor": {
         "@type": "Organization",
-        "name": "iCreatePixels"
+        "name": "icreatepixels"
       }
     }
   });
@@ -22,9 +22,9 @@ export const AboutUs: React.FC = () => {
   return (
     <>
       <SEO 
-        title="Our Story | iCreatePixels | Abhishek Sanjay Gujar"
-        description="Meet Abhishek Sanjay Gujar, Founder & Creative Director of iCreatePixels. Bridging the gap between cinematic filmmaking and performance marketing."
-        keywords="About iCreatePixels, Abhishek Sanjay Gujar, Creative Director Mumbai, Agency Story"
+        title="Our Story | icreatepixels | Abhishek Sanjay Gujar"
+        description="Meet Abhishek Sanjay Gujar, Founder & Creative Director of icreatepixels. Bridging the gap between cinematic filmmaking and performance marketing."
+        keywords="About icreatepixels, Abhishek Sanjay Gujar, Creative Director Mumbai, Agency Story"
         schema={structuredData}
       />
       
@@ -37,17 +37,17 @@ export const AboutUs: React.FC = () => {
               </h1>
               
               <div className="sr-only">
-                <h2>Meet Abhishek Sanjay Gujar, founder and director of iCreatePixels—a production house and growth agency built on principles of creative excellence and measurable business results.</h2>
-                <p>Abhishek Sanjay Gujar founded iCreatePixels with a clear vision: help businesses in Navi Mumbai and beyond achieve measurable growth through world-class production and data-driven marketing.</p>
+                <h2>Meet Abhishek Sanjay Gujar, founder and director of icreatepixels—a production house and growth agency built on principles of creative excellence and measurable business results.</h2>
+                <p>Abhishek Sanjay Gujar founded icreatepixels with a clear vision: help businesses in Navi Mumbai and beyond achieve measurable growth through world-class production and data-driven marketing.</p>
                 <p>With 15+ years of experience in production, branding, and digital marketing, Abhishek has worked with 200+ brands across 50+ industries. He's directed hundreds of video productions, developed brand strategies for startups and enterprises, and built marketing campaigns generating millions of impressions and millions in revenue.</p>
-                <p>Before founding iCreatePixels, Abhishek consulted as Creative Head and Project Lead at Karn Marketing Warfare. He has directed hundreds of video productions, developed brand strategies for startups and enterprises, and built marketing campaigns generating millions in revenue.</p>
-                <p>Philosophy: "Great creative work and smart marketing aren't separate. They work best when merged. That's what iCreatePixels does."</p>
-                <p>Keywords: About iCreatePixels, Abhishek Sanjay Gujar, founder, production house, growth agency, Navi Mumbai.</p>
+                <p>Before founding icreatepixels, Abhishek consulted as Creative Head and Project Lead at Karn Marketing Warfare. He has directed hundreds of video productions, developed brand strategies for startups and enterprises, and built marketing campaigns generating millions in revenue.</p>
+                <p>Philosophy: "Great creative work and smart marketing aren't separate. They work best when merged. That's what icreatepixels does."</p>
+                <p>Keywords: About icreatepixels, Abhishek Sanjay Gujar, founder, production house, growth agency, Navi Mumbai.</p>
               </div>
 
               <h3 className="text-2xl font-bold text-white mb-6">Bridging the cinematic and the analytical.</h3>
               <p className="text-zinc-400 text-lg leading-relaxed mb-6">
-                iCreatePixels was born from a fundamental frustration: videographers didn't understand marketing funnels, and marketing agencies produced stale, uninspired visuals.
+                icreatepixels was born from a fundamental frustration: videographers didn't understand marketing funnels, and marketing agencies produced stale, uninspired visuals.
               </p>
               <p className="text-zinc-400 text-lg leading-relaxed">
                 Founded by Abhishek Sanjay Gujar, we set out to build a hybrid powerhouse. A place where Netflix-standard visual production meets ruthless, data-driven growth strategies. Over the last 4 years, we've scaled businesses across Navi Mumbai by ensuring their brand not only looks premium but performs exceptionally.
@@ -60,15 +60,15 @@ export const AboutUs: React.FC = () => {
                 <p>Keywords: Abhishek Sanjay Gujar background, production expertise, marketing strategy, founder experience, agency leadership.</p>
                 
                 <h3>THE TEAM</h3>
-                <p>iCreatePixels is a lean, expert team focused on delivering exceptional results for clients. Creative Direction & Strategy: Abhishek Sanjay Gujar.</p>
+                <p>icreatepixels is a lean, expert team focused on delivering exceptional results for clients. Creative Direction & Strategy: Abhishek Sanjay Gujar.</p>
                 <p>Combined experience: 50+ years. 500+ projects completed.</p>
-                <p>Keywords: iCreatePixels team, creative team, production team, marketing team.</p>
+                <p>Keywords: icreatepixels team, creative team, production team, marketing team.</p>
 
                 <h3>OUR MISSION & APPROACH</h3>
                 <p>Mission: Help businesses in Navi Mumbai and beyond achieve measurable growth through world-class production, strategic marketing, and data-driven optimization.</p>
                 <p>Core Values: EXCELLENCE, RESULTS-FOCUSED, TRANSPARENCY, INNOVATION, PARTNERSHIP.</p>
-                <p>Why Choose iCreatePixels: Founder-led, 15+ years experience, 500+ projects completed, ₹1Cr+ revenue generated for clients, 4.8/5 client rating.</p>
-                <p>Keywords: About iCreatePixels, mission statement, our values, why choose us, agency philosophy.</p>
+                <p>Why Choose icreatepixels: Founder-led, 15+ years experience, 500+ projects completed, ₹1Cr+ revenue generated for clients, 4.8/5 client rating.</p>
+                <p>Keywords: About icreatepixels, mission statement, our values, why choose us, agency philosophy.</p>
               </div>
             </Reveal>
           </div>

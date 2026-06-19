@@ -11,7 +11,7 @@ export const ProductionService: React.FC = () => {
     "serviceType": "Video Production & Photography",
     "provider": {
       "@type": "LocalBusiness",
-      "name": "iCreatePixels",
+      "name": "icreatepixels",
       "image": "https://raw.githubusercontent.com/jagrutipixels/pixels/2a4100de1fb6b50a220f0ca500322b2a91316285/logo_white.png",
       "address": {
         "@type": "PostalAddress",
@@ -43,8 +43,8 @@ export const ProductionService: React.FC = () => {
             </h1>
             
             <div className="sr-only">
-              <h2>iCreatePixels is Navi Mumbai's premium production house, founded by Abhishek Sanjay Gujar. We specialize in cinematic video production, commercial videos, corporate films, product photography, drone videography, and podcast production.</h2>
-              <p>iCreatePixels delivers broadcast-quality production services that help businesses tell compelling brand stories and generate measurable results. From dramatic commercial videos to professional corporate films, high-end product photography, stunning aerial cinematography, and full-service podcast production—we handle it all with cinematic excellence.</p>
+              <h2>icreatepixels is Navi Mumbai's premium production house, founded by Abhishek Sanjay Gujar. We specialize in cinematic video production, commercial videos, corporate films, product photography, drone videography, and podcast production.</h2>
+              <p>icreatepixels delivers broadcast-quality production services that help businesses tell compelling brand stories and generate measurable results. From dramatic commercial videos to professional corporate films, high-end product photography, stunning aerial cinematography, and full-service podcast production—we handle it all with cinematic excellence.</p>
               <p>Our production philosophy: Use world-class equipment, expert creative direction, and meticulous attention to detail to create content that doesn't just look good—it converts.</p>
               <h3>What Sets Us Apart:</h3>
               <ul>
@@ -165,7 +165,7 @@ export const ProductionService: React.FC = () => {
 
             <div>
               <h4>FREQUENTLY ASKED QUESTIONS</h4>
-              <p>Q: What makes iCreatePixels different? A: We combine cinematic quality with founder-led creative direction and results focus.</p>
+              <p>Q: What makes icreatepixels different? A: We combine cinematic quality with founder-led creative direction and results focus.</p>
               <p>Q: How long does a project take? A: Most take 4-8 weeks from consultation to delivery.</p>
               <p>Q: Can you work within a budget? A: Yes, starting at ₹50,000 for corporate videos.</p>
               <p>Keywords: Video production FAQ, production questions, how to hire videographer, production process explained.</p>

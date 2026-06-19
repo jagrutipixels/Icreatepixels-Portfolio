@@ -17,7 +17,7 @@ export const Blog: React.FC = () => {
   return (
     <>
       <SEO 
-        title="Intelligence Hub | Marketing & Production Insights | iCreatePixels"
+        title="Intelligence Hub | Marketing & Production Insights | icreatepixels"
         description="Read our latest insights on Video Production, Local SEO in Navi Mumbai, and Performance Marketing strategies."
         keywords="Blog, Marketing Insights, Production Setup, SEO Navi Mumbai"
       />

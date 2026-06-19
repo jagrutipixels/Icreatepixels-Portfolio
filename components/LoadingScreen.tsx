@@ -1,59 +1,62 @@
 import React, { useEffect, useState } from 'react';
 
 export const LoadingScreen: React.FC = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [isExiting, setIsExiting] = useState(false);
-  const logoUrl = "https://raw.githubusercontent.com/jagrutipixels/pixels/2a4100de1fb6b50a220f0ca500322b2a91316285/logo_white.png";
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsExiting(true);
-      setTimeout(() => setIsVisible(false), 800);
-    }, 2200);
+    // Lock body scroll
+    document.body.style.overflow = 'hidden';
 
-    return () => clearTimeout(timer);
+    const handleLoad = () => {
+      setIsLoaded(true);
+    };
+
+    if (document.readyState === 'complete') {
+      // Simulate minimal display time if already loaded
+      setTimeout(handleLoad, 500);
+    } else {
+      window.addEventListener('load', handleLoad);
+    }
+
+    return () => {
+      window.removeEventListener('load', handleLoad);
+      document.body.style.overflow = 'auto'; // ensure it cleans up
+    };
   }, []);
+
+  useEffect(() => {
+    if (isLoaded) {
+      const timer = setTimeout(() => {
+        document.body.style.overflow = 'auto';
+        setIsVisible(false);
+      }, 1000); // Wait for the 1s slide-up animation
+
+      return () => clearTimeout(timer);
+    }
+  }, [isLoaded]);
 
   if (!isVisible) return null;
 
   return (
     <div 
-      className={`fixed inset-0 z-[9999] flex items-center justify-center bg-[#050505] transition-all duration-1000 ease-in-out ${
-        isExiting ? 'opacity-0 translate-y-[-10px]' : 'opacity-100'
-      }`}
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#000000] w-full h-full pointer-events-none"
+      style={{
+        transition: 'transform 1s cubic-bezier(0.76, 0, 0.24, 1)',
+        transform: isLoaded ? 'translateY(-100%)' : 'translateY(0%)',
+      }}
     >
-      <div className="relative flex flex-col items-center">
-        {/* Animated Logo - Increased from h-16/20 to h-24/32 */}
-        <div className={`transition-all duration-1000 ease-out transform ${
-          isExiting ? 'scale-110 blur-sm' : 'scale-100 blur-0'
-        }`}>
-          <img 
-            src={logoUrl} 
-            alt="Abhishek Sanjay Gujar" 
-            className="h-24 md:h-32 w-auto object-contain animate-pulse"
-          />
-        </div>
-
-        {/* Cinematic Progress Line */}
-        <div className="mt-12 w-32 h-[1px] bg-zinc-900 overflow-hidden relative">
-          <div 
-            className={`absolute inset-0 bg-white transition-all duration-[2000ms] ease-out ${
-              isExiting ? 'translate-x-full' : '-translate-x-full'
-            }`}
-            style={{ transform: isExiting ? 'translateX(100%)' : 'translateX(0%)' }}
-          ></div>
-        </div>
-
-        <div className="mt-6">
-          <span className="text-[8px] font-black uppercase tracking-[1em] text-zinc-600 animate-pulse">
-            Establishing Focus
-          </span>
-        </div>
-      </div>
-
-      {/* Background Ambience for Loader */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-white/5 blur-[120px] rounded-full"></div>
+      <div 
+        className="flex flex-col items-center"
+        style={{
+          transition: 'all 0.6s cubic-bezier(0.76, 0, 0.24, 1)',
+          transform: isLoaded ? 'translateY(-20px)' : 'translateY(0)',
+          opacity: isLoaded ? 0 : 1
+        }}
+      >
+        <span className="text-white text-sm md:text-base font-medium tracking-[0.3em] uppercase">
+          Calibrating Focus...
+        </span>
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ export const MarketingService: React.FC = () => {
     "serviceType": "Marketing & SEO",
     "provider": {
       "@type": "LocalBusiness",
-      "name": "iCreatePixels",
+      "name": "icreatepixels",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Navi Mumbai",
@@ -26,7 +26,7 @@ export const MarketingService: React.FC = () => {
     <>
       <SEO 
         title="Social Media Marketing & SEO Agency | Navi Mumbai"
-        description="Data-driven marketing, Local SEO, and Social Media Management that scales. Transform traffic into revenue with iCreatePixels."
+        description="Data-driven marketing, Local SEO, and Social Media Management that scales. Transform traffic into revenue with icreatepixels."
         keywords="Social Media Marketing Navi Mumbai, SEO Expert Navi Mumbai, Performance Marketing, Digital Marketing Agency"
         schema={structuredData}
       />
@@ -42,8 +42,8 @@ export const MarketingService: React.FC = () => {
             </h1>
             
             <div className="sr-only">
-              <h2>iCreatePixels is Navi Mumbai's leading social media marketing and local SEO agency. We help businesses generate qualified leads and sustainable growth through data-driven strategies.</h2>
-              <p>iCreatePixels provides comprehensive digital marketing solutions designed to help businesses in Navi Mumbai and beyond achieve measurable growth. Founded by Abhishek Sanjay Gujar, our agency specializes in social media marketing, local SEO, performance advertising, content strategy, website optimization, and brand architecture.</p>
+              <h2>icreatepixels is Navi Mumbai's leading social media marketing and local SEO agency. We help businesses generate qualified leads and sustainable growth through data-driven strategies.</h2>
+              <p>icreatepixels provides comprehensive digital marketing solutions designed to help businesses in Navi Mumbai and beyond achieve measurable growth. Founded by Abhishek Sanjay Gujar, our agency specializes in social media marketing, local SEO, performance advertising, content strategy, website optimization, and brand architecture.</p>
               <p>We don't believe in vanity metrics. Our focus is on business results: leads, revenue, market share, and sustainable growth. We use data to guide every decision and continuously optimize for better outcomes.</p>
               <h3>What We Offer:</h3>
               <ul>

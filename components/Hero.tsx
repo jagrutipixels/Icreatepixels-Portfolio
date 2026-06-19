@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { PERSONAL_INFO } from '../constants.ts';
 import gsap from 'gsap';
+import { MagneticButton } from './MagneticButton.tsx';
 
 export const Hero: React.FC = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -86,8 +87,9 @@ export const Hero: React.FC = () => {
         </h1>
 
         <div ref={ctaRef} className="flex flex-col sm:flex-row items-center gap-6 mt-4">
-          <button 
+          <MagneticButton 
             onClick={() => setShowreelPlaying(true)}
+            strength={40}
             className="group relative flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 rounded-full border border-white/20 bg-black/20 backdrop-blur-md hover:bg-white hover:border-white transition-all duration-500"
           >
             <div className="absolute inset-0 rounded-full border border-[#ff4d00]/30 scale-[1.3] group-hover:scale-100 group-hover:opacity-0 transition-all duration-700 ease-out"></div>
@@ -102,7 +104,7 @@ export const Hero: React.FC = () => {
             <span className="absolute -bottom-10 whitespace-nowrap text-[10px] font-black uppercase tracking-[0.3em] text-white/50 group-hover:text-white transition-colors duration-500">
               Play Showreel
             </span>
-          </button>
+          </MagneticButton>
         </div>
 
         {/* Scroll Indicator */}

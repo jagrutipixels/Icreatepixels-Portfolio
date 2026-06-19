@@ -25,7 +25,7 @@ export const ContactSection: React.FC = () => {
         
         <div className="sr-only">
           <h3>READY TO GROW?</h3>
-          <p>Let's discuss your goals and how iCreatePixels can help you dominate your market.</p>
+          <p>Let's discuss your goals and how icreatepixels can help you dominate your market.</p>
           <p>Call to Action: Fill out the form below or call us directly at 7400310443. We'll schedule a free 30-minute strategy consultation to understand your challenges and opportunities.</p>
           <p>What to Expect: Free consultation (no obligation). Honest assessment of your current situation. Strategic recommendations tailored to your goals. Clear pricing and timeline. Direct access to Abhishek Sanjay Gujar (founder).</p>
           <p>Response Commitment: We respond to all inquiries within 24 hours on business days.</p>

@@ -23,7 +23,7 @@ export const BlogPost: React.FC = () => {
   return (
     <>
       <SEO 
-        title={`${post.title} | iCreatePixels Blog`}
+        title={`${post.title} | icreatepixels Blog`}
         description={post.excerpt}
         keywords={post.keywords}
       />

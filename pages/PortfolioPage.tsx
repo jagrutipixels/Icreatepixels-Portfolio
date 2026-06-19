@@ -16,7 +16,7 @@ export const PortfolioPage: React.FC = () => {
   return (
     <>
       <SEO 
-        title="Our Work & Portfolio | Video Production & Marketing | iCreatePixels"
+        title="Our Work & Portfolio | Video Production & Marketing | icreatepixels"
         description="Explore our cinematic video productions, branding projects, and social media reels. See how we've scaled businesses in Navi Mumbai."
         keywords="Portfolio, Video Production Portfolio, Product Shoots, Marketing Case Studies, Navi Mumbai"
       />

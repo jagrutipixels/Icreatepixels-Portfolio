@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     
     <!-- Primary SEO -->
-    <title>iCreatePixels | Top Production House & Growth Agency in Navi Mumbai</title>
-    <meta name="description" content="iCreatePixels is a premium production house and growth agency based in Navi Mumbai. We merge cinematic video production with data-driven social media marketing, local SEO, and digital strategy.">
-    <meta name="keywords" content="Production House Navi Mumbai, Video Agency, SEO Navi Mumbai, Social Media Marketing, Performance Agency, Videographer Mumbai, Brand Strategist, iCreatePixels">
-    <meta name="author" content="iCreatePixels">
+    <title>icreatepixels | Top Production House & Growth Agency in Navi Mumbai</title>
+    <meta name="description" content="icreatepixels: Navi Mumbai's premium production house and growth agency. We combine cinematic video production with data-driven marketing, local SEO & strategy.">
+    <meta name="keywords" content="Production House Navi Mumbai, Video Agency, SEO Navi Mumbai, Social Media Marketing, Performance Agency, Videographer Mumbai, Brand Strategist, icreatepixels">
+    <meta name="author" content="icreatepixels">
     <link rel="canonical" href="https://www.icreatepixels.com/" />
     
     <!-- Favicon -->
@@ -18,15 +18,15 @@
     <!-- Open Graph / Social sharing -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.icreatepixels.com/">
-    <meta property="og:title" content="iCreatePixels | Top Production House in Navi Mumbai">
+    <meta property="og:title" content="icreatepixels | Top Production House in Navi Mumbai">
     <meta property="og:description" content="Premium film production, local SEO, and performance marketing in Navi Mumbai. We build brands that dominate.">
     <meta property="og:image" content="https://raw.githubusercontent.com/jagrutipixels/pixels/58c0b1e5252344b7fd2c30e2b74dbcc0874b0870/Hero_Image_cover.jpg">
-    <meta property="og:site_name" content="iCreatePixels">
+    <meta property="og:site_name" content="icreatepixels">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://www.icreatepixels.com/">
-    <meta name="twitter:title" content="iCreatePixels | Top Production House in Navi Mumbai">
+    <meta name="twitter:title" content="icreatepixels | Top Production House in Navi Mumbai">
     <meta name="twitter:description" content="Premium film production, local SEO, and performance marketing in Navi Mumbai. We build brands that dominate.">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/jagrutipixels/pixels/58c0b1e5252344b7fd2c30e2b74dbcc0874b0870/Hero_Image_cover.jpg">
 
@@ -35,7 +35,7 @@
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "iCreatePixels",
+      "name": "icreatepixels",
       "description": "Premium production house and growth agency in Navi Mumbai.",
       "url": "https://www.icreatepixels.com",
       "image": "https://raw.githubusercontent.com/jagrutipixels/pixels/2a4100de1fb6b50a220f0ca500322b2a91316285/logo_white.png",
@@ -158,6 +158,19 @@
         @keyframes float-slow {
             0%, 100% { transform: translateY(0) rotate(0deg); }
             50% { transform: translateY(-30px) rotate(2deg); }
+        }
+
+        /* Makora Studio Scroll Polish */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s cubic-bezier(0.76, 0, 0.24, 1), transform 1s cubic-bezier(0.76, 0, 0.24, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal-on-scroll.is-revealed {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .animate-flare {

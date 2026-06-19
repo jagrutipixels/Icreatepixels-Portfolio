@@ -32,7 +32,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "In 2026, simply having a website isn't enough. If your target audience is based in Navi Mumbai, securing a spot in the Google Local Map Pack is the most crucial step for driving foot traffic and local leads.",
       "The Map Pack is the group of three local business listings that appear at the top of Google search results. But how do you get there? It starts with a perfectly optimized Google Business Profile (GBP). Ensure your NAP (Name, Address, Phone Number) consistency is 100% accurate across all directories.",
       "Next, focus on hyper-local content. Create service pages that specifically mention target areas like Vashi, Belapur, and Kharghar. Getting local backlinks from Navi Mumbai news sites, community blogs, and local event sponsorships sends massive authority signals to Google.",
-      "Finally, reviews are the engine of local SEO. Implement an automated review generation strategy. Reply to every review—positive or negative—using relevant keywords naturally. At iCreatePixels, we've helped numerous Navi Mumbai businesses double their local visibility within 90 days."
+      "Finally, reviews are the engine of local SEO. Implement an automated review generation strategy. Reply to every review—positive or negative—using relevant keywords naturally. At icreatepixels, we've helped numerous Navi Mumbai businesses double their local visibility within 90 days."
     ]
   },
   {
@@ -51,7 +51,7 @@ export const BLOG_POSTS: BlogPost[] = [
     content: [
       "We all know the narrative: 'You just need a smartphone and a ring light to go viral.' While this might be true for influencer organic content, applying this to commercial ad campaigns is actively burning your ad spend.",
       "High-converting video ads require more than just 4K resolution. They require intentional lighting, crisp audio, color grading that aligns with brand identity, and psychological pacing. When a potential customer sees a poorly lit, smartphone-shot ad, their brain subconsciously attaches a 'low quality' tag to your actual product.",
-      "At iCreatePixels, we bridge the gap between cinematic filmmaking and performance marketing. A broadcast-quality commercial signals trust and authority before the viewer even processes your offer. Our data shows that professionally shot and lit ads drastically reduce Cost Per Acquisition (CPA) simply through increased trust.",
+      "At icreatepixels, we bridge the gap between cinematic filmmaking and performance marketing. A broadcast-quality commercial signals trust and authority before the viewer even processes your offer. Our data shows that professionally shot and lit ads drastically reduce Cost Per Acquisition (CPA) simply through increased trust.",
       "Stop risking your brand's perception. Invest in production architecture that scales your authority alongside your revenue."
     ]
   },

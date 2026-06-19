@@ -17,7 +17,7 @@ export const Home: React.FC = () => {
   const structuredData = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "iCreatePixels",
+    "name": "icreatepixels",
     "image": "https://raw.githubusercontent.com/jagrutipixels/pixels/2a4100de1fb6b50a220f0ca500322b2a91316285/logo_white.png",
     "@id": "https://www.icreatepixels.com",
     "url": "https://www.icreatepixels.com",
@@ -76,7 +76,7 @@ export const Home: React.FC = () => {
 
           <Reveal delay={300}>
             <p className="text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed mb-8">
-              iCreatePixels is a high-end production house and growth agency merging cinematic video production with ruthless, data-driven marketing.
+              icreatepixels is a high-end production house and growth agency merging cinematic video production with ruthless, data-driven marketing.
             </p>
           </Reveal>
 
@@ -302,7 +302,7 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center">
           <div className="w-full md:w-1/2">
             <Reveal>
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-8">Why iCreatePixels?</h2>
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-8">Why icreatepixels?</h2>
               <p className="text-zinc-400 mb-8 leading-relaxed">
                 Most agencies do marketing. Most videographers do videos. Very few do both exceptionally well. We bridge the gap between stunning cinematic visuals and ROI-obsessed marketing strategies.
               </p>

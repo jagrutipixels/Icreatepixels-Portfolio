@@ -72,7 +72,7 @@ export const BrandSection: React.FC = () => {
     <>
       <div className="sr-only">
         <h2>Brand Architecture & Strategy</h2>
-        <p>What We Offer: iCreatePixels provides complete brand strategy and positioning services designed to help businesses establish authority and market presence in Navi Mumbai and beyond.</p>
+        <p>What We Offer: icreatepixels provides complete brand strategy and positioning services designed to help businesses establish authority and market presence in Navi Mumbai and beyond.</p>
         <p>Services Include: Brand positioning and market analysis, Messaging architecture and tone guidelines, Visual identity and logo design, Brand guidelines and standards, Rebranding and brand refresh strategies, Brand storytelling and content framework.</p>
         <p>Why Branding Matters: Strong brands command premium pricing, build customer loyalty, and generate organic referrals. Weak branding leaves money on the table and forces reliance on paid advertising.</p>
         <p>Results: Clients typically see 40-100% increase in brand awareness, improved market positioning, and stronger customer recognition within 6 months.</p>
