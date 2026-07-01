@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { motion, useSpring, useMotionValue } from 'motion/react';
+import React, { useEffect, useState, useRef } from "react";
+import { motion, useSpring, useMotionValue } from "motion/react";
 
 export const CustomCursor: React.FC = () => {
   const [isHovering, setIsHovering] = useState(false);
-  const [cursorText, setCursorText] = useState('');
+  const [cursorText, setCursorText] = useState("");
   const cursorSize = isHovering ? 96 : 12;
 
   const mouseX = useMotionValue(0);
@@ -15,10 +15,11 @@ export const CustomCursor: React.FC = () => {
 
   useEffect(() => {
     // Detect touch devices
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    const isTouchDevice =
+      "ontouchstart" in window || navigator.maxTouchPoints > 0;
     if (isTouchDevice) {
-      document.body.style.cursor = 'auto'; // restore cursor for mobile/touch
-      document.documentElement.style.setProperty('--cursor-none', 'auto');
+      document.body.style.cursor = "auto"; // restore cursor for mobile/touch
+      document.documentElement.style.setProperty("--cursor-none", "auto");
       return;
     }
 
@@ -31,35 +32,35 @@ export const CustomCursor: React.FC = () => {
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       // find closest element with data-cursor
-      const elementWithCursor = target.closest('[data-cursor]');
-      
+      const elementWithCursor = target.closest("[data-cursor]");
+
       if (elementWithCursor) {
         setIsHovering(true);
-        setCursorText(elementWithCursor.getAttribute('data-cursor') || '');
+        setCursorText(elementWithCursor.getAttribute("data-cursor") || "");
       } else if (
-        target.tagName.toLowerCase() === 'a' || 
-        target.tagName.toLowerCase() === 'button' ||
-        target.closest('a') ||
-        target.closest('button')
+        target.tagName.toLowerCase() === "a" ||
+        target.tagName.toLowerCase() === "button" ||
+        target.closest("a") ||
+        target.closest("button")
       ) {
         setIsHovering(true);
-        setCursorText('');
+        setCursorText("");
       } else {
         setIsHovering(false);
-        setCursorText('');
+        setCursorText("");
       }
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mouseover', handleMouseOver);
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseover", handleMouseOver);
 
     // Hide default cursor
-    document.body.style.cursor = 'none';
+    document.body.style.cursor = "none";
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseover', handleMouseOver);
-      document.body.style.cursor = 'auto';
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseover", handleMouseOver);
+      document.body.style.cursor = "auto";
     };
   }, [cursorSize, mouseX, mouseY]);
 
@@ -71,15 +72,19 @@ export const CustomCursor: React.FC = () => {
         y: cursorY,
         width: isHovering ? (cursorText ? 96 : 48) : 12,
         height: isHovering ? (cursorText ? 96 : 48) : 12,
-        borderRadius: '50%',
-        backgroundColor: isHovering ? (cursorText ? 'rgba(255, 255, 255, 1)' : 'rgba(255, 255, 255, 0.4)') : 'white',
-        mixBlendMode: isHovering && !cursorText ? 'difference' : 'normal',
+        borderRadius: "50%",
+        backgroundColor: isHovering
+          ? cursorText
+            ? "rgba(255, 255, 255, 1)"
+            : "rgba(255, 255, 255, 0.4)"
+          : "white",
+        mixBlendMode: isHovering && !cursorText ? "difference" : "normal",
       }}
       animate={{
         width: isHovering ? (cursorText ? 96 : 48) : 12,
         height: isHovering ? (cursorText ? 96 : 48) : 12,
       }}
-      transition={{ type: 'spring', ...springConfig }}
+      transition={{ type: "spring", ...springConfig }}
     >
       {isHovering && cursorText && (
         <motion.span

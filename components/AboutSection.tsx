@@ -1,33 +1,41 @@
-import React from 'react';
-import { PERSONAL_INFO, METHODOLOGY } from '../constants.ts';
-import { Reveal } from './Reveal.tsx';
+import React from "react";
+import { PERSONAL_INFO, METHODOLOGY } from "../constants.ts";
+import { Reveal } from "./Reveal.tsx";
 
 export const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="relative py-20 md:py-28 px-6 md:px-12 lg:px-24 bg-zinc-500/5 transition-colors duration-1000 overflow-hidden">
+    <section
+      id="about"
+      className="relative py-20 md:py-28 px-6 md:px-12 lg:px-24 bg-zinc-500/5 transition-colors duration-1000 overflow-hidden"
+    >
       {/* Film Strip Perforations (Left) */}
       <div className="absolute left-4 top-0 bottom-0 w-4 flex flex-col justify-around py-12 opacity-10 pointer-events-none hidden md:flex">
         {Array.from({ length: 15 }).map((_, i) => (
-          <div key={i} className="w-3 h-5 border-2 border-zinc-500 rounded-sm"></div>
+          <div
+            key={i}
+            className="w-3 h-5 border-2 border-zinc-500 rounded-sm"
+          ></div>
         ))}
       </div>
       {/* Film Strip Perforations (Right) */}
       <div className="absolute right-4 top-0 bottom-0 w-4 flex flex-col justify-around py-12 opacity-10 pointer-events-none hidden md:flex">
         {Array.from({ length: 15 }).map((_, i) => (
-          <div key={i} className="w-3 h-5 border-2 border-zinc-500 rounded-sm"></div>
+          <div
+            key={i}
+            className="w-3 h-5 border-2 border-zinc-500 rounded-sm"
+          ></div>
         ))}
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
-          
           <div className="lg:col-span-7">
             <Reveal direction="left">
               <span className="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-500 block mb-6">
                 The Narrative
               </span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-8 leading-tight">
-                Behind the Lens, <br/>
+                Behind the Lens, <br />
                 <span className="text-zinc-500 italic">Across the Story.</span>
               </h2>
             </Reveal>
@@ -40,14 +48,18 @@ export const AboutSection: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-16">
               {METHODOLOGY.map((item, idx) => (
-                <Reveal key={idx} delay={300 + (idx * 100)} direction="up">
+                <Reveal key={idx} delay={300 + idx * 100} direction="up">
                   <div className="group">
                     <div className="text-[9px] font-black uppercase tracking-[0.4em] text-zinc-400 mb-2 flex items-center gap-3">
                       <span className="w-5 h-[1px] bg-zinc-500/30 group-hover:w-8 group-hover:bg-zinc-500 transition-all"></span>
                       0{idx + 1}
                     </div>
-                    <h4 className="text-base font-bold mb-1 uppercase tracking-tight">{item.label}</h4>
-                    <p className="text-zinc-500 text-xs leading-relaxed">{item.detail}</p>
+                    <h4 className="text-base font-bold mb-1 uppercase tracking-tight">
+                      {item.label}
+                    </h4>
+                    <p className="text-zinc-500 text-xs leading-relaxed">
+                      {item.detail}
+                    </p>
                   </div>
                 </Reveal>
               ))}
@@ -59,54 +71,62 @@ export const AboutSection: React.FC = () => {
               <div className="relative border border-zinc-500/10 rounded-3xl bg-zinc-500/5 backdrop-blur-sm shadow-sm overflow-hidden">
                 {PERSONAL_INFO.image && (
                   <div className="w-full h-64 md:h-80 overflow-hidden relative">
-                     <img 
-                       src={PERSONAL_INFO.image} 
-                       alt={PERSONAL_INFO.name} 
-                       loading="lazy"
-                       decoding="async"
-                       referrerPolicy="no-referrer"
-                       className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                     />
-                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent"></div>
+                    <img
+                      src={PERSONAL_INFO.image}
+                      alt={PERSONAL_INFO.name}
+                      loading="lazy"
+                      decoding="async"
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent"></div>
                   </div>
                 )}
                 <div className="relative p-8 md:p-10">
                   <div className="absolute top-0 left-10 -translate-y-1/2 px-4 py-1 bg-[#0a0a0a] border border-zinc-500/20 text-[8px] font-black uppercase tracking-[0.4em] text-zinc-500 z-10">
                     Director's Note
                   </div>
-                  
+
                   <div className="text-2xl md:text-3xl font-serif italic leading-snug mb-6 opacity-90 relative z-10 mt-2">
                     "{PERSONAL_INFO.philosophy}"
                   </div>
-                  
+
                   <div className="flex items-center gap-6 pt-6 border-t border-zinc-500/10 relative z-10">
-                     <div className="w-10 h-10 rounded-full border border-zinc-500/20 flex items-center justify-center">
-                        <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse"></div>
-                     </div>
-                     <div>
-                        <div className="text-[10px] font-bold uppercase tracking-widest">{PERSONAL_INFO.name}</div>
-                        <div className="text-[9px] text-zinc-500 uppercase tracking-widest">{PERSONAL_INFO.title} • {PERSONAL_INFO.location}</div>
-                     </div>
+                    <div className="w-10 h-10 rounded-full border border-zinc-500/20 flex items-center justify-center">
+                      <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse"></div>
+                    </div>
+                    <div>
+                      <div className="text-[10px] font-bold uppercase tracking-widest">
+                        {PERSONAL_INFO.name}
+                      </div>
+                      <div className="text-[9px] text-zinc-500 uppercase tracking-widest">
+                        {PERSONAL_INFO.title} • {PERSONAL_INFO.location}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </Reveal>
 
             <Reveal delay={600} direction="none" className="mt-10">
-               <div className="p-6 border-l border-zinc-500/20 flex flex-col sm:flex-row gap-8 sm:gap-12">
-                  <div>
-                    <div className="text-5xl font-serif font-bold text-zinc-500/20 mb-1">6+</div>
-                    <div className="text-[9px] font-black uppercase tracking-[0.4em] text-zinc-500">
-                      Years of Visual Storytelling
-                    </div>
+              <div className="p-6 border-l border-zinc-500/20 flex flex-col sm:flex-row gap-8 sm:gap-12">
+                <div>
+                  <div className="text-5xl font-serif font-bold text-zinc-500/20 mb-1">
+                    6+
                   </div>
-                  <div>
-                    <div className="text-5xl font-serif font-bold text-zinc-500/20 mb-1">{PERSONAL_INFO.stats.views}</div>
-                    <div className="text-[9px] font-black uppercase tracking-[0.4em] text-zinc-500">
-                      Views Engineered
-                    </div>
+                  <div className="text-[9px] font-black uppercase tracking-[0.4em] text-zinc-500">
+                    Years of Visual Storytelling
                   </div>
-               </div>
+                </div>
+                <div>
+                  <div className="text-5xl font-serif font-bold text-zinc-500/20 mb-1">
+                    {PERSONAL_INFO.stats.views}
+                  </div>
+                  <div className="text-[9px] font-black uppercase tracking-[0.4em] text-zinc-500">
+                    Views Engineered
+                  </div>
+                </div>
+              </div>
             </Reveal>
           </div>
         </div>

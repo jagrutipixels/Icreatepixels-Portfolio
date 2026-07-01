@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
 
 export const Preloader: React.FC = () => {
   const [step, setStep] = useState(1);
@@ -7,7 +7,7 @@ export const Preloader: React.FC = () => {
 
   useEffect(() => {
     // Disable scroll on mount
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
 
     const timer1 = setTimeout(() => {
       setStep(2);
@@ -15,13 +15,13 @@ export const Preloader: React.FC = () => {
 
     const timer2 = setTimeout(() => {
       setIsVisible(false);
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }, 3500);
 
     return () => {
       clearTimeout(timer1);
       clearTimeout(timer2);
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     };
   }, []);
 

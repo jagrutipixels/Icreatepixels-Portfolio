@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
 
 const WORDS = ["Dominate.", "Scale.", "Convert.", "Innovate.", "Captivate."];
 
@@ -23,7 +23,10 @@ export const DynamicFlipText: React.FC = () => {
           exit={{ y: -40, opacity: 0, rotateX: 60 }}
           transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
           className="absolute left-0 right-0 top-0 text-transparent bg-clip-text bg-gradient-to-r from-[#ff4d00] to-orange-400 drop-shadow-sm pb-2"
-          style={{ transformStyle: 'preserve-3d', transformOrigin: 'center center -50px' }}
+          style={{
+            transformStyle: "preserve-3d",
+            transformOrigin: "center center -50px",
+          }}
         >
           {WORDS[index]}
         </motion.span>

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { Link, useLocation } from "react-router-dom";
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -9,16 +9,16 @@ export const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     // Prevent scrolling when menu is open
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }
   }, [isMenuOpen]);
 
@@ -28,24 +28,27 @@ export const Header: React.FC = () => {
   }, [location.pathname]);
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Production', href: '/production-house-navi-mumbai' },
-    { name: 'Marketing', href: '/social-media-marketing-navi-mumbai' },
-    { name: 'Portfolio', href: '/portfolio' },
-    { name: 'About', href: '/about-us' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/contact' }
+    { name: "Home", href: "/" },
+    { name: "Production", href: "/production-house-navi-mumbai" },
+    { name: "Marketing", href: "/social-media-marketing-navi-mumbai" },
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "About", href: "/about-us" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const socialLinks = [
-    { name: 'Instagram', href: 'https://www.instagram.com/icreatepixels/' },
-    { name: 'LinkedIn', href: 'https://in.linkedin.com/in/icreatepixels' },
-    { name: 'YouTube', href: 'https://www.youtube.com/@icreatepixels' }
+    { name: "Instagram", href: "https://www.instagram.com/icreatepixels/" },
+    { name: "LinkedIn", href: "https://in.linkedin.com/in/icreatepixels" },
+    { name: "YouTube", href: "https://www.youtube.com/@icreatepixels" },
   ];
 
   const menuVariants = {
-    closed: { y: '-100%', transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } },
-    open: { y: 0, transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }
+    closed: {
+      y: "-100%",
+      transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
+    },
+    open: { y: 0, transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } },
   };
 
   const linkVariants = {
@@ -53,18 +56,28 @@ export const Header: React.FC = () => {
     open: (i: number) => ({
       y: 0,
       opacity: 1,
-      transition: { delay: 0.2 + i * 0.1, duration: 0.6, ease: [0.76, 0, 0.24, 1] }
-    })
+      transition: {
+        delay: 0.2 + i * 0.1,
+        duration: 0.6,
+        ease: [0.76, 0, 0.24, 1],
+      },
+    }),
   };
 
   return (
     <>
       <header
         className={`fixed top-0 left-0 w-full z-[9901] transition-all duration-500 flex justify-between items-center px-6 py-4 lg:px-12 ${
-          isScrolled ? 'bg-[#050505]/70 backdrop-blur-md border-b border-white/5' : 'bg-transparent'
+          isScrolled
+            ? "bg-[#050505]/70 backdrop-blur-md border-b border-white/5"
+            : "bg-transparent"
         }`}
       >
-        <Link to="/" className="text-xl font-bold tracking-tighter text-white uppercase" data-cursor="HOME">
+        <Link
+          to="/"
+          className="text-xl font-bold tracking-tighter text-white uppercase"
+          data-cursor="HOME"
+        >
           icreatepixels
         </Link>
         <button
@@ -73,10 +86,14 @@ export const Header: React.FC = () => {
           data-cursor="CLICK"
         >
           <span className="relative flex h-2 w-2">
-            <span className={`animate-ping absolute inline-flex h-full w-full rounded-full ${isMenuOpen ? 'bg-[#ff4d00]' : 'bg-white'} opacity-75`}></span>
-            <span className={`relative inline-flex rounded-full h-2 w-2 ${isMenuOpen ? 'bg-[#ff4d00]' : 'bg-white'}`}></span>
+            <span
+              className={`animate-ping absolute inline-flex h-full w-full rounded-full ${isMenuOpen ? "bg-[#ff4d00]" : "bg-white"} opacity-75`}
+            ></span>
+            <span
+              className={`relative inline-flex rounded-full h-2 w-2 ${isMenuOpen ? "bg-[#ff4d00]" : "bg-white"}`}
+            ></span>
           </span>
-          {isMenuOpen ? 'CLOSE' : 'MENU'}
+          {isMenuOpen ? "CLOSE" : "MENU"}
         </button>
       </header>
 
@@ -107,7 +124,9 @@ export const Header: React.FC = () => {
 
             <div className="mt-auto grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-white/10">
               <div className="flex flex-col gap-4">
-                <span className="text-zinc-500 text-xs tracking-widest uppercase">Socials</span>
+                <span className="text-zinc-500 text-xs tracking-widest uppercase">
+                  Socials
+                </span>
                 <div className="flex flex-col gap-2">
                   {socialLinks.map((social, i) => (
                     <motion.a
@@ -127,8 +146,14 @@ export const Header: React.FC = () => {
                 </div>
               </div>
               <div className="flex flex-col gap-4">
-                <span className="text-zinc-500 text-xs tracking-widest uppercase">Say Hello</span>
-                <a href="mailto:abhishek@icreatepixels.in" className="text-sm font-medium hover:text-[#ff4d00] transition-colors" data-cursor="MAIL">
+                <span className="text-zinc-500 text-xs tracking-widest uppercase">
+                  Say Hello
+                </span>
+                <a
+                  href="mailto:abhishek@icreatepixels.in"
+                  className="text-sm font-medium hover:text-[#ff4d00] transition-colors"
+                  data-cursor="MAIL"
+                >
                   abhishek@icreatepixels.in
                 </a>
               </div>

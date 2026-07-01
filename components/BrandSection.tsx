@@ -1,36 +1,39 @@
-import React, { useState } from 'react';
-import { BRAND_PROJECTS } from '../constants.ts';
-import { Reveal } from './Reveal.tsx';
+import React, { useState } from "react";
+import { BRAND_PROJECTS } from "../constants.ts";
+import { Reveal } from "./Reveal.tsx";
 
-const BrandCard: React.FC<{ brand: any; index: number }> = ({ brand, index }) => {
+const BrandCard: React.FC<{ brand: any; index: number }> = ({
+  brand,
+  index,
+}) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <Reveal delay={index * 150} direction="up" className="h-full">
-      <a 
-        href={brand.link} 
-        target="_blank" 
+      <a
+        href={brand.link}
+        target="_blank"
         rel="noopener noreferrer"
         className="group relative flex flex-col h-full bg-zinc-500/5 border border-zinc-500/10 hover:border-zinc-500/30 transition-all duration-500 rounded-[2rem] sm:rounded-[2.5rem] block outline-none focus:ring-2 focus:ring-zinc-500/20 overflow-hidden shadow-xl"
       >
         <div className="relative aspect-video overflow-hidden bg-zinc-950/10">
           {!isLoaded && (
             <div className="absolute inset-0 animate-pulse bg-zinc-500/5 flex items-center justify-center">
-               <div className="w-8 h-8 border-2 border-zinc-500/20 border-t-zinc-500/50 rounded-full animate-spin"></div>
+              <div className="w-8 h-8 border-2 border-zinc-500/20 border-t-zinc-500/50 rounded-full animate-spin"></div>
             </div>
           )}
-          
-          <img 
-            src={brand.image} 
-            alt={brand.name} 
+
+          <img
+            src={brand.image}
+            alt={brand.name}
             loading="lazy"
             decoding="async"
             onLoad={() => setIsLoaded(true)}
-            className={`w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-all duration-1000 ease-out ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+            className={`w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-all duration-1000 ease-out ${isLoaded ? "opacity-100" : "opacity-0"}`}
           />
-          
+
           <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-all duration-700 ease-in-out"></div>
-          
+
           <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 transform group-hover:translate-x-2 transition-transform duration-500 z-10">
             <div className="px-4 py-2 sm:px-5 sm:py-2.5 bg-black/60 backdrop-blur-xl border border-white/10 text-white text-[8px] sm:text-[10px] font-black uppercase tracking-[0.2em] rounded-full">
               {brand.category}
@@ -40,22 +43,39 @@ const BrandCard: React.FC<{ brand: any; index: number }> = ({ brand, index }) =>
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 z-20 pointer-events-none sm:pointer-events-auto">
             <div className="flex flex-col items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
               <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white text-black flex items-center justify-center shadow-2xl">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                >
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
               </div>
-              <span className="text-[8px] sm:text-[10px] text-white font-black uppercase tracking-[0.3em] drop-shadow-2xl">Launch Site</span>
+              <span className="text-[8px] sm:text-[10px] text-white font-black uppercase tracking-[0.3em] drop-shadow-2xl">
+                Launch Site
+              </span>
             </div>
           </div>
         </div>
 
         <div className="p-6 sm:p-8 md:p-10 flex flex-col flex-grow">
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold mb-3 sm:mb-4">{brand.name}</h3>
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold mb-3 sm:mb-4">
+            {brand.name}
+          </h3>
           <p className="text-zinc-500 text-xs sm:text-sm lg:text-base leading-relaxed mb-6 sm:mb-8 flex-grow font-light">
             {brand.description}
           </p>
 
           <div className="flex flex-wrap gap-x-4 gap-y-2 pt-5 sm:pt-6 border-t border-zinc-500/10">
             {brand.deliverables.map((item: string, i: number) => (
-              <span key={i} className="text-[7px] sm:text-[9px] font-black text-zinc-400 uppercase tracking-widest flex items-center gap-1.5">
+              <span
+                key={i}
+                className="text-[7px] sm:text-[9px] font-black text-zinc-400 uppercase tracking-widest flex items-center gap-1.5"
+              >
                 <span className="w-1 h-1 bg-zinc-500/40 rounded-full"></span>
                 {item}
               </span>
@@ -72,11 +92,31 @@ export const BrandSection: React.FC = () => {
     <>
       <div className="sr-only">
         <h2>Brand Architecture & Strategy</h2>
-        <p>What We Offer: icreatepixels provides complete brand strategy and positioning services designed to help businesses establish authority and market presence in Navi Mumbai and beyond.</p>
-        <p>Services Include: Brand positioning and market analysis, Messaging architecture and tone guidelines, Visual identity and logo design, Brand guidelines and standards, Rebranding and brand refresh strategies, Brand storytelling and content framework.</p>
-        <p>Why Branding Matters: Strong brands command premium pricing, build customer loyalty, and generate organic referrals. Weak branding leaves money on the table and forces reliance on paid advertising.</p>
-        <p>Results: Clients typically see 40-100% increase in brand awareness, improved market positioning, and stronger customer recognition within 6 months.</p>
-        <p>Keywords: Brand strategy, brand architecture, visual identity, logo design, brand positioning, rebranding, Navi Mumbai branding.</p>
+        <p>
+          What We Offer: icreatepixels provides complete brand strategy and
+          positioning services designed to help businesses establish authority
+          and market presence in Navi Mumbai and beyond.
+        </p>
+        <p>
+          Services Include: Brand positioning and market analysis, Messaging
+          architecture and tone guidelines, Visual identity and logo design,
+          Brand guidelines and standards, Rebranding and brand refresh
+          strategies, Brand storytelling and content framework.
+        </p>
+        <p>
+          Why Branding Matters: Strong brands command premium pricing, build
+          customer loyalty, and generate organic referrals. Weak branding leaves
+          money on the table and forces reliance on paid advertising.
+        </p>
+        <p>
+          Results: Clients typically see 40-100% increase in brand awareness,
+          improved market positioning, and stronger customer recognition within
+          6 months.
+        </p>
+        <p>
+          Keywords: Brand strategy, brand architecture, visual identity, logo
+          design, brand positioning, rebranding, Navi Mumbai branding.
+        </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
         {BRAND_PROJECTS.map((brand, index) => (

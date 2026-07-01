@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { EXPERIENCES } from '../constants.ts';
-import { Reveal } from './Reveal.tsx';
+import React, { useState, useEffect, useRef } from "react";
+import { EXPERIENCES } from "../constants.ts";
+import { Reveal } from "./Reveal.tsx";
 
 export const ExperienceSection: React.FC = () => {
   const [timecode, setTimecode] = useState("00:14:22:04");
@@ -15,14 +15,14 @@ export const ExperienceSection: React.FC = () => {
   // Simple timecode simulation
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimecode(prev => {
-        const parts = prev.split(':').map(Number);
+      setTimecode((prev) => {
+        const parts = prev.split(":").map(Number);
         parts[3]++; // Increment frames
         if (parts[3] >= 24) {
           parts[3] = 0;
           parts[2]++; // Increment seconds
         }
-        return parts.map(p => p.toString().padStart(2, '0')).join(':');
+        return parts.map((p) => p.toString().padStart(2, "0")).join(":");
       });
     }, 41); // Roughly 24fps
     return () => clearInterval(interval);
@@ -68,7 +68,8 @@ export const ExperienceSection: React.FC = () => {
     const rect = sliderRef.current.getBoundingClientRect();
     let percent = (clientX - rect.left) / rect.width;
     percent = Math.max(0, Math.min(1, percent)); // Clamp between 0 and 1
-    const maxScroll = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
+    const maxScroll =
+      scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
     scrollRef.current.scrollLeft = percent * maxScroll;
   };
 
@@ -95,9 +96,11 @@ export const ExperienceSection: React.FC = () => {
         {/* REC Indicator */}
         <div className="absolute top-0 right-6 md:right-12 lg:right-24 flex items-center gap-2">
           <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse"></div>
-          <span className="text-[10px] font-black uppercase tracking-widest">REC [●]</span>
+          <span className="text-[10px] font-black uppercase tracking-widest">
+            REC [●]
+          </span>
         </div>
-        
+
         {/* Camera Stats */}
         <div className="absolute top-0 left-6 md:left-12 lg:left-24 text-[9px] font-black uppercase tracking-[0.4em] flex flex-col gap-1">
           <span>ISO 800</span>
@@ -125,69 +128,103 @@ export const ExperienceSection: React.FC = () => {
       {/* Drag Indicator */}
       <Reveal>
         <div className="text-center mb-8 text-zinc-500 text-[10px] uppercase tracking-widest font-bold flex items-center justify-center gap-2 animate-pulse">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
           Drag to explore timeline
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+          </svg>
         </div>
       </Reveal>
 
       {/* Horizontal Scroll Container */}
-      <div 
+      <div
         ref={scrollRef}
         onScroll={handleScroll}
         onMouseDown={handleMouseDown}
         onMouseLeave={handleMouseLeave}
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
-        className={`relative z-10 overflow-x-auto pb-8 pt-8 [&::-webkit-scrollbar]:hidden ${isDragging ? 'cursor-grabbing' : 'cursor-grab'} select-none`}
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        className={`relative z-10 overflow-x-auto pb-8 pt-8 [&::-webkit-scrollbar]:hidden ${isDragging ? "cursor-grabbing" : "cursor-grab"} select-none`}
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         <div className="relative flex w-max gap-12 md:gap-20 pr-6 md:pr-12 lg:pr-24">
           {/* Horizontal Timeline Line */}
           <div className="absolute top-[14px] left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-500/30 to-transparent pointer-events-none -z-10"></div>
 
           {EXPERIENCES.map((exp, index) => (
-            <Reveal key={index} direction="up" delay={index * 100} width="fit-content" className="flex-shrink-0">
+            <Reveal
+              key={index}
+              direction="up"
+              delay={index * 100}
+              width="fit-content"
+              className="flex-shrink-0"
+            >
               <div className="relative w-[280px] md:w-[380px] flex flex-col pt-12">
-                
                 {/* Timeline Dot */}
                 <div className="absolute left-0 top-2 w-3 h-3 bg-[var(--text-color)] rounded-full border-4 border-[var(--bg-color)] z-10 shadow-[0_0_15px_rgba(255,255,255,0.1)]"></div>
 
-              {/* Content Side */}
-              <div className="text-left">
-                <div className="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-md mb-4 backdrop-blur-sm">
-                  <span className="text-[9px] font-black uppercase tracking-[0.3em] text-zinc-400">{exp.period}</span>
-                </div>
-                
-                <h3 className="text-2xl sm:text-3xl font-serif font-bold mb-2 leading-tight group-hover:text-zinc-300 transition-colors">
-                  {exp.company}
-                </h3>
-                
-                <div className="flex flex-wrap items-center gap-3 mb-6">
-                  <span className="text-xs font-black uppercase tracking-widest text-zinc-500">{exp.role}</span>
-                  <span className="w-1 h-1 bg-zinc-500/30 rounded-full"></span>
-                  <span className="text-[10px] text-zinc-500 uppercase tracking-tighter">{exp.location}</span>
-                </div>
+                {/* Content Side */}
+                <div className="text-left">
+                  <div className="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-md mb-4 backdrop-blur-sm">
+                    <span className="text-[9px] font-black uppercase tracking-[0.3em] text-zinc-400">
+                      {exp.period}
+                    </span>
+                  </div>
 
-                <ul className="space-y-4">
-                  {exp.highlights.map((item, i) => (
-                    <li key={i} className="flex items-start gap-4 text-zinc-400 text-sm leading-relaxed group/item">
-                      <span className="mt-2.5 w-1 h-1 bg-zinc-600 rounded-full flex-shrink-0 group-hover/item:bg-white transition-colors"></span>
-                      <span className="group-hover/item:text-white transition-colors">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                  <h3 className="text-2xl sm:text-3xl font-serif font-bold mb-2 leading-tight group-hover:text-zinc-300 transition-colors">
+                    {exp.company}
+                  </h3>
+
+                  <div className="flex flex-wrap items-center gap-3 mb-6">
+                    <span className="text-xs font-black uppercase tracking-widest text-zinc-500">
+                      {exp.role}
+                    </span>
+                    <span className="w-1 h-1 bg-zinc-500/30 rounded-full"></span>
+                    <span className="text-[10px] text-zinc-500 uppercase tracking-tighter">
+                      {exp.location}
+                    </span>
+                  </div>
+
+                  <ul className="space-y-4">
+                    {exp.highlights.map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-4 text-zinc-400 text-sm leading-relaxed group/item"
+                      >
+                        <span className="mt-2.5 w-1 h-1 bg-zinc-600 rounded-full flex-shrink-0 group-hover/item:bg-white transition-colors"></span>
+                        <span className="group-hover/item:text-white transition-colors">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
-          </Reveal>
-        ))}
+            </Reveal>
+          ))}
         </div>
       </div>
 
       {/* Custom Scrubber Slider */}
       <Reveal delay={400}>
         <div className="relative z-20 mt-8 max-w-md mx-auto px-4">
-          <div 
+          <div
             ref={sliderRef}
             onPointerDown={handleSliderPointerDown}
             onPointerMove={handleSliderPointerMove}
@@ -198,14 +235,14 @@ export const ExperienceSection: React.FC = () => {
             {/* Track Background */}
             <div className="absolute left-0 right-0 h-1 bg-zinc-800 rounded-full overflow-hidden">
               {/* Track Fill */}
-              <div 
+              <div
                 className="absolute top-0 bottom-0 left-0 bg-[var(--text-color)] opacity-50"
                 style={{ width: `${scrollProgress * 100}%` }}
               ></div>
             </div>
-            
+
             {/* Thumb */}
-            <div 
+            <div
               className="absolute w-4 h-4 bg-[var(--text-color)] rounded-full shadow-[0_0_10px_rgba(255,255,255,0.3)] transform -translate-x-1/2 transition-transform group-hover:scale-125"
               style={{ left: `${scrollProgress * 100}%` }}
             ></div>

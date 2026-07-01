@@ -4,6 +4,8 @@ import { BLOG_POSTS } from '../blogs.ts';
 import { SEO } from '../components/SEO.tsx';
 import { Reveal } from '../components/Reveal.tsx';
 import { ArrowLeft, Clock, Calendar, User } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -42,7 +44,7 @@ export const BlogPost: React.FC = () => {
                 {post.category}
               </span>
               
-              <h1 className="text-4xl md:text-6xl font-serif font-black mb-8 text-white tracking-tight leading-[1.1]">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-black mb-8 text-white tracking-tight leading-[1.1]">
                 {post.title}
               </h1>
               
@@ -64,12 +66,10 @@ export const BlogPost: React.FC = () => {
           </Reveal>
 
           <Reveal delay={100}>
-            <div className="prose prose-invert prose-lg max-w-none text-zinc-300">
-              {post.content.map((paragraph, idx) => (
-                <p key={idx} className="mb-8 leading-relaxed">
-                  {paragraph}
-                </p>
-              ))}
+            <div className="prose prose-invert prose-lg max-w-none text-zinc-300 prose-headings:font-serif prose-headings:font-bold prose-headings:text-white prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4 prose-p:leading-relaxed prose-p:mb-6 prose-ul:list-disc prose-ul:pl-6 prose-ul:mb-6 prose-li:mb-2 prose-strong:text-white prose-strong:font-bold">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {post.content}
+              </ReactMarkdown>
             </div>
           </Reveal>
 
