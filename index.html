@@ -201,6 +201,13 @@
         
         .touch-target { min-height: 48px; min-width: 48px; }
 
+        /* Global Cursor Hide */
+        @media (pointer: fine) {
+            * {
+                cursor: none !important;
+            }
+        }
+
         @media (max-width: 640px) {
             .text-fluid-h1 { font-size: clamp(2.2rem, 14vw, 4rem); }
             .text-fluid-h2 { font-size: clamp(1.8rem, 12vw, 3rem); }

@@ -14,7 +14,7 @@ export const DynamicFlipText: React.FC = () => {
   }, []);
 
   return (
-    <span className="relative inline-block w-[240px] sm:w-[300px] md:w-[420px] lg:w-[480px] h-[1.2em] text-center align-bottom overflow-visible">
+    <span className="relative inline-block w-[4.5em] sm:w-[5em] h-[1.2em] text-center align-bottom overflow-visible border-b-4 border-transparent">
       <AnimatePresence mode="popLayout">
         <motion.span
           key={index}

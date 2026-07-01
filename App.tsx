@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import Lenis from 'lenis';
 import { Layout } from './components/Layout.tsx';
 import { Home } from './pages/Home.tsx';
 import { ProductionService } from './pages/ProductionService.tsx';
@@ -11,18 +12,27 @@ import { BlogPost } from './pages/BlogPost.tsx';
 import { Contact } from './pages/Contact.tsx';
 
 const ScrollToTopHelper = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (hash) {
+      setTimeout(() => {
+        const element = document.getElementById(hash.replace('#', ''));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 200);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
 
   return null;
 };
 
 const App: React.FC = () => {
-  // Phase 3: Scroll-Triggered Polish (Makora Studio style)
   useEffect(() => {
+    // Basic Intersection Observer for some legacy reveals if needed
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -32,28 +42,29 @@ const App: React.FC = () => {
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
-    // Initial check
     document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
 
-    // Observe future DOM additions
-    const mutationObserver = new MutationObserver((mutations) => {
-      mutations.forEach(mutation => {
-        mutation.addedNodes.forEach(node => {
-          if (node instanceof HTMLElement) {
-            if (node.classList.contains('reveal-on-scroll')) {
-              observer.observe(node);
-            }
-            node.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
-          }
-        });
-      });
+    // Lenis Smooth Scroll Setup
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
+      infinite: false,
     });
 
-    mutationObserver.observe(document.body, { childList: true, subtree: true });
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
 
     return () => {
       observer.disconnect();
-      mutationObserver.disconnect();
+      lenis.destroy();
     };
   }, []);
 
