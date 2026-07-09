@@ -5,6 +5,8 @@ import {
   ArrowRight,
   X,
   Menu,
+  Sun,
+  Moon,
 } from "lucide-react";
 
 const InstagramIcon = ({ size = 16 }: { size?: number }) => (
@@ -112,6 +114,25 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           <div className="relative z-[210] flex items-center gap-4">
+            {/* Theme Toggle Desktop */}
+            <button
+              onClick={onToggleTheme}
+              className="hidden lg:flex items-center gap-2 rounded-full border border-white/10 px-4 py-3.5 text-white/80 hover:text-white hover:bg-white/10 transition-colors backdrop-blur-md bg-black/50 text-xs font-bold tracking-widest uppercase"
+              aria-label="Toggle theme"
+            >
+              {isLightMode ? (
+                <>
+                  <Moon size={16} />
+                  <span>DARK THEME</span>
+                </>
+              ) : (
+                <>
+                  <Sun size={16} />
+                  <span>LIGHT THEME</span>
+                </>
+              )}
+            </button>
+
             {/* Desktop CTA Button */}
             <Link
               to="/contact"
@@ -120,6 +141,25 @@ export const Navbar: React.FC<NavbarProps> = ({
               BOOK A CALL
               <ArrowRight size={16} />
             </Link>
+
+            {/* Theme Toggle Mobile */}
+            <button
+              onClick={onToggleTheme}
+              className="lg:hidden flex items-center gap-1.5 sm:gap-2 px-3 py-2.5 rounded-full border border-white/10 text-white/80 hover:text-white hover:bg-white/10 transition-colors backdrop-blur-md bg-[#18181b] text-[10px] font-bold tracking-widest uppercase"
+              aria-label="Toggle theme"
+            >
+              {isLightMode ? (
+                <>
+                  <Moon size={14} />
+                  <span>DARK</span>
+                </>
+              ) : (
+                <>
+                  <Sun size={14} />
+                  <span>LIGHT</span>
+                </>
+              )}
+            </button>
 
             {/* Mobile Menu Button */}
             <button

@@ -48,7 +48,7 @@
         "@type": "Person",
         "name": "Abhishek Sanjay Gujar"
       },
-      "telephone": "7400310443",
+      "telephone": "+91 7400310443",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Navi Mumbai",
@@ -74,6 +74,13 @@
           }
         }
       }
+    </script>
+    <script>
+        // Set default theme to light to avoid flashing
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme !== 'dark') {
+            document.documentElement.classList.add('light-mode');
+        }
     </script>
     <style>
         :root {

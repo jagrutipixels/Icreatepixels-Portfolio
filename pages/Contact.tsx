@@ -6,6 +6,8 @@ import { ContactSection } from '../components/ContactSection.tsx';
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState({ name: '', email: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const formRef = useRef<HTMLFormElement>(null);
 
   const validate = () => {
@@ -43,11 +45,41 @@ export const Contact: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
     if (validate()) {
-      if (formRef.current) {
-        formRef.current.submit();
+      setIsSubmitting(true);
+      setSubmitStatus('idle');
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: "4697695a-87d9-4156-87cb-55969daff703",
+            subject: "New Project Inquiry from icreatepixels",
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+          }),
+        });
+        
+        const result = await response.json();
+        if (result.success) {
+          setSubmitStatus('success');
+          setFormData({ name: '', email: '', message: '' });
+        } else {
+          setSubmitStatus('error');
+        }
+      } catch (error) {
+        console.error(error);
+        setSubmitStatus('error');
+      } finally {
+        setIsSubmitting(false);
       }
     }
   };
@@ -59,10 +91,10 @@ export const Contact: React.FC = () => {
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Navi Mumbai",
-      "addressRegion": "MH",
+      "addressRegion": "Maharashtra",
       "addressCountry": "IN"
     },
-    "telephone": "7400310443",
+    "telephone": "+91 7400310443",
     "email": "abhishek@icreatepixels.in",
     "contactPoint": {
       "@type": "ContactPoint",
@@ -99,14 +131,25 @@ export const Contact: React.FC = () => {
             <div className="absolute -top-[1px] left-1/2 -translate-x-1/2 w-1/3 h-[1px] bg-gradient-to-r from-transparent via-[#ff4d00] to-transparent opacity-50"></div>
             
             <div className="mb-16">
-              <form ref={formRef} onSubmit={handleSubmit} action="https://api.web3forms.com/submit" method="POST" className="max-w-2xl mx-auto space-y-6">
-                <input type="hidden" name="access_key" value="4697695a-87d9-4156-87cb-55969daff703" />
-                <input type="hidden" name="subject" value="New Project Inquiry from icreatepixels" />
-                <input type="hidden" name="redirect" value="https://web3forms.com/success" />
-                <input type="checkbox" name="botcheck" className="hidden" style={{display: 'none'}} />
+              {submitStatus === 'success' ? (
+                <div className="max-w-2xl mx-auto text-center py-12 border border-green-500/20 bg-green-500/5 rounded-sm">
+                  <h3 className="text-2xl font-serif font-bold text-white mb-4">Inquiry Received</h3>
+                  <p className="text-zinc-400">Thank you for reaching out. Our strategy team will contact you within 24 hours.</p>
+                  <button onClick={() => setSubmitStatus('idle')} className="mt-8 text-[#ff4d00] hover:text-white uppercase tracking-widest text-xs font-bold transition-colors">
+                    Send another message
+                  </button>
+                </div>
+              ) : (
+                <form ref={formRef} onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
+                  {submitStatus === 'error' && (
+                    <div className="p-4 border border-red-500/20 bg-red-500/5 text-red-400 text-sm rounded-sm mb-6 text-center">
+                      Something went wrong. Please try again or contact us directly via WhatsApp.
+                    </div>
+                  )}
+                  <input type="checkbox" name="botcheck" className="hidden" style={{display: 'none'}} />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
                     <label htmlFor="name" className="block text-xs font-bold uppercase tracking-widest text-zinc-500">Full Name</label>
                     <input 
                       type="text" 
@@ -149,12 +192,14 @@ export const Contact: React.FC = () => {
                 </div>
 
                 <button 
-                  type="submit" 
-                  className="w-full bg-[#ff4d00] text-white font-bold uppercase tracking-widest text-sm py-4 rounded-sm hover:bg-[#ff4d00]/90 transition-colors"
+                  type="submit"
+                  disabled={isSubmitting} 
+                  className="w-full bg-[#ff4d00] text-white font-bold uppercase tracking-widest text-sm py-4 rounded-sm hover:bg-[#ff4d00]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Submit Inquiry
+                  {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
                 </button>
               </form>
+              )}
             </div>
 
             {/* Existing sophisticated contact section elements */}

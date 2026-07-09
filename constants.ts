@@ -63,7 +63,7 @@ export const PROJECTS: Project[] = [
   {
     title: "Bharat Realty Showcase",
     client: "BHARAT REALTY",
-    deliverable: "Visual Storytelling [UNDER CONSTRUCTION]",
+    deliverable: "Visual Storytelling",
     impact: "Production In-Progress",
     image: "https://raw.githubusercontent.com/jagrutipixels/Icreatepixels-Portfolio/3b8c4278cf6ecbc618fe5eef54170856797cd9ae/ChatGPT%20Image%20Apr%209%2C%202026%2C%2006_21_20%20PM.png",
     description: "Revamping the digital property showcase for a real estate firm. This project involves a high-fidelity site-to-screen pipeline currently under development.",

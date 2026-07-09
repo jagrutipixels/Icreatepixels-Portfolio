@@ -48,7 +48,8 @@ export const Hero: React.FC = () => {
           </span>
         </motion.div>
 
-        <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-black leading-[1.05] tracking-tight text-white mb-2 w-full max-w-5xl">
+        <h1 className="sr-only">Premium Video Production & Growth Marketing Agency in Navi Mumbai</h1>
+        <h2 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-black leading-[1.05] tracking-tight text-white mb-2 w-full max-w-5xl">
           <div className="overflow-visible pb-1">
             <motion.div
               custom={0}
@@ -70,7 +71,7 @@ export const Hero: React.FC = () => {
               that <DynamicFlipText />
             </motion.div>
           </div>
-        </h1>
+        </h2>
 
         <div className="flex flex-col items-center gap-6 mt-0 w-full">
           <motion.p

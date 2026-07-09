@@ -31,8 +31,22 @@ export const InteractiveFAQ: React.FC = () => {
     setOpenIndex(openIndex === i ? null : i);
   };
 
+  const structuredData = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.category,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  });
+
   return (
     <section className="py-32 px-6 lg:px-12 bg-[#050505]">
+      <script type="application/ld+json">{structuredData}</script>
       <div className="max-w-[800px] mx-auto">
         <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-white mb-16 text-center">
           Frequently <br /> Asked

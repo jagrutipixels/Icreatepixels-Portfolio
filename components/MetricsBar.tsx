@@ -33,8 +33,11 @@ const Counter = ({ value, suffix }: { value: number; suffix: string }) => {
 
   return (
     <span ref={ref}>
-      {displayValue}
-      {suffix}
+      <span className="sr-only">{value}{suffix}</span>
+      <span aria-hidden="true">
+        {displayValue}
+        {suffix}
+      </span>
     </span>
   );
 };

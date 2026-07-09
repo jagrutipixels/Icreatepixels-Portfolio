@@ -21,10 +21,23 @@ const CinematicAtmosphere: React.FC = () => {
 
 export const Layout: React.FC = () => {
   const { pathname } = useLocation();
+  const [isLightMode, setIsLightMode] = React.useState(() => {
+    return localStorage.getItem('theme') !== 'dark';
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  useEffect(() => {
+    if (isLightMode) {
+      document.documentElement.classList.add('light-mode');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.classList.remove('light-mode');
+      localStorage.setItem('theme', 'dark');
+    }
+  }, [isLightMode]);
 
   return (
     <div className="min-h-screen bg-[#050505] text-white flex flex-col font-sans relative selection:bg-[#ff4d00] selection:text-white">
@@ -34,7 +47,7 @@ export const Layout: React.FC = () => {
       <CinematicAtmosphere />
 
       <div className="relative z-10 flex flex-col flex-1">
-        <Navbar isLightMode={false} onToggleTheme={() => {}} />
+        <Navbar isLightMode={isLightMode} onToggleTheme={() => setIsLightMode(!isLightMode)} />
 
         <main className="flex-1 w-full relative">
           <Outlet />

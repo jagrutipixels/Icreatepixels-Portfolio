@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
-const WORDS = ["Dominate.", "Scale.", "Convert.", "Innovate.", "Captivate."];
+const WORDS = ["Dominate.", "Innovate.", "Captivate.", "Convert."];
 
 export const DynamicFlipText: React.FC = () => {
   const [index, setIndex] = useState(0);
