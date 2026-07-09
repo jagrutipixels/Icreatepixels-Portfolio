@@ -46,14 +46,10 @@ const App: React.FC = () => {
 
     // Lenis Smooth Scroll Setup
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
+      lerp: 0.1,
       smoothWheel: true,
       wheelMultiplier: 1,
       touchMultiplier: 2,
-      infinite: false,
     });
 
     function raf(time: number) {

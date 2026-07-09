@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import { Header } from "./Header.tsx";
+import { Navbar } from "./Navbar.tsx";
 import { ScrollToTop } from "./ScrollToTop.tsx";
 import { Preloader } from "./Preloader.tsx";
 import { CustomCursor } from "./CustomCursor.tsx";
 import { FloatingActionBar } from "./FloatingActionBar.tsx";
+import { AgencyFooter } from "./AgencyFooter.tsx";
 
 const CinematicAtmosphere: React.FC = () => {
   return (
@@ -33,12 +34,13 @@ export const Layout: React.FC = () => {
       <CinematicAtmosphere />
 
       <div className="relative z-10 flex flex-col flex-1">
-        <Header />
+        <Navbar isLightMode={false} onToggleTheme={() => {}} />
 
         <main className="flex-1 w-full relative">
           <Outlet />
         </main>
 
+        <AgencyFooter />
         <FloatingActionBar />
       </div>
     </div>

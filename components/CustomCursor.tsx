@@ -4,14 +4,11 @@ import { motion, useSpring, useMotionValue } from "motion/react";
 export const CustomCursor: React.FC = () => {
   const [isHovering, setIsHovering] = useState(false);
   const [cursorText, setCursorText] = useState("");
-  const cursorSize = isHovering ? 96 : 12;
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  const springConfig = { damping: 25, stiffness: 300, mass: 0.5 };
-  const cursorX = useSpring(mouseX, springConfig);
-  const cursorY = useSpring(mouseY, springConfig);
+  const springConfig = { damping: 28, stiffness: 400, mass: 0.1 };
 
   useEffect(() => {
     // Detect touch devices
@@ -24,9 +21,8 @@ export const CustomCursor: React.FC = () => {
     }
 
     const handleMouseMove = (e: MouseEvent) => {
-      // Offset by half of cursor size
-      mouseX.set(e.clientX - cursorSize / 2);
-      mouseY.set(e.clientY - cursorSize / 2);
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
     };
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -62,14 +58,16 @@ export const CustomCursor: React.FC = () => {
       window.removeEventListener("mouseover", handleMouseOver);
       document.body.style.cursor = "auto";
     };
-  }, [cursorSize, mouseX, mouseY]);
+  }, [mouseX, mouseY]);
 
   return (
     <motion.div
-      className="fixed top-0 left-0 z-[99999] pointer-events-none flex items-center justify-center text-center font-bold tracking-widest text-[10px] text-black overflow-hidden backdrop-blur-sm"
+      className="fixed top-0 left-0 z-[99999] pointer-events-none flex items-center justify-center text-center font-bold tracking-widest text-[10px] text-black overflow-hidden"
       style={{
-        x: cursorX,
-        y: cursorY,
+        x: mouseX,
+        y: mouseY,
+        translateX: "-50%",
+        translateY: "-50%",
         width: isHovering ? (cursorText ? 96 : 48) : 12,
         height: isHovering ? (cursorText ? 96 : 48) : 12,
         borderRadius: "50%",

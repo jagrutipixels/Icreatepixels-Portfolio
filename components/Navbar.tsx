@@ -2,14 +2,26 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import {
-  Twitter,
-  Linkedin,
-  Instagram,
-  Dribbble,
   ArrowRight,
   X,
   Menu,
 } from "lucide-react";
+
+const InstagramIcon = ({ size = 16 }: { size?: number }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+);
+
+const LinkedinIcon = ({ size = 16 }: { size?: number }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+);
+
+const TwitterIcon = ({ size = 16 }: { size?: number }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+);
+
+const DribbbleIcon = ({ size = 16 }: { size?: number }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"></path></svg>
+);
 
 interface NavbarProps {
   isLightMode: boolean;
@@ -64,11 +76,11 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full z-[100] transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] pt-4 md:pt-6 pb-4 px-4 md:px-12 pointer-events-none ${
+        className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] pt-4 md:pt-6 pb-4 px-4 md:px-12 pointer-events-none ${
           isHidden && !isMenuOpen
             ? "-translate-y-full opacity-0"
             : "translate-y-0 opacity-100"
-        }`}
+        } ${isScrolled ? "bg-[#050505]/80 backdrop-blur-md border-b border-white/5 pb-4 md:pt-4" : "bg-transparent"}`}
       >
         <div className="max-w-[1600px] mx-auto flex justify-between items-center pointer-events-auto">
           <Link
@@ -195,18 +207,18 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </div>
                 <div className="flex items-center gap-3">
                   <a
-                    href="#"
+                    href="https://in.linkedin.com/in/icreatepixels"
                     className="w-10 h-10 bg-[#111] hover:bg-[#222] rounded-full flex justify-center items-center text-white/70 hover:text-white transition-colors"
                     aria-label="LinkedIn"
                   >
-                    <Linkedin size={16} />
+                    <LinkedinIcon size={16} />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.instagram.com/icreatepixels/"
                     className="w-10 h-10 bg-[#111] hover:bg-[#222] rounded-full flex justify-center items-center text-white/70 hover:text-white transition-colors"
                     aria-label="Instagram"
                   >
-                    <Instagram size={16} />
+                    <InstagramIcon size={16} />
                   </a>
                 </div>
               </div>

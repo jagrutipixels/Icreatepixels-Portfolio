@@ -42,11 +42,13 @@ const Counter = ({ value, suffix }: { value: number; suffix: string }) => {
 export const MetricsBar: React.FC = () => {
   return (
     <section className="py-24 px-6 lg:px-12 bg-[#050505] border-y border-white/5">
-      <div className="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-6 divide-x divide-white/5">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-y-12 md:gap-6">
         {metrics.map((metric, i) => (
           <div
             key={i}
-            className="flex flex-col items-center justify-center text-center px-4"
+            className={`flex flex-col items-center justify-center text-center px-4 ${
+              i !== 0 && i !== 2 ? "border-l border-white/5" : ""
+            } ${i === 2 || i === 3 ? "md:border-l border-white/5" : ""}`}
           >
             <h4 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter mb-2">
               <Counter value={metric.value} suffix={metric.suffix} />
