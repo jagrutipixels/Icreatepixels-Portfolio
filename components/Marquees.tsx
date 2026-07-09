@@ -31,7 +31,7 @@ export const Marquees: React.FC = () => {
           {[...images, ...images, ...images, ...images].map((img, i) => (
             <div
               key={i}
-              className="w-[320px] h-[180px] sm:w-[480px] sm:h-[270px] md:w-[640px] md:h-[360px] lg:w-[800px] lg:h-[450px] shrink-0 overflow-hidden bg-zinc-900 rounded-sm"
+              className="w-[320px] h-[180px] sm:w-[480px] sm:h-[270px] md:w-[640px] md:h-[360px] lg:w-[800px] lg:h-[450px] shrink-0 overflow-hidden bg-zinc-900 rounded-2xl"
               data-cursor="VIEW"
             >
               <img

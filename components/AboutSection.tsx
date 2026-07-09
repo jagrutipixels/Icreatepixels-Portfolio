@@ -79,11 +79,11 @@ export const AboutSection: React.FC = () => {
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#050505] to-transparent"></div>
                   </div>
                 )}
                 <div className="relative p-8 md:p-10">
-                  <div className="absolute top-0 left-10 -translate-y-1/2 px-4 py-1 bg-[#0a0a0a] border border-zinc-500/20 text-[8px] font-black uppercase tracking-[0.4em] text-zinc-500 z-10">
+                  <div className="absolute top-0 left-10 -translate-y-1/2 px-4 py-1 bg-[#050505] border border-zinc-500/20 text-[8px] font-black uppercase tracking-[0.4em] text-zinc-500 z-10">
                     Director's Note
                   </div>
 

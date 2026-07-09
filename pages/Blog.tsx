@@ -49,11 +49,11 @@ export const Blog: React.FC = () => {
         </div>
       </div>
 
-      <div className="py-12 px-6 bg-[#0a0a0a]">
+      <div className="py-12 px-6 bg-[#050505]">
         <div className="max-w-7xl mx-auto">
           
           {/* Sticky Filter Bar */}
-          <div className="sticky top-20 z-40 bg-[#0a0a0a]/90 backdrop-blur-md py-4 mb-12 border-b border-white/5 overflow-x-auto">
+          <div className="sticky top-20 z-40 bg-[#050505]/90 backdrop-blur-md py-4 mb-12 border-b border-white/5 overflow-x-auto">
             <div className="flex gap-4 min-w-max">
               {categories.map(cat => (
                 <button
@@ -75,10 +75,10 @@ export const Blog: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredArticles.map((article, idx) => (
               <Reveal key={article.id} delay={idx * 50}>
-                <Link to={`/blog/${article.slug}`} className="block border border-white/10 bg-[#050505] p-8 h-full flex flex-col justify-between group hover:border-[#ff4d00]/50 transition-colors">
+                <Link to={`/blog/${article.slug}`} className="block bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 h-full flex flex-col justify-between group hover:border-[#ff4d00]/50 transition-colors">
                   <div>
                     <div className="flex items-center justify-between mb-6">
-                      <span className="text-[#ff4d00] text-[10px] font-black uppercase tracking-widest bg-[#ff4d00]/10 px-3 py-1 rounded-sm">
+                      <span className="text-[#ff4d00] text-[10px] font-black uppercase tracking-widest bg-[#ff4d00]/10 px-3 py-1 rounded-2xl">
                         {article.category}
                       </span>
                       <span className="text-zinc-600 text-xs font-medium">{article.readTime}</span>

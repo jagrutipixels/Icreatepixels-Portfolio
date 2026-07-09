@@ -53,7 +53,7 @@ export const Hero: React.FC = () => {
           <div className="overflow-visible pb-1">
             <motion.div
               custom={0}
-              variants={lineVariants}
+              variants={lineVariants as any}
               initial="hidden"
               animate="visible"
             >
@@ -63,7 +63,7 @@ export const Hero: React.FC = () => {
           <div className="overflow-visible pb-4">
             <motion.div
               custom={1}
-              variants={lineVariants}
+              variants={lineVariants as any}
               initial="hidden"
               animate="visible"
               className="flex justify-center items-center flex-wrap gap-x-3 gap-y-2"

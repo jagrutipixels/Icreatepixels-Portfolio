@@ -38,7 +38,7 @@ export const FeaturedWork: React.FC = () => {
                 className={`group flex flex-col gap-6 ${i % 2 !== 0 ? "md:mt-32" : ""}`}
               >
                 <div
-                  className="w-full aspect-[4/5] bg-zinc-900 overflow-hidden relative cursor-none rounded-md"
+                  className="w-full aspect-[4/5] bg-zinc-900 overflow-hidden relative cursor-none rounded-3xl"
                   data-cursor="VIEW WORK"
                 >
                   <img

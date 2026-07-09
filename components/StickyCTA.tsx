@@ -32,7 +32,7 @@ export const StickyCTA: React.FC = () => {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="fixed bottom-6 left-6 z-[90] max-w-[300px]"
         >
-          <div className="bg-[#050505] border border-white/10 p-5 rounded-sm shadow-2xl relative">
+          <div className="bg-[#050505] border border-white/10 p-5 rounded-2xl shadow-2xl relative">
             <button
               onClick={handleDismiss}
               className="absolute top-2 right-2 text-zinc-500 hover:text-white transition-colors"
@@ -49,7 +49,7 @@ export const StickyCTA: React.FC = () => {
             <Link
               to="/contact"
               onClick={handleDismiss}
-              className="inline-flex items-center gap-2 bg-[#ff4d00] text-white px-4 py-2 font-semibold text-sm rounded-sm hover:bg-[#ff4d00]/90 transition-colors"
+              className="inline-flex items-center gap-2 bg-[#ff4d00] text-white px-4 py-2 font-semibold text-sm rounded-2xl hover:bg-[#ff4d00]/90 transition-colors"
             >
               Get a Quote <ArrowRight size={14} />
             </Link>

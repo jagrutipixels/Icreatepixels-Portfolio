@@ -29,7 +29,7 @@ export const Preloader: React.FC = () => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#0a0a0a]"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#050505]"
           initial={{ y: 0 }}
           exit={{ y: "-100%" }}
           transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}

@@ -76,14 +76,14 @@ export const AboutUs: React.FC = () => {
           <div className="w-full md:w-1/2">
             <Reveal delay={200}>
               <div className="relative aspect-[4/5] w-full max-w-md mx-auto">
-                <div className="absolute inset-0 bg-[#ff4d00] translate-x-4 translate-y-4 rounded-sm"></div>
+                <div className="absolute inset-0 bg-[#ff4d00] translate-x-4 translate-y-4 rounded-2xl"></div>
                 <img 
                   src={PERSONAL_INFO.image} 
                   alt="Abhishek Sanjay Gujar - Founder & Creative Director" 
                   loading="lazy"
                   decoding="async"
                   referrerPolicy="no-referrer"
-                  className="absolute inset-0 w-full h-full object-cover rounded-sm grayscale contrast-125 hover:grayscale-0 transition-all duration-1000 z-10"
+                  className="absolute inset-0 w-full h-full object-cover rounded-2xl grayscale contrast-125 hover:grayscale-0 transition-all duration-1000 z-10"
                 />
                 <div className="absolute bottom-6 left-6 z-20 bg-[#050505]/90 backdrop-blur-md px-6 py-4 border border-white/10">
                   <h4 className="text-white font-bold text-xl uppercase tracking-wider mb-1">Abhishek Gujar</h4>
@@ -95,7 +95,7 @@ export const AboutUs: React.FC = () => {
         </div>
       </div>
 
-      <div className="py-24 px-6 bg-[#0a0a0a]">
+      <div className="py-24 px-6 bg-[#050505]">
          <div className="max-w-7xl mx-auto">
             <Reveal>
               <div className="text-center mb-16">

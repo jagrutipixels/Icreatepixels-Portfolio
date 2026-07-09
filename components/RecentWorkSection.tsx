@@ -289,8 +289,6 @@ export const RecentWorkSection: React.FC = () => {
                     <svg
                       width="16"
                       height="16"
-                      md:width="20"
-                      md:height="20"
                       viewBox="0 0 24 24"
                       fill="currentColor"
                       className="group-hover/btn:scale-110 transition-transform"

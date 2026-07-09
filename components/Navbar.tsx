@@ -25,15 +25,7 @@ const DribbbleIcon = ({ size = 16 }: { size?: number }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"></path></svg>
 );
 
-interface NavbarProps {
-  isLightMode: boolean;
-  onToggleTheme: () => void;
-}
-
-export const Navbar: React.FC<NavbarProps> = ({
-  isLightMode,
-  onToggleTheme,
-}) => {
+export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -114,52 +106,14 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           <div className="relative z-[210] flex items-center gap-4">
-            {/* Theme Toggle Desktop */}
-            <button
-              onClick={onToggleTheme}
-              className="hidden lg:flex items-center gap-2 rounded-full border border-white/10 px-4 py-3.5 text-white/80 hover:text-white hover:bg-white/10 transition-colors backdrop-blur-md bg-black/50 text-xs font-bold tracking-widest uppercase"
-              aria-label="Toggle theme"
-            >
-              {isLightMode ? (
-                <>
-                  <Moon size={16} />
-                  <span>DARK THEME</span>
-                </>
-              ) : (
-                <>
-                  <Sun size={16} />
-                  <span>LIGHT THEME</span>
-                </>
-              )}
-            </button>
-
             {/* Desktop CTA Button */}
             <Link
               to="/contact"
-              className="hidden lg:flex bg-[#ff4d00] text-white hover:bg-[#e64500] py-3.5 px-8 rounded-full font-bold text-xs xl:text-sm tracking-widest uppercase items-center gap-3 transition-colors shadow-[0_0_20px_rgba(255,77,0,0.3)]"
+              className="hidden lg:flex bg-white text-black py-4 px-8 rounded-full font-bold text-xs xl:text-sm tracking-widest uppercase items-center gap-3 hover:bg-black hover:text-white border border-transparent hover:border-white transition-colors"
             >
               BOOK A CALL
               <ArrowRight size={16} />
             </Link>
-
-            {/* Theme Toggle Mobile */}
-            <button
-              onClick={onToggleTheme}
-              className="lg:hidden flex items-center gap-1.5 sm:gap-2 px-3 py-2.5 rounded-full border border-white/10 text-white/80 hover:text-white hover:bg-white/10 transition-colors backdrop-blur-md bg-[#18181b] text-[10px] font-bold tracking-widest uppercase"
-              aria-label="Toggle theme"
-            >
-              {isLightMode ? (
-                <>
-                  <Moon size={14} />
-                  <span>DARK</span>
-                </>
-              ) : (
-                <>
-                  <Sun size={14} />
-                  <span>LIGHT</span>
-                </>
-              )}
-            </button>
 
             {/* Mobile Menu Button */}
             <button
@@ -227,7 +181,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <Link
                 to="/contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="bg-[#ff4d00] text-white hover:bg-[#e64500] py-3.5 sm:py-4 px-8 rounded-full font-bold text-sm tracking-widest uppercase flex items-center justify-center gap-4 transition-colors w-full"
+                className="bg-white text-black py-4 px-8 rounded-full font-bold text-sm tracking-widest uppercase flex items-center justify-center gap-4 hover:bg-black hover:text-white border border-transparent hover:border-white transition-colors w-full"
               >
                 BOOK A CALL
                 <ArrowRight size={18} />

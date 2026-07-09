@@ -180,7 +180,7 @@ export const ServiceDetail: React.FC = () => {
         <h1 className="text-4xl font-serif font-black text-white mb-6">Service Not Found</h1>
         <button 
           onClick={() => navigate(-1)} 
-          className="bg-[#ff4d00] text-white px-8 py-4 rounded-sm font-bold tracking-widest uppercase text-sm hover:bg-[#ff4d00]/90 transition-all"
+          className="bg-[#ff4d00] text-white px-8 py-4 rounded-xl font-bold tracking-widest uppercase text-sm hover:bg-[#ff4d00]/90 transition-all"
         >
           Go Back
         </button>
@@ -217,7 +217,7 @@ export const ServiceDetail: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
             <Reveal>
-              <div className="bg-[#0a0a0a] border border-white/10 p-8 rounded-sm h-full">
+              <div className="bg-[#050505] border border-white/10 p-8 rounded-2xl h-full">
                 <h3 className="text-2xl font-bold text-white mb-6">What You Get</h3>
                 <ul className="space-y-4">
                   {service.benefits.map((benefit, idx) => (
@@ -231,7 +231,7 @@ export const ServiceDetail: React.FC = () => {
             </Reveal>
             
             <Reveal delay={100}>
-              <div className="bg-[#0a0a0a] border border-white/10 p-8 rounded-sm h-full">
+              <div className="bg-[#050505] border border-white/10 p-8 rounded-2xl h-full">
                 <h3 className="text-2xl font-bold text-white mb-6">Our Process</h3>
                 <div className="space-y-6">
                   {service.process.map((step, idx) => (
@@ -246,12 +246,12 @@ export const ServiceDetail: React.FC = () => {
           </div>
           
           <Reveal>
-            <div className="bg-gradient-to-br from-[#1a0800] to-[#050505] border border-[#ff4d00]/30 p-10 rounded-sm text-center">
+            <div className="bg-gradient-to-br from-[#1a0800] to-[#050505] border border-[#ff4d00]/30 p-10 md:p-16 rounded-3xl text-center">
               <h2 className="text-3xl font-serif font-bold text-white mb-6">Ready to scale your {service.categoryName.toLowerCase()}?</h2>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link 
                   to="/contact" 
-                  className="w-full sm:w-auto inline-block bg-[#ff4d00] text-white px-10 py-4 rounded-sm font-bold tracking-widest uppercase text-sm hover:bg-[#ff4d00]/90 transition-all"
+                  className="w-full sm:w-auto inline-block bg-[#ff4d00] text-white px-10 py-4 rounded-xl font-bold tracking-widest uppercase text-sm hover:bg-[#ff4d00]/90 transition-all"
                 >
                   {service.ctaText}
                 </Link>
@@ -259,7 +259,7 @@ export const ServiceDetail: React.FC = () => {
                   href="https://wa.me/917400310443" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-block bg-transparent border border-white/20 text-white px-10 py-4 rounded-sm font-bold tracking-widest uppercase text-sm hover:bg-white/10 transition-all"
+                  className="w-full sm:w-auto inline-block bg-transparent border border-white/20 text-white px-10 py-4 rounded-xl font-bold tracking-widest uppercase text-sm hover:bg-white/10 transition-all"
                 >
                   WhatsApp Us
                 </a>

@@ -40,7 +40,7 @@ export const BlogPost: React.FC = () => {
 
           <Reveal>
             <div className="mb-16">
-              <span className="text-[#ff4d00] text-[10px] font-black uppercase tracking-widest bg-[#ff4d00]/10 px-3 py-1 rounded-sm mb-6 inline-block">
+              <span className="text-[#ff4d00] text-[10px] font-black uppercase tracking-widest bg-[#ff4d00]/10 px-3 py-1 rounded-2xl mb-6 inline-block">
                 {post.category}
               </span>
               
@@ -78,7 +78,7 @@ export const BlogPost: React.FC = () => {
             <p className="text-zinc-400 mb-8 max-w-xl mx-auto">
               Whether it's cinematic video production or data-backed performance marketing, our team in Navi Mumbai is ready to craft your next campaign.
             </p>
-            <Link to="/contact" className="inline-flex items-center gap-2 bg-[#ff4d00] text-white px-8 py-4 rounded-sm font-bold uppercase tracking-wide hover:bg-orange-600 transition-colors">
+            <Link to="/contact" className="inline-flex items-center gap-2 bg-[#ff4d00] text-white px-8 py-4 rounded-2xl font-bold uppercase tracking-wide hover:bg-orange-600 transition-colors">
               Start a Project
             </Link>
           </Reveal>

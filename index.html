@@ -75,13 +75,6 @@
         }
       }
     </script>
-    <script>
-        // Set default theme to light to avoid flashing
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme !== 'dark') {
-            document.documentElement.classList.add('light-mode');
-        }
-    </script>
     <style>
         :root {
             --bg-color: #050505;
@@ -124,14 +117,10 @@
             scroll-margin-top: clamp(80px, 12vh, 120px);
         }
 
-        .light-mode {
-            filter: invert(1) hue-rotate(180deg);
-        }
         .light-mode img:not([alt*="Logo"]),
         .light-mode video,
         .light-mode iframe,
         .light-mode .no-invert {
-            filter: invert(1) hue-rotate(180deg);
         }
         .grain::before {
             content: "";

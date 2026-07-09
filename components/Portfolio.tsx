@@ -21,7 +21,7 @@ const ProjectCard: React.FC<{
         role="button"
         tabIndex={0}
         onKeyDown={(e) => e.key === "Enter" && onClick()}
-        className="group h-full cursor-pointer relative overflow-hidden bg-zinc-900/50 border border-zinc-800/20 hover:border-zinc-700/50 transition-all duration-500 rounded-xl flex flex-col active:scale-[0.99] outline-none shadow-sm"
+        className="group h-full cursor-pointer relative overflow-hidden bg-white/5 border border-white/10 hover:border-[#ff4d00]/50 transition-all duration-500 rounded-3xl flex flex-col active:scale-[0.99] outline-none shadow-sm"
       >
         <div className="aspect-[4/3] relative overflow-hidden bg-zinc-950/10">
           {!imageLoaded && (

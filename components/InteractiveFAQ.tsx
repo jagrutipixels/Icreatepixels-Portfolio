@@ -60,11 +60,11 @@ export const InteractiveFAQ: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="border-b border-white/10"
+              className="bg-white/5 border border-white/10 rounded-3xl p-6 mb-4 hover:border-[#ff4d00]/50 transition-colors"
             >
               <button
                 onClick={() => toggle(i)}
-                className="w-full py-6 flex justify-between items-center text-left focus:outline-none"
+                className="w-full py-2 flex justify-between items-center text-left focus:outline-none"
                 data-cursor="CLICK"
               >
                 <span className="text-xl md:text-2xl font-bold tracking-tight text-white group-hover:text-[#ff4d00] transition-colors">

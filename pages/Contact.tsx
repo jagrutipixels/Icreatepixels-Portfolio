@@ -127,12 +127,12 @@ export const Contact: React.FC = () => {
             </div>
           </Reveal>
           
-          <div className="bg-[#0a0a0a] border border-white/10 rounded-sm p-4 sm:p-6 md:p-12 shadow-2xl relative">
+          <div className="bg-white/5 border border-white/10 rounded-3xl p-4 sm:p-6 md:p-12 shadow-2xl relative">
             <div className="absolute -top-[1px] left-1/2 -translate-x-1/2 w-1/3 h-[1px] bg-gradient-to-r from-transparent via-[#ff4d00] to-transparent opacity-50"></div>
             
             <div className="mb-16">
               {submitStatus === 'success' ? (
-                <div className="max-w-2xl mx-auto text-center py-12 border border-green-500/20 bg-green-500/5 rounded-sm">
+                <div className="max-w-2xl mx-auto text-center py-12 border border-green-500/20 bg-green-500/5 rounded-2xl">
                   <h3 className="text-2xl font-serif font-bold text-white mb-4">Inquiry Received</h3>
                   <p className="text-zinc-400">Thank you for reaching out. Our strategy team will contact you within 24 hours.</p>
                   <button onClick={() => setSubmitStatus('idle')} className="mt-8 text-[#ff4d00] hover:text-white uppercase tracking-widest text-xs font-bold transition-colors">
@@ -142,7 +142,7 @@ export const Contact: React.FC = () => {
               ) : (
                 <form ref={formRef} onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
                   {submitStatus === 'error' && (
-                    <div className="p-4 border border-red-500/20 bg-red-500/5 text-red-400 text-sm rounded-sm mb-6 text-center">
+                    <div className="p-4 border border-red-500/20 bg-red-500/5 text-red-400 text-sm rounded-2xl mb-6 text-center">
                       Something went wrong. Please try again or contact us directly via WhatsApp.
                     </div>
                   )}
@@ -157,7 +157,7 @@ export const Contact: React.FC = () => {
                       name="name" 
                       value={formData.name}
                       onChange={handleChange}
-                      className={`w-full bg-[#050505] border ${errors.name ? 'border-red-500/50' : 'border-white/10'} rounded-sm px-4 py-3 text-white focus:outline-none focus:border-[#ff4d00]/50 transition-colors`}
+                      className={`w-full bg-white/5 border ${errors.name ? 'border-red-500/50' : 'border-white/10'} rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#ff4d00] transition-colors`}
                       placeholder="Jane Doe"
                     />
                     {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
@@ -170,7 +170,7 @@ export const Contact: React.FC = () => {
                       name="email" 
                       value={formData.email}
                       onChange={handleChange}
-                      className={`w-full bg-[#050505] border ${errors.email ? 'border-red-500/50' : 'border-white/10'} rounded-sm px-4 py-3 text-white focus:outline-none focus:border-[#ff4d00]/50 transition-colors`}
+                      className={`w-full bg-white/5 border ${errors.email ? 'border-red-500/50' : 'border-white/10'} rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#ff4d00] transition-colors`}
                       placeholder="jane@example.com"
                     />
                     {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
@@ -185,7 +185,7 @@ export const Contact: React.FC = () => {
                     rows={5} 
                     value={formData.message}
                     onChange={handleChange}
-                    className={`w-full bg-[#050505] border ${errors.message ? 'border-red-500/50' : 'border-white/10'} rounded-sm px-4 py-3 text-white focus:outline-none focus:border-[#ff4d00]/50 transition-colors resize-none`}
+                    className={`w-full bg-white/5 border ${errors.message ? 'border-red-500/50' : 'border-white/10'} rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#ff4d00] transition-colors resize-none`}
                     placeholder="Tell us about your brand and what you want to achieve..."
                   ></textarea>
                   {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
@@ -194,7 +194,7 @@ export const Contact: React.FC = () => {
                 <button 
                   type="submit"
                   disabled={isSubmitting} 
-                  className="w-full bg-[#ff4d00] text-white font-bold uppercase tracking-widest text-sm py-4 rounded-sm hover:bg-[#ff4d00]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-white text-black px-8 py-4 font-bold uppercase tracking-wider text-sm hover:bg-black hover:text-white border border-transparent hover:border-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed rounded-xl"
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
                 </button>

@@ -14,7 +14,7 @@ const BrandCard: React.FC<{ brand: any; index: number }> = ({
         href={brand.link}
         target="_blank"
         rel="noopener noreferrer"
-        className="group relative flex flex-col h-full bg-zinc-500/5 border border-zinc-500/10 hover:border-zinc-500/30 transition-all duration-500 rounded-[2rem] sm:rounded-[2.5rem] block outline-none focus:ring-2 focus:ring-zinc-500/20 overflow-hidden shadow-xl"
+        className="group relative flex flex-col h-full bg-white/5 border border-white/10 hover:border-[#ff4d00]/50 transition-all duration-500 rounded-3xl block outline-none focus:ring-2 focus:ring-[#ff4d00] overflow-hidden shadow-xl"
       >
         <div className="relative aspect-video overflow-hidden bg-zinc-950/10">
           {!isLoaded && (

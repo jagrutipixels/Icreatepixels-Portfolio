@@ -61,7 +61,7 @@ export const BentoServices: React.FC = () => {
                 delay: i * 0.1,
                 ease: [0.76, 0, 0.24, 1],
               }}
-              className={`bg-[#0a0a0a] border border-white/10 rounded-xl p-8 flex flex-col justify-between hover:border-[#ff4d00]/50 transition-colors ${service.colSpan}`}
+              className={`bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 flex flex-col justify-between hover:border-[#ff4d00]/50 transition-colors ${service.colSpan}`}
             >
               <div>
                 <h3 className="text-2xl font-bold tracking-tight text-white mb-3">

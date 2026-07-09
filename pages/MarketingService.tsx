@@ -61,19 +61,19 @@ export const MarketingService: React.FC = () => {
             <p className="text-zinc-400 max-w-2xl text-lg leading-relaxed mb-12">
               Vanity metrics are dead. We architect data-driven marketing systems, SEO pipelines, and social media ecosystems that convert awareness into actual cash flow.
             </p>
-            <Link to="/contact" className="bg-[#ff4d00] text-white px-8 py-4 rounded-sm font-bold tracking-widest uppercase text-sm hover:bg-[#ff4d00]/90 transition-all inline-block">
+            <Link to="/contact" className="bg-[#ff4d00] text-white px-8 py-4 rounded-2xl font-bold tracking-widest uppercase text-sm hover:bg-[#ff4d00]/90 transition-all inline-block">
               Audit My Brand
             </Link>
           </Reveal>
         </div>
       </div>
 
-      <div className="py-24 px-6 bg-[#0a0a0a]">
+      <div className="py-24 px-6 bg-[#050505]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             
             <Reveal>
-              <div className="border border-white/10 p-10 bg-[#050505] hover:border-[#ff4d00]/50 transition-colors h-full flex flex-col group">
+              <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 hover:border-[#ff4d00]/50 transition-colors h-full flex flex-col group">
                 <Search size={48} className="text-[#ff4d00] mb-6" />
                 <h3 className="text-3xl font-bold text-white mb-4">Local & Global SEO</h3>
                 <p className="text-zinc-400 leading-relaxed mb-6">
@@ -91,7 +91,7 @@ export const MarketingService: React.FC = () => {
             </Reveal>
 
             <Reveal delay={100}>
-              <div className="border border-white/10 p-10 bg-[#050505] hover:border-[#ff4d00]/50 transition-colors h-full flex flex-col group">
+              <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 hover:border-[#ff4d00]/50 transition-colors h-full flex flex-col group">
                 <Smartphone size={48} className="text-[#ff4d00] mb-6" />
                 <h3 className="text-3xl font-bold text-white mb-4">Social Media Architecture</h3>
                 <p className="text-zinc-400 leading-relaxed mb-6">
@@ -109,7 +109,7 @@ export const MarketingService: React.FC = () => {
             </Reveal>
 
             <Reveal>
-              <div className="border border-white/10 p-10 bg-[#050505] hover:border-[#ff4d00]/50 transition-colors h-full flex flex-col group">
+              <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 hover:border-[#ff4d00]/50 transition-colors h-full flex flex-col group">
                 <Target size={48} className="text-[#ff4d00] mb-6" />
                 <h3 className="text-3xl font-bold text-white mb-4">Performance Marketing</h3>
                 <p className="text-zinc-400 leading-relaxed mb-6">
@@ -127,7 +127,7 @@ export const MarketingService: React.FC = () => {
             </Reveal>
 
             <Reveal delay={100}>
-              <div className="border border-white/10 p-10 bg-[#050505] hover:border-[#ff4d00]/50 transition-colors h-full flex flex-col group">
+              <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 hover:border-[#ff4d00]/50 transition-colors h-full flex flex-col group">
                 <LineChart size={48} className="text-[#ff4d00] mb-6" />
                 <h3 className="text-3xl font-bold text-white mb-4">Conversion Rate Optimization</h3>
                 <p className="text-zinc-400 leading-relaxed mb-6">
