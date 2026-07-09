@@ -73,62 +73,74 @@ export const MarketingService: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             
             <Reveal>
-              <div className="border border-white/10 p-10 bg-[#050505] hover:border-[#ff4d00]/50 transition-colors h-full group">
+              <div className="border border-white/10 p-10 bg-[#050505] hover:border-[#ff4d00]/50 transition-colors h-full flex flex-col group">
                 <Search size={48} className="text-[#ff4d00] mb-6" />
                 <h3 className="text-3xl font-bold text-white mb-4">Local & Global SEO</h3>
                 <p className="text-zinc-400 leading-relaxed mb-6">
                   If you aren't on page one, you don't exist. We optimize your digital presence to dominate search intent and conquer local map packs in Navi Mumbai and beyond.
                 </p>
-                <ul className="space-y-2 mb-8 text-zinc-500">
+                <ul className="space-y-2 mb-8 text-zinc-500 flex-grow">
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Technical Audits & Fixes</li>
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Keyword Dominance Strategy</li>
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Google Business Profile Optimization</li>
                 </ul>
+                <Link to="/social-media-marketing-navi-mumbai/local-global-seo" className="text-[#ff4d00] text-sm font-bold tracking-widest uppercase hover:text-white transition-colors flex items-center gap-2 mt-auto">
+                  Know More <span>&rarr;</span>
+                </Link>
               </div>
             </Reveal>
 
             <Reveal delay={100}>
-              <div className="border border-white/10 p-10 bg-[#050505] hover:border-[#ff4d00]/50 transition-colors h-full group">
+              <div className="border border-white/10 p-10 bg-[#050505] hover:border-[#ff4d00]/50 transition-colors h-full flex flex-col group">
                 <Smartphone size={48} className="text-[#ff4d00] mb-6" />
                 <h3 className="text-3xl font-bold text-white mb-4">Social Media Architecture</h3>
                 <p className="text-zinc-400 leading-relaxed mb-6">
                   We don't just "post." We build communities. From grid aesthetics to algorithmic hacks, we manage your social presence to drive authentic engagement.
                 </p>
-                <ul className="space-y-2 mb-8 text-zinc-500">
+                <ul className="space-y-2 mb-8 text-zinc-500 flex-grow">
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> End-to-End Grid Management</li>
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Organic Growth Campaigns</li>
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Influencer & Collaboration Outreach</li>
                 </ul>
+                <Link to="/social-media-marketing-navi-mumbai/social-media-architecture" className="text-[#ff4d00] text-sm font-bold tracking-widest uppercase hover:text-white transition-colors flex items-center gap-2 mt-auto">
+                  Know More <span>&rarr;</span>
+                </Link>
               </div>
             </Reveal>
 
             <Reveal>
-              <div className="border border-white/10 p-10 bg-[#050505] hover:border-[#ff4d00]/50 transition-colors h-full group">
+              <div className="border border-white/10 p-10 bg-[#050505] hover:border-[#ff4d00]/50 transition-colors h-full flex flex-col group">
                 <Target size={48} className="text-[#ff4d00] mb-6" />
                 <h3 className="text-3xl font-bold text-white mb-4">Performance Marketing</h3>
                 <p className="text-zinc-400 leading-relaxed mb-6">
                   Stop burning money on bad ads. We deploy highly targeted, mathematically sound ad campaigns across Meta and Google to acquire customers profitably.
                 </p>
-                <ul className="space-y-2 mb-8 text-zinc-500">
+                <ul className="space-y-2 mb-8 text-zinc-500 flex-grow">
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Paid Social & Search Ads</li>
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Retargeting Funnels</li>
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> A/B Creative Testing</li>
                 </ul>
+                <Link to="/social-media-marketing-navi-mumbai/performance-marketing" className="text-[#ff4d00] text-sm font-bold tracking-widest uppercase hover:text-white transition-colors flex items-center gap-2 mt-auto">
+                  Know More <span>&rarr;</span>
+                </Link>
               </div>
             </Reveal>
 
             <Reveal delay={100}>
-              <div className="border border-white/10 p-10 bg-[#050505] hover:border-[#ff4d00]/50 transition-colors h-full group">
+              <div className="border border-white/10 p-10 bg-[#050505] hover:border-[#ff4d00]/50 transition-colors h-full flex flex-col group">
                 <LineChart size={48} className="text-[#ff4d00] mb-6" />
                 <h3 className="text-3xl font-bold text-white mb-4">Conversion Rate Optimization</h3>
                 <p className="text-zinc-400 leading-relaxed mb-6">
                   Traffic is useless if it doesn't convert. We audit and rebuild digital touchpoints (landing pages, checkout flows) to maximize conversion percentages.
                 </p>
-                <ul className="space-y-2 mb-8 text-zinc-500">
+                <ul className="space-y-2 mb-8 text-zinc-500 flex-grow">
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Landing Page Architecture</li>
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Copywriting & Psychology</li>
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> User Journey Mapping</li>
                 </ul>
+                <Link to="/social-media-marketing-navi-mumbai/conversion-rate-optimization" className="text-[#ff4d00] text-sm font-bold tracking-widest uppercase hover:text-white transition-colors flex items-center gap-2 mt-auto">
+                  Know More <span>&rarr;</span>
+                </Link>
               </div>
             </Reveal>
 

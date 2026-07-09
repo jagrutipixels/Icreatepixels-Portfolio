@@ -1,17 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { MessageCircle } from "lucide-react";
 
 export const FloatingActionBar: React.FC = () => {
   return (
     <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[8000] flex items-center justify-center pointer-events-none w-full px-4 max-w-[max-content]">
       <div className="bg-white/10 backdrop-blur-xl border border-white/10 p-2 rounded-full flex items-center justify-between gap-2 pointer-events-auto shadow-2xl w-full">
-        <Link
-          to="/#services"
-          className="px-4 sm:px-6 py-3 text-[10px] sm:text-xs font-bold tracking-widest text-white uppercase hover:text-[#ff4d00] transition-colors whitespace-nowrap"
-          data-cursor="CLICK"
+        <a
+          href="https://wa.me/917400310443"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-green-500 text-white px-4 sm:px-6 py-3 rounded-full flex items-center gap-2 sm:gap-3 hover:bg-green-600 transition-all group whitespace-nowrap"
+          data-cursor="GO"
         >
-          SERVICES
-        </Link>
+          <MessageCircle size={16} />
+          <span className="text-[10px] sm:text-xs font-bold tracking-widest uppercase hidden sm:block">
+            WhatsApp
+          </span>
+        </a>
         <Link
           to="/contact"
           className="bg-white text-black px-4 sm:px-6 py-3 rounded-full flex items-center gap-2 sm:gap-3 hover:bg-[#ff4d00] hover:text-white transition-all group whitespace-nowrap"

@@ -18,7 +18,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-[100vh] w-full flex flex-col justify-center px-6 lg:px-12 pt-32 pb-16 overflow-hidden">
+    <section className="relative min-h-[100vh] w-full flex flex-col justify-center px-6 lg:px-12 pt-32 pb-32 overflow-hidden">
       {/* Background Video Layer */}
       <div className="absolute inset-0 z-0">
         <video
@@ -32,7 +32,7 @@ export const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505]" />
       </div>
 
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto flex flex-col items-center text-center gap-10">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto flex flex-col items-center text-center gap-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -48,7 +48,7 @@ export const Hero: React.FC = () => {
           </span>
         </motion.div>
 
-        <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-black leading-[1.05] tracking-tight text-white mb-6 w-full max-w-5xl">
+        <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-black leading-[1.05] tracking-tight text-white mb-2 w-full max-w-5xl">
           <div className="overflow-visible pb-1">
             <motion.div
               custom={0}
@@ -72,7 +72,7 @@ export const Hero: React.FC = () => {
           </div>
         </h1>
 
-        <div className="flex flex-col items-center gap-8 mt-8 w-full">
+        <div className="flex flex-col items-center gap-6 mt-0 w-full">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -83,21 +83,6 @@ export const Hero: React.FC = () => {
             merging cinematic video production with ruthless, data-driven
             marketing.
           </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 4.4, type: "spring" }}
-          >
-            <Link
-              to="/contact"
-              className="bg-[#ff4d00] text-white w-32 h-32 md:w-36 md:h-36 rounded-full flex items-center justify-center text-center p-6 text-sm font-bold tracking-widest uppercase hover:scale-105 hover:bg-orange-500 transition-all shadow-[0_0_40px_rgba(255,77,0,0.3)] mt-4"
-              data-cursor="START"
-            >
-              Start a<br />
-              Project
-            </Link>
-          </motion.div>
         </div>
       </div>
     </section>

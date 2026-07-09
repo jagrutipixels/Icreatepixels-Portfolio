@@ -11,12 +11,12 @@ export const Preloader: React.FC = () => {
 
     const timer1 = setTimeout(() => {
       setStep(2);
-    }, 1500);
+    }, 400);
 
     const timer2 = setTimeout(() => {
       setIsVisible(false);
       document.body.style.overflow = "auto";
-    }, 3500);
+    }, 1200);
 
     return () => {
       clearTimeout(timer1);

@@ -73,62 +73,74 @@ export const ProductionService: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             
             <Reveal>
-              <div className="border border-white/10 p-10 bg-[#050505] hover:border-[#ff4d00]/50 transition-colors h-full group">
+              <div className="border border-white/10 p-10 bg-[#050505] hover:border-[#ff4d00]/50 transition-colors h-full flex flex-col group">
                 <Video size={48} className="text-[#ff4d00] mb-6" />
                 <h3 className="text-3xl font-bold text-white mb-4">Corporate & Ad Films</h3>
                 <p className="text-zinc-400 leading-relaxed mb-6">
                   High-ticket visuals meant to close deals. We handle end-to-end production: scripting, casting, location scouting, shooting, and Netflix-standard post-production.
                 </p>
-                <ul className="space-y-2 mb-8 text-zinc-500">
+                <ul className="space-y-2 mb-8 text-zinc-500 flex-grow">
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> TVCs & Digital Ads</li>
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Brand Manifestos</li>
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Documentaries</li>
                 </ul>
+                <Link to="/production-house-navi-mumbai/corporate-ad-films" className="text-[#ff4d00] text-sm font-bold tracking-widest uppercase hover:text-white transition-colors flex items-center gap-2 mt-auto">
+                  Know More <span>&rarr;</span>
+                </Link>
               </div>
             </Reveal>
 
             <Reveal delay={100}>
-              <div className="border border-white/10 p-10 bg-[#050505] hover:border-[#ff4d00]/50 transition-colors h-full group">
+              <div className="border border-white/10 p-10 bg-[#050505] hover:border-[#ff4d00]/50 transition-colors h-full flex flex-col group">
                 <Camera size={48} className="text-[#ff4d00] mb-6" />
                 <h3 className="text-3xl font-bold text-white mb-4">Commercial Photography</h3>
                 <p className="text-zinc-400 leading-relaxed mb-6">
                   First impressions happen in milliseconds. Our photography ensures your products, team, and facilities look undeniably premium.
                 </p>
-                <ul className="space-y-2 mb-8 text-zinc-500">
+                <ul className="space-y-2 mb-8 text-zinc-500 flex-grow">
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Product & E-Commerce</li>
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Fashion & Editorial</li>
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Architectural & Real Estate</li>
                 </ul>
+                <Link to="/production-house-navi-mumbai/commercial-photography" className="text-[#ff4d00] text-sm font-bold tracking-widest uppercase hover:text-white transition-colors flex items-center gap-2 mt-auto">
+                  Know More <span>&rarr;</span>
+                </Link>
               </div>
             </Reveal>
 
             <Reveal>
-              <div className="border border-white/10 p-10 bg-[#050505] hover:border-[#ff4d00]/50 transition-colors h-full group">
+              <div className="border border-white/10 p-10 bg-[#050505] hover:border-[#ff4d00]/50 transition-colors h-full flex flex-col group">
                 <Mic size={48} className="text-[#ff4d00] mb-6" />
                 <h3 className="text-3xl font-bold text-white mb-4">Podcast Production</h3>
                 <p className="text-zinc-400 leading-relaxed mb-6">
                   Build authority with long-form audio-visual content. We provide multi-cam setups, broadcast-quality audio, and professional set designs.
                 </p>
-                <ul className="space-y-2 mb-8 text-zinc-500">
+                <ul className="space-y-2 mb-8 text-zinc-500 flex-grow">
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Multi-Cam Video Podcasts</li>
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Audio Engineering</li>
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Micro-content extraction (Shorts/Reels)</li>
                 </ul>
+                <Link to="/production-house-navi-mumbai/podcast-production" className="text-[#ff4d00] text-sm font-bold tracking-widest uppercase hover:text-white transition-colors flex items-center gap-2 mt-auto">
+                  Know More <span>&rarr;</span>
+                </Link>
               </div>
             </Reveal>
 
             <Reveal delay={100}>
-              <div className="border border-white/10 p-10 bg-[#050505] hover:border-[#ff4d00]/50 transition-colors h-full group">
+              <div className="border border-white/10 p-10 bg-[#050505] hover:border-[#ff4d00]/50 transition-colors h-full flex flex-col group">
                 <PlaySquare size={48} className="text-[#ff4d00] mb-6" />
                 <h3 className="text-3xl font-bold text-white mb-4">Social First Content</h3>
                 <p className="text-zinc-400 leading-relaxed mb-6">
                   Vertical format doesn't mean low quality. We shoot high-retention Reels, Shorts, and TikToks designed specifically for the algorithm.
                 </p>
-                <ul className="space-y-2 mb-8 text-zinc-500">
+                <ul className="space-y-2 mb-8 text-zinc-500 flex-grow">
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Instagram Reels / YouTube Shorts</li>
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Founder Personal Branding</li>
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Behind The Scenes</li>
                 </ul>
+                <Link to="/production-house-navi-mumbai/social-first-content" className="text-[#ff4d00] text-sm font-bold tracking-widest uppercase hover:text-white transition-colors flex items-center gap-2 mt-auto">
+                  Know More <span>&rarr;</span>
+                </Link>
               </div>
             </Reveal>
 
@@ -172,16 +184,6 @@ export const ProductionService: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
-      
-      {/* CTA Bottom */}
-      <div className="py-24 px-6 text-center">
-        <Reveal>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-8">Ready to shoot?</h2>
-          <Link to="/contact" className="inline-block bg-[#ff4d00] text-white px-10 py-5 rounded-sm font-bold tracking-widest uppercase hover:bg-[#ff4d00]/90 transition-all">
-            Contact Production Team
-          </Link>
-        </Reveal>
       </div>
     </>
   );
