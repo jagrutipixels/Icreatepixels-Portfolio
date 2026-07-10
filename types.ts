@@ -41,3 +41,20 @@ export interface Methodology {
   label: string;
   detail: string;
 }
+
+export interface BlogPost {
+  id: string;
+  slug: string;
+  category: "SEO" | "Production" | "Marketing";
+  title: string;
+  date: string;
+  readTime: string;
+  excerpt: string;
+  content: string; 
+  author: {
+    name: string;
+    role: string;
+  };
+  keywords: string;
+  createdAt?: any;
+}

@@ -106,7 +106,7 @@ const SERVICES_DATA: Record<string, ServiceInfo> = {
     ],
     ctaText: "Audit My Brand",
     categoryName: "Marketing",
-    backLink: "/social-media-marketing-navi-mumbai"
+    backLink: "/marketing"
   },
   "social-media-architecture": {
     title: "Social Media Architecture",
@@ -124,7 +124,7 @@ const SERVICES_DATA: Record<string, ServiceInfo> = {
     ],
     ctaText: "Audit My Brand",
     categoryName: "Marketing",
-    backLink: "/social-media-marketing-navi-mumbai"
+    backLink: "/marketing"
   },
   "performance-marketing": {
     title: "Performance Marketing",
@@ -142,7 +142,7 @@ const SERVICES_DATA: Record<string, ServiceInfo> = {
     ],
     ctaText: "Audit My Brand",
     categoryName: "Marketing",
-    backLink: "/social-media-marketing-navi-mumbai"
+    backLink: "/marketing"
   },
   "conversion-rate-optimization": {
     title: "Conversion Rate Optimization",
@@ -160,7 +160,7 @@ const SERVICES_DATA: Record<string, ServiceInfo> = {
     ],
     ctaText: "Audit My Brand",
     categoryName: "Marketing",
-    backLink: "/social-media-marketing-navi-mumbai"
+    backLink: "/marketing"
   }
 };
 
@@ -244,28 +244,6 @@ export const ServiceDetail: React.FC = () => {
               </div>
             </Reveal>
           </div>
-          
-          <Reveal>
-            <div className="bg-gradient-to-br from-[#1a0800] to-[#050505] border border-[#ff4d00]/30 p-10 md:p-16 rounded-3xl text-center">
-              <h2 className="text-3xl font-serif font-bold text-white mb-6">Ready to scale your {service.categoryName.toLowerCase()}?</h2>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link 
-                  to="/contact" 
-                  className="w-full sm:w-auto inline-block bg-[#ff4d00] text-white px-10 py-4 rounded-xl font-bold tracking-widest uppercase text-sm hover:bg-[#ff4d00]/90 transition-all"
-                >
-                  {service.ctaText}
-                </Link>
-                <a 
-                  href="https://wa.me/917400310443" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-block bg-transparent border border-white/20 text-white px-10 py-4 rounded-xl font-bold tracking-widest uppercase text-sm hover:bg-white/10 transition-all"
-                >
-                  WhatsApp Us
-                </a>
-              </div>
-            </div>
-          </Reveal>
         </div>
       </div>
     </>

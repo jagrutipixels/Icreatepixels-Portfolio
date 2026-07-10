@@ -1,0 +1,25 @@
+{
+  "entities": {
+    "Blog": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "slug": { "type": "string" },
+        "category": { "type": "string" },
+        "date": { "type": "string" },
+        "readTime": { "type": "string" },
+        "excerpt": { "type": "string" },
+        "content": { "type": "string" },
+        "keywords": { "type": "string" },
+        "createdAt": { "type": "timestamp" },
+        "author": { "type": "object", "properties": {
+          "name": { "type": "string" },
+          "role": { "type": "string" }
+        } }
+      }
+    }
+  },
+  "firestore": {
+    "/blogs/{blogId}": "Blog"
+  }
+}

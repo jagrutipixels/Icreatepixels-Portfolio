@@ -84,7 +84,7 @@ export const MarketingService: React.FC = () => {
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Keyword Dominance Strategy</li>
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Google Business Profile Optimization</li>
                 </ul>
-                <Link to="/social-media-marketing-navi-mumbai/local-global-seo" className="text-[#ff4d00] text-sm font-bold tracking-widest uppercase hover:text-white transition-colors flex items-center gap-2 mt-auto">
+                <Link to="/marketing/local-global-seo" className="text-[#ff4d00] text-sm font-bold tracking-widest uppercase hover:text-white transition-colors flex items-center gap-2 mt-auto">
                   Know More <span>&rarr;</span>
                 </Link>
               </div>
@@ -102,7 +102,7 @@ export const MarketingService: React.FC = () => {
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Organic Growth Campaigns</li>
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Influencer & Collaboration Outreach</li>
                 </ul>
-                <Link to="/social-media-marketing-navi-mumbai/social-media-architecture" className="text-[#ff4d00] text-sm font-bold tracking-widest uppercase hover:text-white transition-colors flex items-center gap-2 mt-auto">
+                <Link to="/marketing/social-media-architecture" className="text-[#ff4d00] text-sm font-bold tracking-widest uppercase hover:text-white transition-colors flex items-center gap-2 mt-auto">
                   Know More <span>&rarr;</span>
                 </Link>
               </div>
@@ -120,7 +120,7 @@ export const MarketingService: React.FC = () => {
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Retargeting Funnels</li>
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> A/B Creative Testing</li>
                 </ul>
-                <Link to="/social-media-marketing-navi-mumbai/performance-marketing" className="text-[#ff4d00] text-sm font-bold tracking-widest uppercase hover:text-white transition-colors flex items-center gap-2 mt-auto">
+                <Link to="/marketing/performance-marketing" className="text-[#ff4d00] text-sm font-bold tracking-widest uppercase hover:text-white transition-colors flex items-center gap-2 mt-auto">
                   Know More <span>&rarr;</span>
                 </Link>
               </div>
@@ -138,7 +138,7 @@ export const MarketingService: React.FC = () => {
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> Copywriting & Psychology</li>
                   <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#ff4d00] rounded-full"></div> User Journey Mapping</li>
                 </ul>
-                <Link to="/social-media-marketing-navi-mumbai/conversion-rate-optimization" className="text-[#ff4d00] text-sm font-bold tracking-widest uppercase hover:text-white transition-colors flex items-center gap-2 mt-auto">
+                <Link to="/marketing/conversion-rate-optimization" className="text-[#ff4d00] text-sm font-bold tracking-widest uppercase hover:text-white transition-colors flex items-center gap-2 mt-auto">
                   Know More <span>&rarr;</span>
                 </Link>
               </div>

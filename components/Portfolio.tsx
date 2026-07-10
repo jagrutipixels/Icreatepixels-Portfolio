@@ -99,7 +99,7 @@ const ProjectCard: React.FC<{
             <Link to="/production-house-navi-mumbai">
               See more production work
             </Link>
-            <Link to="/social-media-marketing-navi-mumbai">
+            <Link to="/marketing">
               See more marketing work
             </Link>
           </div>

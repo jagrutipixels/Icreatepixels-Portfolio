@@ -4,7 +4,7 @@ import { MessageCircle } from "lucide-react";
 
 export const FloatingActionBar: React.FC = () => {
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[8000] flex items-center justify-center pointer-events-none w-full px-4 max-w-[max-content]">
+    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[8000] flex items-center justify-center pointer-events-none w-full px-4 max-w-[90vw] md:max-w-max">
       <div className="bg-white/10 backdrop-blur-xl border border-white/10 p-2 rounded-full flex items-center justify-between gap-2 pointer-events-auto shadow-2xl w-full">
         <a
           href="https://wa.me/917400310443"

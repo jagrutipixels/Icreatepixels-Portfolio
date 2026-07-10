@@ -1,18 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Reveal } from '../components/Reveal.tsx';
 import { SEO } from '../components/SEO.tsx';
 import { ArrowRight } from 'lucide-react';
-import { BLOG_POSTS } from '../blogs.ts';
+import { db } from '../firebase';
+import { collection, query, orderBy, getDocs } from 'firebase/firestore';
+import { BlogPost } from '../types';
 
 export const Blog: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [blogs, setBlogs] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      if (!db) {
+        setLoading(false);
+        return;
+      }
+      try {
+        const q = query(collection(db, 'blogs'), orderBy('createdAt', 'desc'));
+        const snapshot = await getDocs(q);
+        const blogsData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as BlogPost));
+        setBlogs(blogsData);
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+      }
+      setLoading(false);
+    };
+    fetchBlogs();
+  }, []);
 
   const categories = ["All", "Production", "Marketing", "SEO"];
 
   const filteredArticles = activeCategory === "All" 
-    ? BLOG_POSTS 
-    : BLOG_POSTS.filter(a => a.category === activeCategory);
+    ? blogs 
+    : blogs.filter(a => a.category === activeCategory);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-[#050505] flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-[#ff4d00] border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
 
   return (
     <>

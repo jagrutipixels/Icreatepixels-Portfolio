@@ -90,7 +90,7 @@ export const ExperienceSection: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full py-8 md:py-12 -mx-6 px-6 md:-mx-12 md:px-12 lg:-mx-24 lg:px-24">
+    <div className="relative w-full py-8 md:py-12 px-6 md:px-12 lg:px-24">
       {/* Technical Metadata Overlays */}
       <div className="absolute inset-0 pointer-events-none z-0 opacity-20 sm:opacity-40 overflow-hidden">
         {/* REC Indicator */}

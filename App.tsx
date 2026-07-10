@@ -13,6 +13,7 @@ const Blog = lazy(() => import('./pages/Blog.tsx').then(module => ({ default: mo
 const BlogPost = lazy(() => import('./pages/BlogPost.tsx').then(module => ({ default: module.BlogPost })));
 const Contact = lazy(() => import('./pages/Contact.tsx').then(module => ({ default: module.Contact })));
 const ServiceDetail = lazy(() => import('./pages/ServiceDetail.tsx').then(module => ({ default: module.ServiceDetail })));
+const Admin = lazy(() => import('./pages/Admin.tsx').then(module => ({ default: module.Admin })));
 
 const ScrollToTopHelper = () => {
   const { pathname, hash } = useLocation();
@@ -76,13 +77,14 @@ const App: React.FC = () => {
             <Route index element={<Home />} />
             <Route path="production-house-navi-mumbai" element={<ProductionService />} />
             <Route path="production-house-navi-mumbai/:slug" element={<ServiceDetail />} />
-            <Route path="social-media-marketing-navi-mumbai" element={<MarketingService />} />
-            <Route path="social-media-marketing-navi-mumbai/:slug" element={<ServiceDetail />} />
+            <Route path="marketing" element={<MarketingService />} />
+            <Route path="marketing/:slug" element={<ServiceDetail />} />
             <Route path="portfolio" element={<PortfolioPage />} />
             <Route path="about-us" element={<AboutUs />} />
             <Route path="blog" element={<Blog />} />
             <Route path="blog/:slug" element={<BlogPost />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="admin" element={<Admin />} />
           </Route>
         </Routes>
       </Suspense>

@@ -17,7 +17,7 @@ export const AgencyFooter: React.FC = () => {
         <Link to="/contact" className="absolute inset-0 z-20"></Link>
         <div className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[0.76,0,0.24,1] z-0"></div>
         <div className="relative z-10 flex flex-col items-center gap-6 mix-blend-difference text-white">
-          <h2 className="text-5xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-none">
+          <h2 className="text-4xl xs:text-5xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-none">
             Ready to <br /> dominate?
           </h2>
           <span className="text-sm md:text-lg font-bold tracking-widest uppercase border-b-2 border-white pb-2 hover:opacity-50 transition-opacity">

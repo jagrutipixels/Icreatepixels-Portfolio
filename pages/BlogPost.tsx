@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { BLOG_POSTS } from '../blogs.ts';
+import { db } from '../firebase';
+import { collection, query, where, getDocs } from 'firebase/firestore';
+import { BlogPost as BlogPostType } from '../types';
 import { SEO } from '../components/SEO.tsx';
 import { Reveal } from '../components/Reveal.tsx';
 import { ArrowLeft, Clock, Calendar, User } from 'lucide-react';
@@ -10,16 +12,38 @@ import remarkGfm from 'remark-gfm';
 export const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+  const [post, setPost] = useState<BlogPostType | null>(null);
+  const [loading, setLoading] = useState(true);
   
-  const post = BLOG_POSTS.find(p => p.slug === slug);
-
   useEffect(() => {
-    // If not found, redirect back to blog
-    if (!post) {
-      navigate('/blog');
-    }
-  }, [post, navigate]);
+    const fetchPost = async () => {
+      if (!db) {
+        setLoading(false);
+        navigate('/blog');
+        return;
+      }
+      try {
+        const q = query(collection(db, 'blogs'), where('slug', '==', slug));
+        const snapshot = await getDocs(q);
+        if (!snapshot.empty) {
+          setPost({ id: snapshot.docs[0].id, ...snapshot.docs[0].data() } as BlogPostType);
+        } else {
+          navigate('/blog');
+        }
+      } catch (error) {
+        console.error("Error fetching post:", error);
+        navigate('/blog');
+      }
+      setLoading(false);
+    };
+    fetchPost();
+  }, [slug, navigate]);
 
+  if (loading) return (
+    <div className="min-h-screen bg-[#050505] flex items-center justify-center">
+      <div className="w-8 h-8 border-2 border-[#ff4d00] border-t-transparent rounded-full animate-spin"></div>
+    </div>
+  );
   if (!post) return null;
 
   return (

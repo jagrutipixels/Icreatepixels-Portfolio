@@ -49,7 +49,7 @@ export const Hero: React.FC = () => {
         </motion.div>
 
         <h1 className="sr-only">Premium Video Production & Growth Marketing Agency in Navi Mumbai</h1>
-        <h2 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-black leading-[1.05] tracking-tight text-white mb-2 w-full max-w-5xl">
+        <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-black leading-[1.05] tracking-tight text-white mb-2 w-full max-w-5xl">
           <div className="overflow-visible pb-1">
             <motion.div
               custom={0}
