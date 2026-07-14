@@ -55,15 +55,18 @@ const App: React.FC = () => {
       touchMultiplier: 2,
     });
 
+    let rafId: number;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
     return () => {
       observer.disconnect();
+      if (rafId) cancelAnimationFrame(rafId);
+      if (rafId) cancelAnimationFrame(rafId);
       lenis.destroy();
     };
   }, []);
@@ -77,7 +80,7 @@ const App: React.FC = () => {
             <Route index element={<Home />} />
             <Route path="production-house-navi-mumbai" element={<ProductionService />} />
             <Route path="production-house-navi-mumbai/:slug" element={<ServiceDetail />} />
-            <Route path="marketing" element={<MarketingService />} />
+            <Route path="digital-marketing-agency-navi-mumbai" element={<MarketingService />} />
             <Route path="marketing/:slug" element={<ServiceDetail />} />
             <Route path="portfolio" element={<PortfolioPage />} />
             <Route path="about-us" element={<AboutUs />} />

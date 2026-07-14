@@ -35,6 +35,8 @@ const ProjectCard: React.FC<{
             alt={project.title}
             loading="lazy"
             decoding="async"
+            width="640"
+            height="480"
             onLoad={() => setImageLoaded(true)}
             className={`w-full h-full object-cover transform group-hover:scale-105 transition-all duration-1000 ${imageLoaded ? "opacity-100" : "opacity-0"}`}
           />

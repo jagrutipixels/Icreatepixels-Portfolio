@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -8,18 +9,21 @@ const services = [
       "Cinematic quality storytelling bridging physical sets and digital screens.",
     tags: ["Direction", "Cinematography", "Set Design", "Editing"],
     colSpan: "md:col-span-2",
+    link: "/production-house-navi-mumbai",
   },
   {
     title: "Local SEO & Growth",
     description: "Data-driven strategies to dominate local visibility.",
     tags: ["GMB Maps", "Search", "Conversion"],
     colSpan: "md:col-span-1",
+    link: "/digital-marketing-agency-navi-mumbai",
   },
   {
     title: "Social Media Mgt",
     description: "Viral engineering and retention-focused content.",
     tags: ["Reels", "Grid Design", "Strategy"],
     colSpan: "md:col-span-1",
+    link: "/digital-marketing-agency-navi-mumbai",
   },
   {
     title: "Web & Digital",
@@ -27,6 +31,7 @@ const services = [
       "Lightning-fast, highly-converting digital infrastructure and UI.",
     tags: ["Design", "Webflow", "React", "Analytics"],
     colSpan: "md:col-span-2",
+    link: "/digital-marketing-agency-navi-mumbai",
   },
 ];
 
@@ -61,25 +66,26 @@ export const BentoServices: React.FC = () => {
                 delay: i * 0.1,
                 ease: [0.76, 0, 0.24, 1],
               }}
-              className={`bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 flex flex-col justify-between hover:border-[#ff4d00]/50 transition-colors ${service.colSpan}`}
+              className={`bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-[#ff4d00]/50 transition-colors ${service.colSpan}`}
             >
-              <div>
-                <h3 className="text-2xl font-bold tracking-tight text-white mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-zinc-400 text-sm">{service.description}</p>
-              </div>
-
-              <div className="flex flex-wrap gap-2 mt-8">
-                {service.tags.map((tag, j) => (
-                  <span
-                    key={j}
-                    className="text-[10px] uppercase tracking-widest px-3 py-1 bg-white/5 border border-white/10 rounded-full text-zinc-300"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+              <Link to={service.link} className="flex flex-col justify-between h-full p-8 md:p-12">
+                <div>
+                  <h3 className="text-2xl font-bold tracking-tight text-white mb-3 group-hover:text-[#ff4d00] transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-zinc-400 text-sm">{service.description}</p>
+                </div>
+                <div className="flex flex-wrap gap-2 mt-8">
+                  {service.tags.map((tag, j) => (
+                    <span
+                      key={j}
+                      className="text-[10px] uppercase tracking-widest px-3 py-1 bg-white/5 border border-white/10 rounded-full text-zinc-300"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </Link>
             </motion.div>
           ))}
         </div>

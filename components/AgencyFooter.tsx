@@ -84,9 +84,9 @@ export const AgencyFooter: React.FC = () => {
 
       {/* Edge-to-edge typography */}
       <div className="w-full overflow-hidden text-center -mb-8 lg:-mb-16 select-none leading-none z-0">
-        <h1 className="text-[15vw] font-black uppercase tracking-tighter text-white/5 whitespace-nowrap -mt-12 lg:-mt-24">
+        <div className="text-[15vw] font-black uppercase tracking-tighter text-white/5 whitespace-nowrap -mt-12 lg:-mt-24">
           ICREATEPIXELS
-        </h1>
+        </div>
       </div>
     </footer>
   );

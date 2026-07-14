@@ -1,6 +1,5 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Reveal } from "./Reveal.tsx";
-import reelsData from "../reels_data.json";
 
 const BRAND_CONFIG: Record<
   string,
@@ -210,6 +209,14 @@ const ReelRow: React.FC<{
 };
 
 export const RecentWorkSection: React.FC = () => {
+  const [reelsData, setReelsData] = useState<Record<string, any> | null>(null);
+
+  useEffect(() => {
+    fetch("/reels_data.json").then(res => res.json()).then(data => {
+      setReelsData(data);
+    });
+  }, []);
+
   return (
     <section
       id="recent-work"
@@ -244,6 +251,10 @@ export const RecentWorkSection: React.FC = () => {
                 <img
                   src="https://img.youtube.com/vi/UYhxcfgainM/maxresdefault.jpg"
                   alt="BNI Inesh Featured Video"
+                  loading="lazy"
+                  decoding="async"
+                  width="1280"
+                  height="720"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
@@ -302,7 +313,7 @@ export const RecentWorkSection: React.FC = () => {
             </div>
           </Reveal>
 
-          {[
+          {reelsData && [
             "bhadipa",
             "vishaykhol",
             "puppycuddles",

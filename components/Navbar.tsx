@@ -57,7 +57,7 @@ export const Navbar: React.FC = () => {
   const navLinks = [
     { name: "HOME", href: "/" },
     { name: "PRODUCTION", href: "/production-house-navi-mumbai" },
-    { name: "MARKETING", href: "/marketing" },
+    { name: "MARKETING", href: "/digital-marketing-agency-navi-mumbai" },
     { name: "PORTFOLIO", href: "/portfolio" },
     { name: "ABOUT", href: "/about-us" },
     { name: "BLOG", href: "/blog" },
@@ -65,7 +65,7 @@ export const Navbar: React.FC = () => {
   ];
 
   const logoUrl =
-    "https://raw.githubusercontent.com/jagrutipixels/pixels/2a4100de1fb6b50a220f0ca500322b2a91316285/logo_white.png";
+    "/images/logo_white.png";
 
   return (
     <>

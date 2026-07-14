@@ -50,7 +50,7 @@ export const PROJECTS: Project[] = [
     client: "PUPPYCUDDLES DOG CAFE",
     deliverable: "Content Direction • Social Growth",
     impact: "Boosted cafe footfall through digital alignment",
-    image: "https://raw.githubusercontent.com/jagrutipixels/Icreatepixels-Portfolio/5923419598a5eeff86d46dff83f1f2be50c378cd/ChatGPT%20Image%20Apr%209%2C%202026%2C%2006_19_56%20PM.png",
+    image: "/images/ChatGPT_Image_2.png",
     description: "Transformed the brand’s digital presence by aligning daily reel content with the physical in-cafe experience.",
     challenges: [
       "Creating engaging frames within physical cafe constraints.",
@@ -65,7 +65,7 @@ export const PROJECTS: Project[] = [
     client: "BHARAT REALTY",
     deliverable: "Visual Storytelling",
     impact: "Production In-Progress",
-    image: "https://raw.githubusercontent.com/jagrutipixels/Icreatepixels-Portfolio/3b8c4278cf6ecbc618fe5eef54170856797cd9ae/ChatGPT%20Image%20Apr%209%2C%202026%2C%2006_21_20%20PM.png",
+    image: "/images/ChatGPT_Image_1.png",
     description: "Revamping the digital property showcase for a real estate firm. This project involves a high-fidelity site-to-screen pipeline currently under development.",
     challenges: [
       "Translating physical architecture to cinematic digital tours.",
@@ -83,7 +83,7 @@ export const BRAND_PROJECTS: BrandProject[] = [
     category: "Studio Inception • Live",
     description: "Built the full-service content production arm for Karn Marketing Warfare from scratch. Live operational infrastructure.",
     deliverables: ["Operational Infrastructure", "Creative Leadership", "Production Pipeline"],
-    image: "https://raw.githubusercontent.com/jagrutipixels/pixels/9acf4bd49cf1580f8e8d0cb4e4c49acf84e93880/savoir.jpg",
+    image: "/images/savoir.jpg",
     link: "https://www.ssbykmw.com/" 
   },
   {
@@ -91,7 +91,7 @@ export const BRAND_PROJECTS: BrandProject[] = [
     category: "Electric Mobility • Live",
     description: "Designed the digital launch strategy and high-performance UI structure for a new EV scooter brand. Live site.",
     deliverables: ["Website Architecture", "Digital Strategy", "UI/UX Design"],
-    image: "https://raw.githubusercontent.com/jagrutipixels/pixels/d83e7276207c5022b98a652205fd257d5e6d0449/tech.jpg",
+    image: "/images/tech.jpg",
     link: "https://candid-pegasus-1f86d2.netlify.app/#/"
   },
   {
@@ -99,7 +99,7 @@ export const BRAND_PROJECTS: BrandProject[] = [
     category: "Premium D2C • Live",
     description: "Complete brand launch for premium Alphonso mango distribution. Covers naming, packaging, and digital infrastructure.",
     deliverables: ["Brand Identity", "Packaging Design", "D2C Logistics"],
-    image: "https://raw.githubusercontent.com/jagrutipixels/pixels/2b0e06602bed3b04510ba467b5e0b5ab7e2d0bb1/dbn.jpg",
+    image: "/images/dbn.jpg",
     link: "https://icretepixels.vercel.app/"
   }
 ];

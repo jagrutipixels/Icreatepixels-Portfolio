@@ -44,6 +44,10 @@ export const FeaturedWork: React.FC = () => {
                   <img
                     src={work.image}
                     alt={work.title}
+                    loading="lazy"
+                    decoding="async"
+                    width="400"
+                    height="500"
                     className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1.5s] ease-[0.76,0,0.24,1]"
                   />
                 </div>

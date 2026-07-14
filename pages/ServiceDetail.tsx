@@ -106,7 +106,7 @@ const SERVICES_DATA: Record<string, ServiceInfo> = {
     ],
     ctaText: "Audit My Brand",
     categoryName: "Marketing",
-    backLink: "/marketing"
+    backLink: "/digital-marketing-agency-navi-mumbai"
   },
   "social-media-architecture": {
     title: "Social Media Architecture",
@@ -124,7 +124,7 @@ const SERVICES_DATA: Record<string, ServiceInfo> = {
     ],
     ctaText: "Audit My Brand",
     categoryName: "Marketing",
-    backLink: "/marketing"
+    backLink: "/digital-marketing-agency-navi-mumbai"
   },
   "performance-marketing": {
     title: "Performance Marketing",
@@ -142,7 +142,7 @@ const SERVICES_DATA: Record<string, ServiceInfo> = {
     ],
     ctaText: "Audit My Brand",
     categoryName: "Marketing",
-    backLink: "/marketing"
+    backLink: "/digital-marketing-agency-navi-mumbai"
   },
   "conversion-rate-optimization": {
     title: "Conversion Rate Optimization",
@@ -160,7 +160,7 @@ const SERVICES_DATA: Record<string, ServiceInfo> = {
     ],
     ctaText: "Audit My Brand",
     categoryName: "Marketing",
-    backLink: "/marketing"
+    backLink: "/digital-marketing-agency-navi-mumbai"
   }
 };
 

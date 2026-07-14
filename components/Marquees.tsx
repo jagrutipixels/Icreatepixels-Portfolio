@@ -13,9 +13,9 @@ const clients = [
 ];
 
 export const Marquees: React.FC = () => {
-  const images = [
-    ...PROJECTS.map((p) => p.image).filter(Boolean),
-    ...BRAND_PROJECTS.map((p) => p.image).filter(Boolean),
+  const media = [
+    ...PROJECTS.map((p) => ({ src: p.image, alt: p.title || "Project Image" })).filter(p => p.src),
+    ...BRAND_PROJECTS.map((p) => ({ src: p.image, alt: p.name || "Brand Image" })).filter(p => p.src),
   ];
 
   return (
@@ -28,15 +28,19 @@ export const Marquees: React.FC = () => {
           className="flex whitespace-nowrap gap-6 shrink-0 px-3"
         >
           {/* Double array for seamless loop */}
-          {[...images, ...images, ...images, ...images].map((img, i) => (
+          {[...media, ...media, ...media, ...media].map((item, i) => (
             <div
               key={i}
               className="w-[320px] h-[180px] sm:w-[480px] sm:h-[270px] md:w-[640px] md:h-[360px] lg:w-[800px] lg:h-[450px] shrink-0 overflow-hidden bg-zinc-900 rounded-2xl"
               data-cursor="VIEW"
             >
               <img
-                src={img}
-                alt=""
+                src={item.src}
+                alt={item.alt}
+                loading="lazy"
+                decoding="async"
+                width="640"
+                height="360"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
               />
             </div>

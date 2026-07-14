@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-xs: 475px;
+}
+
+
+        :root {
+            --bg-color: #050505;
+            --text-color: #ffffff;
+            --zinc-900: #18181b;
+            --zinc-800: #27272a;
+            --zinc-700: #3f3f46;
+            --zinc-500: #71717a;
+            --invert: 0;
+            --selection-bg: #ff4d00;
+            --selection-text: #ffffff;
+            --flare-opacity: 0.15;
+        }
+
+        html, body {
+            width: 100%;
+            position: relative;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1), color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        div, section, nav, footer, button, h1, h2, h3, h4, p, span, a {
+            transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.8s cubic-bezier(0.4, 0, 0.2, 1), color 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .logo-invert {
+            filter: invert(var(--invert));
+            transition: filter 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .font-serif {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        section {
+            scroll-margin-top: clamp(80px, 12vh, 120px);
+        }
+
+        .light-mode img:not([alt*="Logo"]),
+        .light-mode video,
+        .light-mode iframe,
+        .light-mode .no-invert {
+        }
+        .grain::before {
+            content: "";
+            position: fixed;
+            top: -100%; left: -100%;
+            width: 300%; height: 300%;
+            background-image: url("/images/noise.png");
+            background-repeat: repeat;
+            background-size: 100px;
+            opacity: 0.04;
+            pointer-events: none;
+            z-index: 9999;
+            animation: grain-animation 8s steps(10) infinite;
+        }
+
+        @keyframes grain-animation {
+            0%, 100% { transform: translate(0, 0); }
+            10% { transform: translate(-5%, -10%); }
+            30% { transform: translate(-15%, 5%); }
+            50% { transform: translate(10%, 10%); }
+            70% { transform: translate(5%, -15%); }
+            90% { transform: translate(-10%, 10%); }
+        }
+
+        @keyframes flare-drift {
+            0% { transform: translateX(-50%) translateY(0) scaleX(1); opacity: 0; }
+            50% { opacity: 0.6; }
+            100% { transform: translateX(50%) translateY(-20vh) scaleX(1.5); opacity: 0; }
+        }
+
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(2deg); }
+        }
+
+        /* Makora Studio Scroll Polish */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s cubic-bezier(0.76, 0, 0.24, 1), transform 1s cubic-bezier(0.76, 0, 0.24, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal-on-scroll.is-revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-flare {
+            animation: flare-drift 20s infinite linear;
+        }
+
+        .animate-float-slow {
+            animation: float-slow 15s ease-in-out infinite;
+        }
+
+        /* Improved Fluid Typography for narrow screens */
+        .text-fluid-h1 { font-size: clamp(2.5rem, 9vw, 6.5rem); }
+        .text-fluid-h2 { font-size: clamp(2rem, 6vw, 4rem); }
+
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: var(--bg-color); }
+        ::-webkit-scrollbar-thumb { background: var(--zinc-800); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--zinc-500); }
+
+        @keyframes drift {
+            0% { transform: translate(-2%, -2%) scale(1); }
+            50% { transform: translate(2%, 2%) scale(1.05); }
+            100% { transform: translate(-2%, -2%) scale(1); }
+        }
+        .animate-drift { animation: drift 25s ease-in-out infinite; }
+
+        ::selection { background: var(--selection-bg); color: var(--selection-text); }
+        
+        .touch-target { min-height: 48px; min-width: 48px; }
+
+        /* Global Cursor Hide */
+        @media (pointer: fine) {
+            * {
+                cursor: none !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .text-fluid-h1 { font-size: clamp(2.2rem, 14vw, 4rem); }
+            .text-fluid-h2 { font-size: clamp(1.8rem, 12vw, 3rem); }
+        }
+        
+        /* Fix for smaller device margins */
+        @media (max-width: 380px) {
+            .px-6 { padding-left: 1rem; padding-right: 1rem; }
+        }
+    
