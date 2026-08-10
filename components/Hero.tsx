@@ -26,10 +26,41 @@ export const Hero: React.FC = () => {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity"
+          className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity"
           src="https://assets.mixkit.co/videos/preview/mixkit-set-of-lights-in-a-video-studio-32400-large.mp4"
         />
+        
+        {/* Animated Glow Orbs */}
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-[20%] left-[10%] w-[40vw] h-[40vw] rounded-full bg-[#ff4d00]/20 blur-[120px] pointer-events-none mix-blend-screen"
+        />
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.3, 1],
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+          className="absolute bottom-[10%] right-[10%] w-[50vw] h-[50vw] rounded-full bg-blue-600/10 blur-[150px] pointer-events-none mix-blend-screen"
+        />
+
         <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505]" />
+        
+        {/* Subtle Grid Overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_10%,transparent_100%)] pointer-events-none" />
       </div>
 
       <div className="relative z-10 w-full max-w-[1400px] mx-auto flex flex-col items-center text-center gap-6">
@@ -85,6 +116,32 @@ export const Hero: React.FC = () => {
             marketing.
           </motion.p>
         </div>
+      </div>
+
+      {/* Hero Bottom Ticker */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden border-t border-white/5 bg-black/50 backdrop-blur-sm z-20">
+        <motion.div
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          className="flex whitespace-nowrap items-center shrink-0 py-3"
+        >
+          {[...Array(6)].map((_, i) => (
+            <div key={i} className="flex items-center">
+              <span className="text-white/40 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase px-8">
+                Cinematic Video Production
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ff4d00]/50"></span>
+              <span className="text-white/40 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase px-8">
+                Data-Driven Marketing
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ff4d00]/50"></span>
+              <span className="text-white/40 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase px-8">
+                Brand Strategy
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ff4d00]/50"></span>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
