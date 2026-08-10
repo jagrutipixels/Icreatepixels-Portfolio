@@ -60,12 +60,11 @@ export const Navbar: React.FC = () => {
     { name: "MARKETING", href: "/digital-marketing-agency-navi-mumbai" },
     { name: "PORTFOLIO", href: "/portfolio" },
     { name: "ABOUT", href: "/about-us" },
-    { name: "BLOG", href: "/blog" },
     { name: "CONTACT", href: "/contact" },
   ];
 
   const logoUrl =
-    "/images/logo_white.png";
+    "https://raw.githubusercontent.com/jagrutipixels/pixels/main/logo_white.png";
 
   return (
     <>

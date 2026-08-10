@@ -9,11 +9,8 @@ const ProductionService = lazy(() => import('./pages/ProductionService.tsx').the
 const MarketingService = lazy(() => import('./pages/MarketingService.tsx').then(module => ({ default: module.MarketingService })));
 const PortfolioPage = lazy(() => import('./pages/PortfolioPage.tsx').then(module => ({ default: module.PortfolioPage })));
 const AboutUs = lazy(() => import('./pages/AboutUs.tsx').then(module => ({ default: module.AboutUs })));
-const Blog = lazy(() => import('./pages/Blog.tsx').then(module => ({ default: module.Blog })));
-const BlogPost = lazy(() => import('./pages/BlogPost.tsx').then(module => ({ default: module.BlogPost })));
 const Contact = lazy(() => import('./pages/Contact.tsx').then(module => ({ default: module.Contact })));
 const ServiceDetail = lazy(() => import('./pages/ServiceDetail.tsx').then(module => ({ default: module.ServiceDetail })));
-const Admin = lazy(() => import('./pages/Admin.tsx').then(module => ({ default: module.Admin })));
 
 const ScrollToTopHelper = () => {
   const { pathname, hash } = useLocation();
@@ -84,10 +81,7 @@ const App: React.FC = () => {
             <Route path="marketing/:slug" element={<ServiceDetail />} />
             <Route path="portfolio" element={<PortfolioPage />} />
             <Route path="about-us" element={<AboutUs />} />
-            <Route path="blog" element={<Blog />} />
-            <Route path="blog/:slug" element={<BlogPost />} />
             <Route path="contact" element={<Contact />} />
-            <Route path="admin" element={<Admin />} />
           </Route>
         </Routes>
       </Suspense>

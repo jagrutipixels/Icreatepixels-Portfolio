@@ -1,14 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { MessageCircle, Bot } from "lucide-react";
-import { AskAI } from "./AskAI.tsx";
+import { MessageCircle } from "lucide-react";
 
 export const FloatingActionBar: React.FC = () => {
-  const [isAIOpen, setIsAIOpen] = useState(false);
-
   return (
     <>
-      <AskAI isOpen={isAIOpen} onClose={() => setIsAIOpen(false)} />
       <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[8000] flex items-center justify-center pointer-events-none w-full px-4 max-w-[90vw] md:max-w-max">
         <div className="bg-white/10 backdrop-blur-xl border border-white/10 p-2 rounded-full flex items-center justify-between gap-2 pointer-events-auto shadow-2xl w-full">
           <a
@@ -24,16 +20,6 @@ export const FloatingActionBar: React.FC = () => {
             </span>
           </a>
           
-          <button
-            onClick={() => setIsAIOpen(!isAIOpen)}
-            className={`${isAIOpen ? 'bg-[#ff4d00]' : 'bg-[#18181b]'} text-white px-4 sm:px-6 py-3 rounded-full flex items-center gap-2 sm:gap-3 hover:bg-[#ff4d00] transition-all group whitespace-nowrap`}
-          >
-            <Bot size={16} />
-            <span className="text-[10px] sm:text-xs font-bold tracking-widest uppercase">
-              Ask AI
-            </span>
-          </button>
-
           <Link
             to="/contact"
             className="bg-white text-black px-4 sm:px-6 py-3 rounded-full flex items-center gap-2 sm:gap-3 hover:bg-[#ff4d00] hover:text-white transition-all group whitespace-nowrap"
@@ -44,7 +30,7 @@ export const FloatingActionBar: React.FC = () => {
             </span>
             <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full overflow-hidden border border-black/20 group-hover:border-white/20 transition-colors hidden xs:block">
               <img
-                src="/images/abhisek-modified.png"
+                src="https://lh3.googleusercontent.com/d/11J133AtfmyuuDzgIgZ_FasN8V2hv6W84"
                 alt="Avatar"
                 className="w-full h-full object-cover filter grayscale"
                 onError={(e) => {
