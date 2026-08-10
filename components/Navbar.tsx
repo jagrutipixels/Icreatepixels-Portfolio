@@ -64,7 +64,7 @@ export const Navbar: React.FC = () => {
   ];
 
   const logoUrl =
-    "https://raw.githubusercontent.com/jagrutipixels/pixels/main/logo_white.png";
+    "/images/logo_white.webp";
 
   return (
     <>

@@ -50,7 +50,7 @@ export const PROJECTS: Project[] = [
     client: "PUPPYCUDDLES DOG CAFE",
     deliverable: "Content Direction • Social Growth",
     impact: "Boosted cafe footfall through digital alignment",
-    image: "/images/ChatGPT_Image_2.png",
+    image: "/images/ChatGPT_Image_2.webp",
     description: "Transformed the brand’s digital presence by aligning daily reel content with the physical in-cafe experience.",
     challenges: [
       "Creating engaging frames within physical cafe constraints.",
@@ -65,7 +65,7 @@ export const PROJECTS: Project[] = [
     client: "BHARAT REALTY",
     deliverable: "Visual Storytelling",
     impact: "Production In-Progress",
-    image: "/images/ChatGPT_Image_1.png",
+    image: "/images/ChatGPT_Image_1.webp",
     description: "Revamping the digital property showcase for a real estate firm. This project involves a high-fidelity site-to-screen pipeline currently under development.",
     challenges: [
       "Translating physical architecture to cinematic digital tours.",
@@ -83,7 +83,7 @@ export const BRAND_PROJECTS: BrandProject[] = [
     category: "Studio Inception • Live",
     description: "Built the full-service content production arm for Karn Marketing Warfare from scratch. Live operational infrastructure.",
     deliverables: ["Operational Infrastructure", "Creative Leadership", "Production Pipeline"],
-    image: "/images/savoir.jpg",
+    image: "/images/savoir.webp",
     link: "https://www.ssbykmw.com/" 
   },
   {
@@ -91,7 +91,7 @@ export const BRAND_PROJECTS: BrandProject[] = [
     category: "Electric Mobility • Live",
     description: "Designed the digital launch strategy and high-performance UI structure for a new EV scooter brand. Live site.",
     deliverables: ["Website Architecture", "Digital Strategy", "UI/UX Design"],
-    image: "/images/tech.jpg",
+    image: "/images/tech.webp",
     link: "https://candid-pegasus-1f86d2.netlify.app/#/"
   },
   {
@@ -99,7 +99,7 @@ export const BRAND_PROJECTS: BrandProject[] = [
     category: "Premium D2C • Live",
     description: "Complete brand launch for premium Alphonso mango distribution. Covers naming, packaging, and digital infrastructure.",
     deliverables: ["Brand Identity", "Packaging Design", "D2C Logistics"],
-    image: "/images/dbn.jpg",
+    image: "/images/dbn.webp",
     link: "https://icretepixels.vercel.app/"
   }
 ];

@@ -12,7 +12,7 @@ export const ProductionService: React.FC = () => {
     "provider": {
       "@type": "LocalBusiness",
       "name": "icreatepixels",
-      "image": "/images/logo_white.png",
+      "image": "/images/logo_white.webp",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Navi Mumbai",
